@@ -1,3 +1,4 @@
+using Digiphy;
 using Fusion.Sockets;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace Fusion.Addons.ConnectionManagerAddon
      * - connection launch (either with room name or matchmaking session properties)
      * - user representation spawn on connection
      **/
-    public class ConnectionManager : MonoBehaviour, INetworkRunnerCallbacks
+    public class ConnectionManager : Singleton<ConnectionManager>, INetworkRunnerCallbacks
     {
         [System.Flags]
         public enum ConnectionCriterias
