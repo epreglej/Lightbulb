@@ -1,18 +1,20 @@
-using Photon.Pun;
+using Fusion;
+using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class NetworkXRGrabInteractable : XRGrabInteractable
 {
-    private PhotonView photonView;
-
-    private void Start()
-    {
-        photonView = GetComponent<PhotonView>();
-    }
+    [SerializeField] private NetworkObject _networkObject;
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
-        photonView.RequestOwnership();
+        _networkObject.RequestStateAuthority();
+    }
+
+    protected override void OnSelectExited(SelectExitEventArgs args)
+    {
+        base.OnSelectExited(args);
+        _networkObject.ReleaseStateAuthority();
     }
 }

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2440245852793256534}
-  - component: {fileID: 932881111375966348}
   - component: {fileID: 1487286506750590048}
+  - component: {fileID: 6802017527589581368}
   m_Layer: 0
   m_Name: NetworkPlayer
   m_TagString: Untagged
@@ -38,33 +38,6 @@ Transform:
   - {fileID: 9011320361759110552}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &932881111375966348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144193461212715726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 8139011896362142874}
-  - {fileID: 2244353875053688607}
-  - {fileID: 1373384733339049011}
-  - {fileID: 7506240265196246941}
-  - {fileID: 3566791617015331962}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!114 &1487286506750590048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,6 +55,29 @@ MonoBehaviour:
   networkedRightController: {fileID: 6355464600323130866}
   networkedLeftHand: {fileID: 5992082067289425943}
   networkedRightHand: {fileID: 9011320361759110552}
+--- !u!114 &6802017527589581368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144193461212715726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 2933412524
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1487286506750590048}
+  - {fileID: 1138998350106241965}
+  - {fileID: 8114886953725977765}
+  - {fileID: 9043780065194852312}
+  - {fileID: 4234682861908273809}
+  - {fileID: 1889691108800510189}
 --- !u!1 &2347001400759946710
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5382939113155664519}
-  - component: {fileID: 2244353875053688607}
+  - component: {fileID: 8114886953725977765}
   m_Layer: 0
   m_Name: LeftController
   m_TagString: Untagged
@@ -199,7 +195,7 @@ Transform:
   - {fileID: 6072103200042138980}
   m_Father: {fileID: 2440245852793256534}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2244353875053688607
+--- !u!114 &8114886953725977765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,13 +204,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3072776743787204528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!1 &4271129370759576284
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5992082067289425943}
-  - component: {fileID: 7506240265196246941}
+  - component: {fileID: 4234682861908273809}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -248,7 +244,7 @@ Transform:
   - {fileID: 3036501962165740955}
   m_Father: {fileID: 2440245852793256534}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7506240265196246941
+--- !u!114 &4234682861908273809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,13 +253,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4271129370759576284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!1 &4437840875998863093
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6355464600323130866}
-  - component: {fileID: 1373384733339049011}
+  - component: {fileID: 9043780065194852312}
   m_Layer: 0
   m_Name: RightController
   m_TagString: Untagged
@@ -297,7 +293,7 @@ Transform:
   - {fileID: 5730990572956798387}
   m_Father: {fileID: 2440245852793256534}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1373384733339049011
+--- !u!114 &9043780065194852312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,13 +302,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4437840875998863093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!1 &8197228933322519302
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3821724865426163707}
-  - component: {fileID: 8139011896362142874}
+  - component: {fileID: 1138998350106241965}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -346,7 +342,7 @@ Transform:
   - {fileID: 2347001400759914998}
   m_Father: {fileID: 2440245852793256534}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8139011896362142874
+--- !u!114 &1138998350106241965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -355,13 +351,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8197228933322519302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!1 &8459774030374598606
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9011320361759110552}
-  - component: {fileID: 3566791617015331962}
+  - component: {fileID: 1889691108800510189}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -395,7 +391,7 @@ Transform:
   - {fileID: 2504412560530616017}
   m_Father: {fileID: 2440245852793256534}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3566791617015331962
+--- !u!114 &1889691108800510189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -404,13 +400,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8459774030374598606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!1001 &2687466491704068410
 PrefabInstance:
   m_ObjectHideFlags: 0

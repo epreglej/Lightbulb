@@ -294,9 +294,8 @@ GameObject:
   - component: {fileID: 289983020}
   - component: {fileID: 289983023}
   - component: {fileID: 289983022}
-  - component: {fileID: 289983025}
   - component: {fileID: 289983024}
-  - component: {fileID: 289983026}
+  - component: {fileID: 289983025}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -544,6 +543,7 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers:
   - {fileID: 289983022}
   m_AddDefaultGrabTransformers: 1
+  _networkObject: {fileID: 289983024}
 --- !u!114 &289983024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,13 +553,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 289983017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 1
-  m_UseLocal: 1
+  SortKey: 578267276
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 289983025}
 --- !u!114 &289983025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,37 +571,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 289983017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 1
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 289983024}
-  - {fileID: 289983026}
-  sceneViewId: 1
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
---- !u!114 &289983026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289983017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 1
-  m_TeleportEnabled: 0
-  m_TeleportIfDistanceGreaterThan: 3
+  SyncScale: 1
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1760526223}
   - component: {fileID: 1760526224}
+  - component: {fileID: 1760526225}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -749,6 +728,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff21288707084446a2e6fc82f9e55be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1760526225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760526222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b2dfec39f015045b1dbe3b2d68d390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMode: 2
+  roomName: Digiphy
+  connectOnStart: 1
+  playerCount: 2
+  connectionCriterias: 1
+  additionalSessionProperties: []
+  runner: {fileID: 0}
+  userPrefab: {fileID: 6802017527589581368, guid: a78dd14a8fa8bb24a9bb7c8a7dfbb65e, type: 3}
+  onWillConnect:
+    m_PersistentCalls:
+      m_Calls: []
+  actualSessionProperties: []
 --- !u!1 &1901126906
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,16 +833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 2
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!210 &2939255517614782
 SortingGroup:
   m_ObjectHideFlags: 0
