@@ -10,14 +10,14 @@ namespace Digiphy
 
         protected override void OnSelectEntered(SelectEnterEventArgs args)
         {
-            base.OnSelectEntered(args);
             _networkObject.RequestStateAuthority();
+            base.OnSelectEntered(args);
         }
 
         protected override void OnSelectExited(SelectExitEventArgs args)
         {
-            base.OnSelectExited(args);
             _networkObject.ReleaseStateAuthority();
+            base.OnSelectExited(args);
         }
     }
 }
