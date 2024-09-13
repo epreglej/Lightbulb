@@ -4,7 +4,6 @@ using Fusion.Addons.Physics;
 #endif
 using System.Collections.Generic;
 using UnityEngine;
-using Fusion;
 
 namespace Fusion.Addons.PositionDebugging
 {

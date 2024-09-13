@@ -1,11 +1,10 @@
-namespace Fusion.Editor {
-  using System.IO;
-  using System.Linq;
-  using UnityEditor;
-  using UnityEditor.AssetImporters;
-  using UnityEngine;
+namespace Fusion.Editor
+{
+    using UnityEditor;
+    using UnityEditor.AssetImporters;
+    using UnityEngine;
 
-  [ScriptedImporter(1, ExtensionWithoutDot, NetworkProjectConfigImporter.ImportQueueOffset + 1)]
+    [ScriptedImporter(1, ExtensionWithoutDot, NetworkProjectConfigImporter.ImportQueueOffset + 1)]
   public class FusionWeaverTriggerImporter : ScriptedImporter {
     public const string DependencyName = "FusionILWeaverTriggerImporter/ConfigHash";
     public const string Extension = "." + ExtensionWithoutDot;

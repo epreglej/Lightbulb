@@ -2,9 +2,7 @@
 #if USE_PHYSICSADDON
 using Fusion.Addons.Physics;
 #endif
-using Fusion;
 using Fusion.XR.Host.Rig;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

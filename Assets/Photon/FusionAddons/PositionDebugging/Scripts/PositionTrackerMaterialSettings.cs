@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PositionTrackerMaterialSettings", menuName = "Fusion Addons/PositionTrackerMaterialSettings", order = 1)]

@@ -1,8 +1,8 @@
-namespace Fusion.Statistics {
-  using System;
-  using UnityEngine;
+namespace Fusion.Statistics
+{
+    using UnityEngine;
 
-  [DisallowMultipleComponent]
+    [DisallowMultipleComponent]
   [AddComponentMenu("Fusion/Statistics/Statistics World Anchor")]
   public class FusionStatsWorldAnchor : MonoBehaviour {
     private void OnEnable() {

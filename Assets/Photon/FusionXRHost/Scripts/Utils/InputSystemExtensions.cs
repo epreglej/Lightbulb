@@ -1,7 +1,5 @@
 using Fusion.XR.Host.Rig;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Fusion.XR.Host

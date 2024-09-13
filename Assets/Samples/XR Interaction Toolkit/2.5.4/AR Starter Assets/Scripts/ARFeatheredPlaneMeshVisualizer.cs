@@ -1,6 +1,5 @@
 ﻿#if AR_FOUNDATION_PRESENT
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
 namespace UnityEngine.XR.Interaction.Toolkit.Samples.ARStarterAssets

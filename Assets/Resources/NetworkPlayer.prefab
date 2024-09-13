@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2440245852793256534}
-  - component: {fileID: 1487286506750590048}
   - component: {fileID: 6802017527589581368}
   m_Layer: 0
   m_Name: NetworkPlayer
@@ -38,23 +37,6 @@ Transform:
   - {fileID: 9011320361759110552}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1487286506750590048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144193461212715726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19edf926f4846af46bfd211d0956fe41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  networkedHead: {fileID: 3821724865426163707}
-  networkedLeftController: {fileID: 5382939113155664519}
-  networkedRightController: {fileID: 6355464600323130866}
-  networkedLeftHand: {fileID: 5992082067289425943}
-  networkedRightHand: {fileID: 9011320361759110552}
 --- !u!114 &6802017527589581368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +54,6 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 1487286506750590048}
   - {fileID: 1138998350106241965}
   - {fileID: 8114886953725977765}
   - {fileID: 9043780065194852312}

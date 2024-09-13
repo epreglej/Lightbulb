@@ -1,11 +1,11 @@
-namespace Fusion.Statistics {
-  using System;
-  using System.Collections.Generic;
-  using UnityEngine;
-  using UnityEngine.Serialization;
-  using UnityEngine.UI;
+namespace Fusion.Statistics
+{
+    using System;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using UnityEngine.UI;
 
-  public class FusionStatsConfig : MonoBehaviour {
+    public class FusionStatsConfig : MonoBehaviour {
     
     public bool IsWorldAnchored => _worldTransformAnchor != null;
 

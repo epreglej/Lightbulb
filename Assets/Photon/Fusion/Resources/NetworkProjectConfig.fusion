@@ -14,7 +14,6 @@
     "HideNetworkObjectInactivityGuard": false,
     "Simulation": {
         "InputDataWordCount": 0,
-        "SceneInfoWordCount": 16,
         "ReplicationFeatures": 0,
         "InputTransferMode": 0,
         "PlayerCount": 10,
@@ -33,6 +32,9 @@
     "HostMigration": {
         "EnableAutoUpdate": false,
         "UpdateDelay": 10
+    },
+    "EncryptionConfig": {
+        "EnableEncryption": false
     },
     "NetworkConditions": {
         "Enabled": false,
@@ -58,7 +60,9 @@
         "Fusion.Unity",
         "Assembly-CSharp",
         "Assembly-CSharp-firstpass",
-        "Fusion.UnityPhysics"
+        "Fusion.UnityPhysics",
+        "Meta.XR.MultiplayerBlocks.Fusion",
+        "PhotonVoice.Fusion"
     ],
     "UseSerializableDictionary": true,
     "NullChecksForNetworkedProperties": true,

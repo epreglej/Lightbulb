@@ -20,7 +20,6 @@
 //
 using UnityEngine;
 using UnityEditor;
-using System.Collections;
 
 [CustomEditor(typeof(ColorSuite)), CanEditMultipleObjects]
 public class ColorSuiteEditor : Editor

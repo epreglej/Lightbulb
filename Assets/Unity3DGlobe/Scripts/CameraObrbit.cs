@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class CameraObrbit : MonoBehaviour {
     public float MinDistance = 1.0f;

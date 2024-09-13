@@ -1,14 +1,14 @@
-namespace Fusion.Editor {
-  using System;
-  using System.Collections.Generic;
-  using UnityEngine;
-  using UnityEditor;
+namespace Fusion.Editor
+{
+    using System;
+    using UnityEngine;
+    using UnityEditor;
 
-  /// <summary>
-  /// This window contains controls for each active NetworkRunner (see Multi-Peer) including
-  /// UI toggles for runner SetVisible() and ProvideInput members. NetworkRunner and Player Objects can be pinged in the hierarchy.
-  /// </summary>
-  public class FusionRunnerVisibilityControlsWindow : EditorWindow {
+    /// <summary>
+    /// This window contains controls for each active NetworkRunner (see Multi-Peer) including
+    /// UI toggles for runner SetVisible() and ProvideInput members. NetworkRunner and Player Objects can be pinged in the hierarchy.
+    /// </summary>
+    public class FusionRunnerVisibilityControlsWindow : EditorWindow {
     private const int WINDOW_MIN_W = 82;
     private const int WINDOW_MIN_H = 48;
 
