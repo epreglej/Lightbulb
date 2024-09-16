@@ -38,7 +38,6 @@ namespace Digiphy
             if (PlayerPrefs.HasKey(_roomType.ToString()))
             {
                 LoadAnchors();
-                return;
             }
 
 
@@ -96,7 +95,7 @@ namespace Digiphy
             }; 
         }
 
-        private void OnLocalized(OVRSpatialAnchor.UnboundAnchor unboundAnchor)
+        private async void OnLocalized(OVRSpatialAnchor.UnboundAnchor unboundAnchor)
         {
             Pose pose;
             unboundAnchor.TryGetPose(out pose);
@@ -111,6 +110,12 @@ namespace Digiphy
 
                 uuid.text = spatialAnchor.Uuid.ToString();
                 savedStatusText.text = "Loaded from device";
+                var resilt = await spatialAnchor.EraseAnchorAsync();
+                if (resilt.Status == OVRAnchor.EraseResult.Success)
+                {
+                    PlayerPrefs.DeleteKey(_roomType.ToString());
+                    savedStatusText.text = "Deleted save";
+                }
             }
         }
     }

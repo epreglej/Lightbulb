@@ -15,13 +15,13 @@ namespace ChessMainLoop
         Both
     }
 
-    public abstract class Piece : MonoBehaviour//Grabbable
+    public abstract class Piece : MonoBehaviour// Grabbable
     {
         #region Private fields and corresponding public properties
         [SerializeField]
         private SideColor _pieceColor;
         public SideColor PieceColor { get => _pieceColor; }
-        private Renderer _renderer;
+        [SerializeField] private Renderer _renderer;
         private Vector3 _startPosition;
         private bool _isActive = false;
         public bool IsActive { get => _isActive; set { _isActive = false; _renderer.material.color = _startColor; } }
@@ -54,8 +54,8 @@ namespace ChessMainLoop
             {
                 Destroy(this);
             }
+            if (_renderer == null) GetComponent<Renderer>();
             _startPosition = transform.position;
-            _renderer = GetComponent<Renderer>();
             _startColor = _renderer.material.color;
         }
 
