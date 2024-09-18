@@ -15,16 +15,14 @@ namespace Digiphy
             //Vector3 displacement = chess.position - _chessExpectedLocation.position;
 
             _labModel.parent = _chessExpectedLocation;
-            _playerAnchor.parent = _chessExpectedLocation;
 
             _chessExpectedLocation.transform.rotation = chess.rotation;
             _chessExpectedLocation.transform.Rotate(0, 180, 0);
             _chessExpectedLocation.transform.position = chess.position;
-            _player.transform.position = _playerAnchor.position;
-            _player.transform.Rotate(chess.transform.rotation.eulerAngles);
+            _player.position = new Vector3(_playerAnchor.position.x, _player.position.y, _playerAnchor.position.z);
+            _player.Rotate(chess.transform.rotation.eulerAngles);
 
             _labModel.parent = null;
-            _playerAnchor.parent = null;
         }
     }
 }

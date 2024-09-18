@@ -10,9 +10,11 @@ namespace ChessMainLoop
         private int _boardSize;
         public int BoardSize { get => _boardSize; }
         [SerializeField]
-        private GameObject _blackPieces;
+        private List<Piece> _blackPieces;
         [SerializeField]
-        private GameObject _whitePieces;
+        private List<Piece> _whitePieces;
+        [SerializeField]
+        private Queue<Piece> _promotedPieces;
         public static float Offset = 1.5f;
 
         private static BoardState _instance;
@@ -48,20 +50,21 @@ namespace ChessMainLoop
                 }
             }
 
-            foreach (Transform child in _blackPieces.transform)
+            for (int i = 0; i < _blackPieces.Count; i++) 
             {
-                int x = (int)(child.localPosition.x / Offset);
-                int y = (int)(child.localPosition.z / Offset);
-                _gridState[x, y] = child.GetComponent<Piece>();
-            }
-            foreach (Transform child in _whitePieces.transform)
+                _gridState[i / _boardSize, i % _boardSize] = _blackPieces[i];
+            } 
+
+            for(int i = 0; i < _whitePieces.Count; i++)
             {
-                int x = (int)(child.localPosition.x / Offset);
-                int y = (int)(child.localPosition.z / Offset);
-                _gridState[x, y] = child.GetComponent<Piece>();
+                _gridState[_boardSize - 1 - i / _boardSize, _boardSize - 1 - i % _boardSize] = _whitePieces[i];
             }
         }
 
+        /// <summary>
+        /// Retrieves current state of that fied on board
+        /// </summary>
+        /// <returns>Pice reference of the piece on the field, or null if not occupied</returns>
         public Piece GetField(int _width, int _length)
         {
             try
@@ -86,9 +89,12 @@ namespace ChessMainLoop
             _gridState[_width, _length] = null;
         }
 
+        /// <summary>
+        /// Checks if cooridantes are inside board borders
+        /// </summary>
         public bool IsInBorders(int _x, int _y)
         {
-            if(_x >=0 && _x < _boardSize && _y >= 0 && _y < _boardSize)
+            if(_x >= 0 && _x < _boardSize && _y >= 0 && _y < _boardSize)
             {
                 return true;
             }
@@ -121,41 +127,18 @@ namespace ChessMainLoop
 
         public void ResetPieces()
         {
-            Piece _piece;
-            Queue<Piece> _pieces = new Queue<Piece>();
-            foreach (Transform child in _blackPieces.transform)
+            foreach (Piece piece in _blackPieces)
             {
-                _piece = child.GetComponent<Piece>();
-                if (_piece.WasPawn != null)
-                {
-                    _pieces.Enqueue(_piece.WasPawn);
-                    _piece.WasPawn.gameObject.SetActive(true);
-                }
-                _pieces.Enqueue(_piece);
+                piece.ResetPiece();
             }
-            foreach (Transform child in _whitePieces.transform)
+            foreach (Piece piece in _whitePieces)
             {
-                _piece = child.GetComponent<Piece>();
-                if (_piece.WasPawn != null)
-                {
-                    _pieces.Enqueue(_piece.WasPawn);
-                    _piece.WasPawn.gameObject.SetActive(true);
-                }
-                _pieces.Enqueue(_piece);
+                piece.ResetPiece();
             }
 
-            while (_pieces.Count > 0)
+            while (_promotedPieces.Count > 0)
             {
-                _piece = _pieces.Dequeue();
-                if (_piece.WasPawn == null)
-                {
-                    _piece.ResetPosition();
-                    _piece.HasMoved = false;
-                }
-                else
-                {
-                    Destroy(_piece.gameObject);
-                }
+                Destroy(_promotedPieces.Dequeue());
             }
 
             InitializeGrid();
@@ -166,6 +149,7 @@ namespace ChessMainLoop
         /// </summary>
         public void PromotePawn(Pawn _promotingPawn, Piece _piece, int _pieceIndex)
         {
+            _promotedPieces.Enqueue(_piece);
             int _xPosition = (int)(_promotingPawn.transform.localPosition.x / Offset);
             int _yPosition = (int)(_promotingPawn.transform.localPosition.z / Offset);
             MoveTracker.Instance.AddMove(_xPosition, _yPosition, _pieceIndex, _pieceIndex, GameManager.Instance.TurnCount - 1);

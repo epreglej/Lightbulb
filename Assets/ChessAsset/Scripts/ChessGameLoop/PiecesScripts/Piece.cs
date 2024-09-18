@@ -54,7 +54,7 @@ namespace ChessMainLoop
             {
                 Destroy(this);
             }
-            if (_renderer == null) GetComponent<Renderer>();
+            if (_renderer == null) _renderer = GetComponent<Renderer>();
             _startPosition = transform.position;
             _startColor = _renderer.material.color;
         }
@@ -137,10 +137,12 @@ namespace ChessMainLoop
             ObjectPool.Instance.AddPiece(this);
         }
 
-        public void ResetPosition()
+        public void ResetPiece()
         {
             transform.position = _startPosition;
             _renderer.material.color = _startColor;
+            _wasPawn = null;
+            _hasMoved = false;
         }
 
         public virtual void Move(int _xPosition, int _yPosition)
