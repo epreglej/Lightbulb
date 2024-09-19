@@ -260,13 +260,13 @@ GameObject:
   m_Component:
   - component: {fileID: 388028474497452506}
   - component: {fileID: 6480370858805390762}
-  - component: {fileID: 4214895587212114232}
   - component: {fileID: 3446422206415536337}
   - component: {fileID: 6329129749287476290}
   - component: {fileID: 4993421391243730492}
   - component: {fileID: 8496718295351180214}
   - component: {fileID: 144857870981928885}
   - component: {fileID: 8125326511591933260}
+  - component: {fileID: 147531416023968710}
   m_Layer: 0
   m_Name: Black Pawn
   m_TagString: Untagged
@@ -313,27 +313,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &4214895587212114232
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77755604374065054}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3446422206415536337
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -441,6 +420,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 6404813636164028203}
+--- !u!64 &147531416023968710
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77755604374065054}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!1 &520245132885812118
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,13 +452,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3643982398732084721}
   - component: {fileID: 1805687841967674210}
-  - component: {fileID: 6466119873522134831}
   - component: {fileID: 8769626140108543573}
   - component: {fileID: 8471191944272587193}
   - component: {fileID: 5957171120259242}
   - component: {fileID: 8411362005376667490}
   - component: {fileID: 2188167386546537940}
   - component: {fileID: 2696591568732518126}
+  - component: {fileID: 8049040754909429014}
   m_Layer: 0
   m_Name: White Queen
   m_TagString: Untagged
@@ -504,27 +505,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &6466119873522134831
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520245132885812118}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8769626140108543573
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -632,6 +612,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 6547247245058021418}
+--- !u!64 &8049040754909429014
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520245132885812118}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
 --- !u!1 &667174606172243225
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,13 +644,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4070373894493246401}
   - component: {fileID: 6857874935516241946}
-  - component: {fileID: 817855096742237521}
   - component: {fileID: 2883610052144452090}
   - component: {fileID: 4294685935615261413}
   - component: {fileID: 2530934030430037391}
   - component: {fileID: 3172290848951651151}
   - component: {fileID: 7621565774408006554}
   - component: {fileID: 8803183928108694301}
+  - component: {fileID: 3109138417560409399}
   m_Layer: 0
   m_Name: White Rook (1)
   m_TagString: Untagged
@@ -695,27 +697,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &817855096742237521
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667174606172243225}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2883610052144452090
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -824,6 +805,28 @@ MonoBehaviour:
   _pieceColor: 1
   _renderer: {fileID: 8697303473831980621}
   _king: {fileID: 8405955492681178923}
+--- !u!64 &3109138417560409399
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667174606172243225}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
 --- !u!1 &793528154534863119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,13 +1004,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7524671972007286238}
   - component: {fileID: 5097282742275268222}
-  - component: {fileID: 5002638014652446290}
   - component: {fileID: 4924313010861077069}
   - component: {fileID: 9042475708208001444}
   - component: {fileID: 3176476576452097096}
   - component: {fileID: 5742621983318124295}
   - component: {fileID: 2878844759315198540}
   - component: {fileID: 732235724799204446}
+  - component: {fileID: 8408675572130013171}
   m_Layer: 0
   m_Name: Black King
   m_TagString: Untagged
@@ -1054,27 +1057,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &5002638014652446290
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898919076243688640}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4924313010861077069
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1185,6 +1167,28 @@ MonoBehaviour:
   _rooks:
   - {fileID: 5469584048805484074}
   - {fileID: 8558429964498350749}
+--- !u!64 &8408675572130013171
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898919076243688640}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: a1edea9a41e71514f94a737abaf1410c, type: 3}
 --- !u!1 &962301912838230744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,13 +1449,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6002797286900340609}
   - component: {fileID: 5621374964903122990}
-  - component: {fileID: 7961525660938822841}
   - component: {fileID: 5596755601631561826}
   - component: {fileID: 2287081433878739088}
   - component: {fileID: 5106069283021096980}
   - component: {fileID: 4650573609222170551}
   - component: {fileID: 7975975972053200649}
   - component: {fileID: 5085610398672495372}
+  - component: {fileID: 4319753722132027193}
   m_Layer: 0
   m_Name: Black Pawn (4)
   m_TagString: Untagged
@@ -1498,27 +1502,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &7961525660938822841
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237071645594612128}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5596755601631561826
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1626,6 +1609,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 908246749492327953}
+--- !u!64 &4319753722132027193
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237071645594612128}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!1 &1254750977228516904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,13 +1641,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2142605750146332787}
   - component: {fileID: 4049310998499083558}
-  - component: {fileID: 6871210375004710678}
   - component: {fileID: 7165000158634868496}
   - component: {fileID: 3735938883600933668}
   - component: {fileID: 8170336456972355707}
   - component: {fileID: 5992206453263520263}
   - component: {fileID: 935567644064075044}
   - component: {fileID: 2897646794953784835}
+  - component: {fileID: 4066757892952539206}
   m_Layer: 0
   m_Name: White Pawn (7)
   m_TagString: Untagged
@@ -1689,27 +1694,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &6871210375004710678
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254750977228516904}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7165000158634868496
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1817,6 +1801,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 7988893415967012406}
+--- !u!64 &4066757892952539206
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254750977228516904}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!1 &1363183797621577026
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,13 +2167,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8067756379020892461}
   - component: {fileID: 2485125470580139259}
-  - component: {fileID: 4356104879210573596}
   - component: {fileID: 2020897118559606782}
   - component: {fileID: 8969204347000851081}
   - component: {fileID: 7886707050666797297}
   - component: {fileID: 6792547392514884830}
   - component: {fileID: 463534059500517977}
   - component: {fileID: 3179025870086547334}
+  - component: {fileID: 6917481137109315752}
   m_Layer: 0
   m_Name: Black Pawn (6)
   m_TagString: Untagged
@@ -2214,27 +2220,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &4356104879210573596
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401774763832568396}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2020897118559606782
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2342,6 +2327,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 2001865382206340707}
+--- !u!64 &6917481137109315752
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401774763832568396}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!1 &1458679534126955131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2435,13 +2442,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4937994942369636174}
   - component: {fileID: 1461447425831476871}
-  - component: {fileID: 3179658162558891237}
   - component: {fileID: 4771388984197194727}
   - component: {fileID: 9193027459839732623}
   - component: {fileID: 7200946478383212330}
   - component: {fileID: 2658711114083074155}
   - component: {fileID: 8034837451965859898}
   - component: {fileID: 1269760451044515687}
+  - component: {fileID: 1590398997394957258}
   m_Layer: 0
   m_Name: White Bishop (1)
   m_TagString: Untagged
@@ -2488,27 +2495,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &3179658162558891237
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1470808157442240574}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4771388984197194727
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2616,6 +2602,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 2962551410223805850}
+--- !u!64 &1590398997394957258
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470808157442240574}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
 --- !u!1 &1491376857974329049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2793,13 +2801,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1019769284688028555}
   - component: {fileID: 7437671997221715345}
-  - component: {fileID: 6866972904390176864}
   - component: {fileID: 1179116202513600991}
   - component: {fileID: 7156473773312876864}
   - component: {fileID: 1615686061191515922}
   - component: {fileID: 8493099390389096383}
   - component: {fileID: 6390362442839278224}
   - component: {fileID: 2796114405932199725}
+  - component: {fileID: 34173987482692957}
   m_Layer: 0
   m_Name: Black Pawn (2)
   m_TagString: Untagged
@@ -2846,27 +2854,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &6866972904390176864
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491716618147559688}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1179116202513600991
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2974,6 +2961,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 6124578229056440762}
+--- !u!64 &34173987482692957
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491716618147559688}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!1 &1514101324591174428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,13 +3243,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8555812084644094723}
   - component: {fileID: 3433574662174609811}
-  - component: {fileID: 3807017292948750124}
   - component: {fileID: 3190854300449346183}
   - component: {fileID: 682272592753993363}
   - component: {fileID: 449069638295755678}
   - component: {fileID: 6346610408835200933}
   - component: {fileID: 6908105486900703704}
   - component: {fileID: 3780447009131661234}
+  - component: {fileID: 3877814651474963715}
   m_Layer: 0
   m_Name: White Rook
   m_TagString: Untagged
@@ -3287,27 +3296,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &3807017292948750124
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725966206225547166}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3190854300449346183
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3416,6 +3404,28 @@ MonoBehaviour:
   _pieceColor: 1
   _renderer: {fileID: 2673158660907850959}
   _king: {fileID: 8405955492681178923}
+--- !u!64 &3877814651474963715
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725966206225547166}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
 --- !u!1 &2071609677280870781
 GameObject:
   m_ObjectHideFlags: 0
@@ -3593,13 +3603,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4671478369613081913}
   - component: {fileID: 1261423559213332795}
-  - component: {fileID: 6154584351083469546}
   - component: {fileID: 8667588234476218944}
   - component: {fileID: 1258331494910353501}
   - component: {fileID: 5766705774091704691}
   - component: {fileID: 492124744119692247}
   - component: {fileID: 369629418048490409}
   - component: {fileID: 8405955492681178923}
+  - component: {fileID: 4390224439135686935}
   m_Layer: 0
   m_Name: White King
   m_TagString: Untagged
@@ -3646,27 +3656,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &6154584351083469546
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2492168008557147983}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8667588234476218944
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3777,6 +3766,28 @@ MonoBehaviour:
   _rooks:
   - {fileID: 3780447009131661234}
   - {fileID: 8803183928108694301}
+--- !u!64 &4390224439135686935
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492168008557147983}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 763435837405bc24691af77936be360b, type: 3}
 --- !u!1 &2519571744896245063
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,13 +3798,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6013600840992484894}
   - component: {fileID: 7259511073229521902}
-  - component: {fileID: 4435963055873754452}
   - component: {fileID: 1515377036308009247}
   - component: {fileID: 9044620976759832090}
   - component: {fileID: 4027575009850366315}
   - component: {fileID: 3645449017563755767}
   - component: {fileID: 4308711574325906442}
   - component: {fileID: 2357509365342936619}
+  - component: {fileID: 8373145715609244058}
   m_Layer: 0
   m_Name: White Pawn (2)
   m_TagString: Untagged
@@ -3840,27 +3851,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &4435963055873754452
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2519571744896245063}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1515377036308009247
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3968,6 +3958,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 1395330416487560341}
+--- !u!64 &8373145715609244058
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2519571744896245063}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!1 &2567799543933525309
 GameObject:
   m_ObjectHideFlags: 0
@@ -3978,13 +3990,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7219136189576214741}
   - component: {fileID: 1337435301348067723}
-  - component: {fileID: 1615729201305806573}
   - component: {fileID: 566697676707395305}
   - component: {fileID: 2629073832909728596}
   - component: {fileID: 6336482862821443645}
   - component: {fileID: 3867931719299070925}
   - component: {fileID: 8836114552322315095}
   - component: {fileID: 5015542230796354936}
+  - component: {fileID: 7201191226747993167}
   m_Layer: 0
   m_Name: White Bishop
   m_TagString: Untagged
@@ -4031,27 +4043,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &1615729201305806573
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2567799543933525309}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &566697676707395305
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4159,6 +4150,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 2025306693849551940}
+--- !u!64 &7201191226747993167
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2567799543933525309}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
 --- !u!1 &2568762258890487960
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,13 +4348,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1786737753946448354}
   - component: {fileID: 556776241831723407}
-  - component: {fileID: 533917206130717984}
   - component: {fileID: 1515072287374895265}
   - component: {fileID: 1980289804388850607}
   - component: {fileID: 7438277951411892165}
   - component: {fileID: 6486626364028135683}
   - component: {fileID: 5551255230422545371}
   - component: {fileID: 1236555406913462016}
+  - component: {fileID: 5893263426776819537}
   m_Layer: 0
   m_Name: White Pawn (6)
   m_TagString: Untagged
@@ -4388,27 +4401,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &533917206130717984
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2633822377461781791}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1515072287374895265
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4516,6 +4508,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 6565170427943101268}
+--- !u!64 &5893263426776819537
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633822377461781791}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!1 &2681712346019293873
 GameObject:
   m_ObjectHideFlags: 0
@@ -5359,13 +5373,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1703130342289894461}
   - component: {fileID: 5755104745943614092}
-  - component: {fileID: 5287962058132197740}
   - component: {fileID: 2467053066844875608}
   - component: {fileID: 2776319765786046547}
   - component: {fileID: 5310978725907208198}
   - component: {fileID: 3603392605440371776}
   - component: {fileID: 4849301515835311438}
   - component: {fileID: 616460693106335238}
+  - component: {fileID: 3926523193216622255}
   m_Layer: 0
   m_Name: White Pawn (5)
   m_TagString: Untagged
@@ -5412,27 +5426,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &5287962058132197740
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3865514406998537919}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2467053066844875608
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5540,6 +5533,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 2246645475269180928}
+--- !u!64 &3926523193216622255
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3865514406998537919}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!1 &3917703929754200384
 GameObject:
   m_ObjectHideFlags: 0
@@ -5882,13 +5897,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5619366156020420459}
   - component: {fileID: 2513315462798327632}
-  - component: {fileID: 8827939253005280150}
   - component: {fileID: 4677234617744632552}
   - component: {fileID: 8262794542724255179}
   - component: {fileID: 4932089764624051342}
   - component: {fileID: 6700292203679356355}
   - component: {fileID: 2695642321872270743}
   - component: {fileID: 7005270515473331971}
+  - component: {fileID: 3048479986036231036}
   m_Layer: 0
   m_Name: White Knight
   m_TagString: Untagged
@@ -5935,27 +5950,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &8827939253005280150
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4337741994932346900}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4677234617744632552
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6063,6 +6057,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 8008453432640048667}
+--- !u!64 &3048479986036231036
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4337741994932346900}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
 --- !u!1 &4492889495527545595
 GameObject:
   m_ObjectHideFlags: 0
@@ -6657,13 +6673,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3816617166702030400}
   - component: {fileID: 3630042153634574888}
-  - component: {fileID: 1271404037493608422}
   - component: {fileID: 5952627571453134645}
   - component: {fileID: 5963550491273760466}
   - component: {fileID: 6176085432347523542}
   - component: {fileID: 4414417301626108993}
   - component: {fileID: 5398255265124148045}
   - component: {fileID: 6392147163630827929}
+  - component: {fileID: 4971578935349731165}
   m_Layer: 0
   m_Name: White Pawn (3)
   m_TagString: Untagged
@@ -6710,27 +6726,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &1271404037493608422
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840844328395633811}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5952627571453134645
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6838,6 +6833,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 3807101089609154288}
+--- !u!64 &4971578935349731165
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4840844328395633811}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!1 &4910272961171851283
 GameObject:
   m_ObjectHideFlags: 0
@@ -7182,8 +7199,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4976436487641180920}
   - component: {fileID: 6500364100357256370}
-  - component: {fileID: 8536296133706046361}
-  - component: {fileID: 8482972137832945722}
+  - component: {fileID: 1156263228835010946}
+  - component: {fileID: 4347960956093517099}
+  - component: {fileID: 8096725119030943050}
+  - component: {fileID: 6035228579322451808}
+  - component: {fileID: 7394602448231174377}
   m_Layer: 0
   m_Name: ChessPrefab
   m_TagString: Untagged
@@ -7204,6 +7224,7 @@ Transform:
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 3370189932232285120}
   - {fileID: 1462838041356372563}
   - {fileID: 2729455384803487184}
   - {fileID: 262878996042512763}
@@ -7260,36 +7281,104 @@ MonoBehaviour:
   - {fileID: 7438277951411892165}
   - {fileID: 8170336456972355707}
   NetworkedBehaviours:
-  - {fileID: 8536296133706046361}
-  - {fileID: 8482972137832945722}
---- !u!114 &8536296133706046361
+  - {fileID: 6035228579322451808}
+  - {fileID: 7394602448231174377}
+--- !u!54 &1156263228835010946
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4976436487641180921}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4347960956093517099
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4976436487641180921}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: f10c2e64b5383f04f840dea170590ffd, type: 3}
+--- !u!114 &8096725119030943050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4976436487641180921}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 167d48acfe267b94e8caa72816e48fe6, type: 3}
+  m_Script: {fileID: 11500000, guid: 413bd4e9cbbc96b46ac5a1d62a4105d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8482972137832945722
+  UseGravity: 0
+--- !u!114 &6035228579322451808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4976436487641180921}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b72e9ba2c21430c818f53e1079c2a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7394602448231174377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4976436487641180921}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a591d221a634417e9827eb58e17de84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SyncScale: 0
   SyncParent: 0
-  _autoAOIOverride: 1
-  DisableSharedModeInterpolation: 0
+  _interpolationTarget: {fileID: 4976436489682273204}
+  UsePreciseRotation: 0
+  UseRenderSleepThresholds: 1
+  RenderThresholds:
+    UseEnergy: 1
+    Position: 0.01
+    Rotation: 0.01
+    Scale: 0.01
 --- !u!1 &4976436487746857443
 GameObject:
   m_ObjectHideFlags: 0
@@ -7626,13 +7715,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3578441783673719389}
   - component: {fileID: 2021247618244440824}
-  - component: {fileID: 625787766671492738}
   - component: {fileID: 8792438569985748545}
   - component: {fileID: 8672415253796543334}
   - component: {fileID: 4741641791420899272}
   - component: {fileID: 7593565518231488058}
   - component: {fileID: 1199820846764914487}
   - component: {fileID: 7105995250085752184}
+  - component: {fileID: 5395699163393140618}
   m_Layer: 0
   m_Name: White Knight (1)
   m_TagString: Untagged
@@ -7679,27 +7768,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &625787766671492738
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5018003859393714286}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8792438569985748545
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7807,6 +7875,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 11403954886445091}
+--- !u!64 &5395699163393140618
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5018003859393714286}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
 --- !u!1 &5089267824289321994
 GameObject:
   m_ObjectHideFlags: 0
@@ -7817,13 +7907,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2504679986574522654}
   - component: {fileID: 2890935161096031355}
-  - component: {fileID: 6983478207067151463}
   - component: {fileID: 4177394140085855622}
   - component: {fileID: 6676029117085807243}
   - component: {fileID: 1384448668371036879}
   - component: {fileID: 8964084339843494427}
   - component: {fileID: 4248986121558616350}
   - component: {fileID: 5018528037922162092}
+  - component: {fileID: 1800245942621120285}
   m_Layer: 0
   m_Name: Black Knight
   m_TagString: Untagged
@@ -7870,27 +7960,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &6983478207067151463
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089267824289321994}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4177394140085855622
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7998,6 +8067,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 3487513526693723566}
+--- !u!64 &1800245942621120285
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089267824289321994}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
 --- !u!1 &5120806911713739183
 GameObject:
   m_ObjectHideFlags: 0
@@ -8386,13 +8477,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4437785868143803757}
   - component: {fileID: 7344508150251435619}
-  - component: {fileID: 9069551630424031524}
   - component: {fileID: 4749849978041494675}
   - component: {fileID: 3812914701364830816}
   - component: {fileID: 725593520154664275}
   - component: {fileID: 3541590306336457208}
   - component: {fileID: 1272330983748969322}
   - component: {fileID: 6934738752278827225}
+  - component: {fileID: 7135213972991043344}
   m_Layer: 0
   m_Name: Black Pawn (3)
   m_TagString: Untagged
@@ -8439,27 +8530,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &9069551630424031524
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5428991576396361598}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4749849978041494675
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8567,6 +8637,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 2086935906919671747}
+--- !u!64 &7135213972991043344
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428991576396361598}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!1 &5625357165881834138
 GameObject:
   m_ObjectHideFlags: 0
@@ -8827,13 +8919,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3867843991842389925}
   - component: {fileID: 6604703147155396129}
-  - component: {fileID: 4203191866571023747}
   - component: {fileID: 3316075946839875966}
   - component: {fileID: 303280295931109418}
   - component: {fileID: 348713382334968140}
   - component: {fileID: 7900533283660046471}
   - component: {fileID: 1682039213922354231}
   - component: {fileID: 2007636214682756196}
+  - component: {fileID: 1266862855328033639}
   m_Layer: 0
   m_Name: White Pawn (4)
   m_TagString: Untagged
@@ -8880,27 +8972,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &4203191866571023747
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5856034056691673039}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3316075946839875966
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9008,6 +9079,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 4816397506800491929}
+--- !u!64 &1266862855328033639
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5856034056691673039}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!1 &5920211810207812780
 GameObject:
   m_ObjectHideFlags: 0
@@ -9018,13 +9111,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8846435973266884910}
   - component: {fileID: 2772278729108013983}
-  - component: {fileID: 4510140155886670934}
   - component: {fileID: 1740810310938945376}
   - component: {fileID: 3147653079796543435}
   - component: {fileID: 5608541426100671755}
   - component: {fileID: 7824377955238964645}
   - component: {fileID: 7173046066135364947}
   - component: {fileID: 5469584048805484074}
+  - component: {fileID: 8227431708576950940}
   m_Layer: 0
   m_Name: Black Rook
   m_TagString: Untagged
@@ -9071,27 +9164,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &4510140155886670934
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5920211810207812780}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1740810310938945376
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9200,6 +9272,28 @@ MonoBehaviour:
   _pieceColor: 1
   _renderer: {fileID: 2317229373148039721}
   _king: {fileID: 732235724799204446}
+--- !u!64 &8227431708576950940
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5920211810207812780}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: c61872173bf5220469786c549644854f, type: 3}
 --- !u!1 &5925717524416229044
 GameObject:
   m_ObjectHideFlags: 0
@@ -9210,13 +9304,13 @@ GameObject:
   m_Component:
   - component: {fileID: 796564350381562944}
   - component: {fileID: 6391522933845607122}
-  - component: {fileID: 8750603955406125341}
   - component: {fileID: 1075289457915877069}
   - component: {fileID: 7194835757089958071}
   - component: {fileID: 2428548239951310596}
   - component: {fileID: 8091231799153508189}
   - component: {fileID: 112733508334864190}
   - component: {fileID: 8125031197072603329}
+  - component: {fileID: 5039262833001943314}
   m_Layer: 0
   m_Name: Black Pawn (5)
   m_TagString: Untagged
@@ -9263,27 +9357,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &8750603955406125341
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5925717524416229044}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1075289457915877069
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9391,6 +9464,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 3051192707882749794}
+--- !u!64 &5039262833001943314
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5925717524416229044}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!1 &5986603562918892074
 GameObject:
   m_ObjectHideFlags: 0
@@ -9550,6 +9645,173 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5986603562918892074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0529a9671a3b6a74fab00c4d05312c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 0}
+  _customIcon: {fileID: 2800000, guid: aa3a2b3718100f84fb5d8ff9adb8ccb7, type: 3}
+  _snappiness: 1
+--- !u!1 &6038804556340293008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3370189932232285120}
+  - component: {fileID: 721888388590310807}
+  - component: {fileID: 3254293908753915631}
+  - component: {fileID: 5050826031196724730}
+  - component: {fileID: 3609192583064097987}
+  - component: {fileID: 2918805948980891500}
+  - component: {fileID: 5491789417832607913}
+  m_Layer: 0
+  m_Name: '[BuildingBlock] DistanceHandGrab'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &3370189932232285120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038804556340293008}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4976436487641180920}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &721888388590310807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038804556340293008}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
+  instanceId: 68474fc1-2bb2-4865-87a8-58fe528fb5dd
+  version: 1
+  installationRoutineCheckpoint:
+    _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
+    _installationVariants:
+    - _memberName: mode
+      _value: '{"value__":0}'
+--- !u!114 &3254293908753915631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038804556340293008}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transferOnSecondSelection: 1
+  _addNewPointsToFront: 0
+  _forwardElement: {fileID: 0}
+  _oneGrabTransformer: {fileID: 0}
+  _twoGrabTransformer: {fileID: 0}
+  _targetTransform: {fileID: 4976436487641180920}
+  _maxGrabPoints: -1
+  _rigidbody: {fileID: 1156263228835010946}
+  _kinematicWhileSelected: 1
+  _throwWhenUnselected: 1
+--- !u!114 &5050826031196724730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038804556340293008}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baed3e011583e1844a6e85b1cd0657f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 0}
+  _pointableElement: {fileID: 3254293908753915631}
+  _rigidbody: {fileID: 1156263228835010946}
+  _physicsGrabbable: {fileID: 0}
+  _resetGrabOnGrabsUpdated: 1
+  _slippiness: 0
+  _supportedGrabTypes: 3
+  _pinchGrabRules:
+    _thumbRequirement: 0
+    _indexRequirement: 2
+    _middleRequirement: 0
+    _ringRequirement: 0
+    _pinkyRequirement: 0
+    _unselectMode: 1
+  _palmGrabRules:
+    _thumbRequirement: 1
+    _indexRequirement: 2
+    _middleRequirement: 2
+    _ringRequirement: 2
+    _pinkyRequirement: 1
+    _unselectMode: 0
+  _movementProvider: {fileID: 2918805948980891500}
+  _handAligment: 0
+  _handGrabPoses: []
+--- !u!114 &3609192583064097987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038804556340293008}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07525681efbca7a4e9643ab3a592ada7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 0}
+  _pointableElement: {fileID: 3254293908753915631}
+  _rigidbody: {fileID: 1156263228835010946}
+  _grabSource: {fileID: 0}
+  _resetGrabOnGrabsUpdated: 1
+  _physicsGrabbable: {fileID: 0}
+  _movementProvider: {fileID: 2918805948980891500}
+--- !u!114 &2918805948980891500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038804556340293008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953054d108799b942815afb3405983ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5491789417832607913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038804556340293008}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0529a9671a3b6a74fab00c4d05312c64, type: 3}
@@ -9735,13 +9997,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2803486701144799922}
   - component: {fileID: 3490291550916078121}
-  - component: {fileID: 5727155051576857499}
   - component: {fileID: 5052917338015075396}
   - component: {fileID: 4262211196834965556}
   - component: {fileID: 7143554982959619684}
   - component: {fileID: 2359204055135028349}
   - component: {fileID: 5850026432932083956}
   - component: {fileID: 712381214777393245}
+  - component: {fileID: 1286730475725057377}
   m_Layer: 0
   m_Name: Black Bishop
   m_TagString: Untagged
@@ -9788,27 +10050,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &5727155051576857499
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6138377913773862166}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5052917338015075396
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9916,6 +10157,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 8344896787167963926}
+--- !u!64 &1286730475725057377
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138377913773862166}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
 --- !u!1 &6303786804721192405
 GameObject:
   m_ObjectHideFlags: 0
@@ -10260,13 +10523,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8081200348835563659}
   - component: {fileID: 2486461290927120634}
-  - component: {fileID: 619482666171532987}
   - component: {fileID: 5367796043239647242}
   - component: {fileID: 1016944318544492894}
   - component: {fileID: 326501015561110995}
   - component: {fileID: 8245361839974336306}
   - component: {fileID: 7435445434602942098}
   - component: {fileID: 9078659657122785921}
+  - component: {fileID: 5972568026207702547}
   m_Layer: 0
   m_Name: Black Bishop (1)
   m_TagString: Untagged
@@ -10313,27 +10576,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &619482666171532987
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6411365311657521453}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5367796043239647242
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10441,6 +10683,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 2021866733873933709}
+--- !u!64 &5972568026207702547
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6411365311657521453}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
 --- !u!1 &6510205829481015719
 GameObject:
   m_ObjectHideFlags: 0
@@ -10617,13 +10881,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8384576869353810424}
   - component: {fileID: 3366569594516982695}
-  - component: {fileID: 907877095987630250}
   - component: {fileID: 8318869258501222329}
   - component: {fileID: 3050112601715618720}
   - component: {fileID: 2403271227451153863}
   - component: {fileID: 5193097657167680223}
   - component: {fileID: 7196025921356175466}
   - component: {fileID: 8558429964498350749}
+  - component: {fileID: 5544384948477281511}
   m_Layer: 0
   m_Name: Black Rook (1)
   m_TagString: Untagged
@@ -10670,27 +10934,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &907877095987630250
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6671627090413188528}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8318869258501222329
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10799,6 +11042,28 @@ MonoBehaviour:
   _pieceColor: 1
   _renderer: {fileID: 2490936027557184869}
   _king: {fileID: 732235724799204446}
+--- !u!64 &5544384948477281511
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671627090413188528}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: c61872173bf5220469786c549644854f, type: 3}
 --- !u!1 &6892184929649216676
 GameObject:
   m_ObjectHideFlags: 0
@@ -10809,13 +11074,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4206961179810989344}
   - component: {fileID: 2451816780740762967}
-  - component: {fileID: 408531672038778868}
   - component: {fileID: 3574896178410928611}
   - component: {fileID: 7587292276166787450}
   - component: {fileID: 7646045788910145571}
   - component: {fileID: 4788661701062426647}
   - component: {fileID: 1368681113025847052}
   - component: {fileID: 7444914479651904003}
+  - component: {fileID: 4101199035921876395}
   m_Layer: 0
   m_Name: White Pawn
   m_TagString: Untagged
@@ -10862,27 +11127,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &408531672038778868
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6892184929649216676}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3574896178410928611
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10990,6 +11234,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 3812066808500121478}
+--- !u!64 &4101199035921876395
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6892184929649216676}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!1 &6928725197568923915
 GameObject:
   m_ObjectHideFlags: 0
@@ -11000,13 +11266,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1722492476294501107}
   - component: {fileID: 3395154521220393829}
-  - component: {fileID: 5838160741323675162}
   - component: {fileID: 8639019482735204328}
   - component: {fileID: 5755756867612990400}
   - component: {fileID: 6570307269468865596}
   - component: {fileID: 5081125161244742434}
   - component: {fileID: 8039456631911100636}
   - component: {fileID: 7250927010579639239}
+  - component: {fileID: 3914081869691417159}
   m_Layer: 0
   m_Name: Black Knight (1)
   m_TagString: Untagged
@@ -11053,27 +11319,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &5838160741323675162
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6928725197568923915}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8639019482735204328
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11181,6 +11426,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 6739145399306582723}
+--- !u!64 &3914081869691417159
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6928725197568923915}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
 --- !u!1 &7031028897322496065
 GameObject:
   m_ObjectHideFlags: 0
@@ -13538,13 +13805,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3443270212598834446}
   - component: {fileID: 4361878588569906714}
-  - component: {fileID: 4150032797812795838}
   - component: {fileID: 549892202406106459}
   - component: {fileID: 7762958300534198881}
   - component: {fileID: 5640845524652346625}
   - component: {fileID: 8522618440622848290}
   - component: {fileID: 3006207947544648512}
   - component: {fileID: 2862908095753283522}
+  - component: {fileID: 5586102550669427207}
   m_Layer: 0
   m_Name: Black Pawn (1)
   m_TagString: Untagged
@@ -13591,27 +13858,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &4150032797812795838
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8823439503724198518}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &549892202406106459
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13719,6 +13965,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 8036508351684938148}
+--- !u!64 &5586102550669427207
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8823439503724198518}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!1 &8877753692730162832
 GameObject:
   m_ObjectHideFlags: 0
@@ -13729,13 +13997,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8613641149259367764}
   - component: {fileID: 2831229946975524261}
-  - component: {fileID: 6609959517317842286}
   - component: {fileID: 157037189973804067}
   - component: {fileID: 399111304837108343}
   - component: {fileID: 1381474531154341534}
   - component: {fileID: 980596078902167070}
   - component: {fileID: 8909227144941797334}
   - component: {fileID: 5654839773340173111}
+  - component: {fileID: 5578516108276967087}
   m_Layer: 0
   m_Name: White Pawn (1)
   m_TagString: Untagged
@@ -13782,27 +14050,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &6609959517317842286
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8877753692730162832}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &157037189973804067
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13910,6 +14157,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 6950599676423554327}
+--- !u!64 &5578516108276967087
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8877753692730162832}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
 --- !u!1 &8928865622396960539
 GameObject:
   m_ObjectHideFlags: 0
@@ -13920,13 +14189,13 @@ GameObject:
   m_Component:
   - component: {fileID: 9067226969054981908}
   - component: {fileID: 7646312950288798050}
-  - component: {fileID: 2088351595525564850}
   - component: {fileID: 3079749949750331831}
   - component: {fileID: 5899105408119570669}
   - component: {fileID: 7400429309114371759}
   - component: {fileID: 7272343541692363635}
   - component: {fileID: 6178357915632730212}
   - component: {fileID: 4071343443441785666}
+  - component: {fileID: 1868701676957095849}
   m_Layer: 0
   m_Name: Black Queen
   m_TagString: Untagged
@@ -13973,27 +14242,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &2088351595525564850
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8928865622396960539}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3079749949750331831
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14101,6 +14349,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 4622572994570026966}
+--- !u!64 &1868701676957095849
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928865622396960539}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
 --- !u!1 &8964526267598766873
 GameObject:
   m_ObjectHideFlags: 0
@@ -14361,13 +14631,13 @@ GameObject:
   m_Component:
   - component: {fileID: 107291485086951203}
   - component: {fileID: 3462398223186834338}
-  - component: {fileID: 829752708783915229}
   - component: {fileID: 1542159736266496177}
   - component: {fileID: 1655126966931125791}
   - component: {fileID: 2994044356698159210}
   - component: {fileID: 7342915362483043763}
   - component: {fileID: 7680332209582760611}
   - component: {fileID: 731726286792825660}
+  - component: {fileID: 2340169784054628697}
   m_Layer: 0
   m_Name: Black Pawn (7)
   m_TagString: Untagged
@@ -14414,27 +14684,6 @@ MonoBehaviour:
       _value: '{}'
     - _memberName: installAutoMatchmaking
       _value: '{}'
---- !u!65 &829752708783915229
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9090747393200174089}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1542159736266496177
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14542,6 +14791,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 670710615724217223}
+--- !u!64 &2340169784054628697
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9090747393200174089}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
 --- !u!1 &9145843243264206790
 GameObject:
   m_ObjectHideFlags: 0

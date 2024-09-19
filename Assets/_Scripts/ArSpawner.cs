@@ -14,7 +14,8 @@ namespace Digiphy
             ChessLabPosition = 3
         }
 
-        [SerializeField] private GameObject _spawnPrefab;
+        [SerializeField] private GameObject _chessPrefab;
+        [SerializeField] private GameObject _synchronizationLocationPrefab;
         [SerializeField] private RoomType _roomType;
         private NetworkRunner _runner;
 
@@ -58,7 +59,8 @@ namespace Digiphy
             Vector3 oldRotation = pose.rotation.eulerAngles;
             Quaternion newRotation = Quaternion.Euler(
                 new Vector3(0, oldRotation.y + 90, 0));
-            NetworkObject chess = _runner.Spawn(_spawnPrefab, pose.position, newRotation);
+            NetworkObject synchronizationLocation = _runner.Spawn(_synchronizationLocationPrefab, pose.position, newRotation);
+            NetworkObject chess = _runner.Spawn(_chessPrefab, pose.position, newRotation);
         }
     }
 }
