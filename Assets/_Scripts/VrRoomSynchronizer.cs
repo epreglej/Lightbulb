@@ -17,7 +17,7 @@ namespace Digiphy
             _labModel.parent = _chessExpectedLocation;
 
             _chessExpectedLocation.transform.rotation = locationProvider.rotation;
-            _chessExpectedLocation.transform.Rotate(0, 180, 0);
+            //_chessExpectedLocation.transform.Rotate(0, 180, 0);
             _chessExpectedLocation.transform.position = locationProvider.position;
             _player.position = new Vector3(_playerAnchor.position.x, _player.position.y, _playerAnchor.position.z);
             _player.Rotate(locationProvider.transform.rotation.eulerAngles);

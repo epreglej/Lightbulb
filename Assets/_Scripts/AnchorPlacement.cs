@@ -13,7 +13,8 @@ namespace Digiphy
         {
             ChessTestPosition = 1,
             ChessOfficePosition = 2,
-            ChessLabPosition = 3
+            ChessLabPosition = 3,
+            ChessLabNew = 4
         }
 
         [SerializeField] private OVRSpatialAnchor _anchorPrefab;
@@ -38,6 +39,7 @@ namespace Digiphy
             if (PlayerPrefs.HasKey(_roomType.ToString()))
             {
                 LoadAnchors();
+                return;
             }
 
 
