@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 33cbec49-4c57-43ef-b1d1-c3cbbb3e67ac
+  instanceId: 86b23c75-d703-43cf-a33a-675a3e43e38b
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -79,6 +79,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 3446422206415536337}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &5078381507850055551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,8 +266,8 @@ GameObject:
   - component: {fileID: 4993421391243730492}
   - component: {fileID: 8496718295351180214}
   - component: {fileID: 144857870981928885}
-  - component: {fileID: 8125326511591933260}
   - component: {fileID: 147531416023968710}
+  - component: {fileID: 6748248824096092237}
   m_Layer: 0
   m_Name: Black Pawn
   m_TagString: Untagged
@@ -304,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 91bd8898-3540-42d0-b6a4-918119ccf99c
+  instanceId: c7ff7c29-1251-49a4-adcf-76b5b5f070d3
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -406,20 +407,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &8125326511591933260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77755604374065054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 6404813636164028203}
 --- !u!64 &147531416023968710
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -442,6 +429,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!95 &6748248824096092237
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77755604374065054}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &520245132885812118
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,8 +465,8 @@ GameObject:
   - component: {fileID: 5957171120259242}
   - component: {fileID: 8411362005376667490}
   - component: {fileID: 2188167386546537940}
-  - component: {fileID: 2696591568732518126}
   - component: {fileID: 8049040754909429014}
+  - component: {fileID: 8817412795198596480}
   m_Layer: 0
   m_Name: White Queen
   m_TagString: Untagged
@@ -496,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 67197e26-9d42-4245-8922-7caa9bbd6785
+  instanceId: fdaa180f-9615-42db-b3a8-939d37745575
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -598,20 +606,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &2696591568732518126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520245132885812118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 681a912e5651c3a4fb0c7b83945457e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 6547247245058021418}
 --- !u!64 &8049040754909429014
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -634,6 +628,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 3d88c9550087ec84c95090f5be583f60, type: 3}
+--- !u!95 &8817412795198596480
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520245132885812118}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &667174606172243225
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,8 +664,8 @@ GameObject:
   - component: {fileID: 2530934030430037391}
   - component: {fileID: 3172290848951651151}
   - component: {fileID: 7621565774408006554}
-  - component: {fileID: 8803183928108694301}
   - component: {fileID: 3109138417560409399}
+  - component: {fileID: 3586807683345383719}
   m_Layer: 0
   m_Name: White Rook (1)
   m_TagString: Untagged
@@ -688,7 +703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: e20eeac3-4809-4e1e-b679-037a316f353d
+  instanceId: f3b89ceb-5c9f-4d17-87e2-a66b87cc19f2
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -790,21 +805,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &8803183928108694301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667174606172243225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 212425d05c4e3744d97ca3195f05d86a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 8697303473831980621}
-  _king: {fileID: 8405955492681178923}
 --- !u!64 &3109138417560409399
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -827,6 +827,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+--- !u!95 &3586807683345383719
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667174606172243225}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &793528154534863119
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 3fb9968b-80b6-4bd4-aee4-e311faafbb28
+  instanceId: 6015ed02-b9cb-4370-9457-8337403d6440
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -906,6 +927,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 7165000158634868496}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &2952337293029920855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,8 +1031,8 @@ GameObject:
   - component: {fileID: 3176476576452097096}
   - component: {fileID: 5742621983318124295}
   - component: {fileID: 2878844759315198540}
-  - component: {fileID: 732235724799204446}
   - component: {fileID: 8408675572130013171}
+  - component: {fileID: 7129886507457269343}
   m_Layer: 0
   m_Name: Black King
   m_TagString: Untagged
@@ -1048,7 +1070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 82131b51-8c76-417f-ad85-6fbc10a9acc1
+  instanceId: 779f6939-6360-45f2-884a-db4146339e00
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -1150,23 +1172,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &732235724799204446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898919076243688640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9630a34c5c436a4093481120af633b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 295087360878421221}
-  _rooks:
-  - {fileID: 5469584048805484074}
-  - {fileID: 8558429964498350749}
 --- !u!64 &8408675572130013171
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1189,6 +1194,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: a1edea9a41e71514f94a737abaf1410c, type: 3}
+--- !u!95 &7129886507457269343
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898919076243688640}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &962301912838230744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,7 +1348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 4190ba2d-5f6c-4aef-a2eb-fb30bb27cee8
+  instanceId: 9e3f38be-32fd-4c26-90fc-2c3697bb8e70
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -1351,6 +1377,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1542159736266496177}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &4850246636704365195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,8 +1481,8 @@ GameObject:
   - component: {fileID: 5106069283021096980}
   - component: {fileID: 4650573609222170551}
   - component: {fileID: 7975975972053200649}
-  - component: {fileID: 5085610398672495372}
   - component: {fileID: 4319753722132027193}
+  - component: {fileID: 2481854093266876922}
   m_Layer: 0
   m_Name: Black Pawn (4)
   m_TagString: Untagged
@@ -1493,7 +1520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 1f5fff1b-8b2a-4ef8-8466-83e794c49414
+  instanceId: 3eecd37e-9267-4e70-9a6c-006739e76330
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -1595,20 +1622,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &5085610398672495372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237071645594612128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 908246749492327953}
 --- !u!64 &4319753722132027193
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1631,6 +1644,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!95 &2481854093266876922
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237071645594612128}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1254750977228516904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,8 +1680,8 @@ GameObject:
   - component: {fileID: 8170336456972355707}
   - component: {fileID: 5992206453263520263}
   - component: {fileID: 935567644064075044}
-  - component: {fileID: 2897646794953784835}
   - component: {fileID: 4066757892952539206}
+  - component: {fileID: 3338410250676501994}
   m_Layer: 0
   m_Name: White Pawn (7)
   m_TagString: Untagged
@@ -1685,7 +1719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: cae7b78d-8401-431f-9fc9-c14744473bdd
+  instanceId: ccc8eb82-d664-4ce8-aa1a-ee6069b9c492
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -1787,20 +1821,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &2897646794953784835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254750977228516904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 7988893415967012406}
 --- !u!64 &4066757892952539206
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1823,6 +1843,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!95 &3338410250676501994
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254750977228516904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1363183797621577026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,7 +1914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 5fb1f6b9-c16d-43fe-af72-9fe6a1da5bcc
+  instanceId: 1518c2f5-949b-4703-a10f-cc2c0f938ded
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -1902,6 +1943,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 5596755601631561826}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &110191713712083520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2040,7 +2082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: e42b9687-4b5e-4d5b-bdb3-dae835104734
+  instanceId: 1fda5608-9427-44b6-8866-1ce158b1fa83
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -2069,6 +2111,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 4749849978041494675}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &1724703020388935960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2172,8 +2215,8 @@ GameObject:
   - component: {fileID: 7886707050666797297}
   - component: {fileID: 6792547392514884830}
   - component: {fileID: 463534059500517977}
-  - component: {fileID: 3179025870086547334}
   - component: {fileID: 6917481137109315752}
+  - component: {fileID: 8198227822156257711}
   m_Layer: 0
   m_Name: Black Pawn (6)
   m_TagString: Untagged
@@ -2211,7 +2254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: c9a5e270-3c49-4e13-9543-6a92eca71528
+  instanceId: 00af209e-bb05-4074-9d5d-9307b6c989ec
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -2313,20 +2356,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &3179025870086547334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401774763832568396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 2001865382206340707}
 --- !u!64 &6917481137109315752
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2349,6 +2378,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!95 &8198227822156257711
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401774763832568396}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1458679534126955131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2447,8 +2497,8 @@ GameObject:
   - component: {fileID: 7200946478383212330}
   - component: {fileID: 2658711114083074155}
   - component: {fileID: 8034837451965859898}
-  - component: {fileID: 1269760451044515687}
   - component: {fileID: 1590398997394957258}
+  - component: {fileID: 2266710970383631614}
   m_Layer: 0
   m_Name: White Bishop (1)
   m_TagString: Untagged
@@ -2486,7 +2536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 6dd20941-e43a-483b-a773-e09a8f1dd99b
+  instanceId: 33dab3c3-2461-439b-919b-4af28d771339
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -2588,20 +2638,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &1269760451044515687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1470808157442240574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd49f6721eacaec4ab70c782dd5018a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 2962551410223805850}
 --- !u!64 &1590398997394957258
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2624,6 +2660,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+--- !u!95 &2266710970383631614
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470808157442240574}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1491376857974329049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,6 +2696,7 @@ GameObject:
   - component: {fileID: 6537656603407431912}
   - component: {fileID: 2381798198594530053}
   - component: {fileID: 2897953178901456281}
+  - component: {fileID: 7799050669959757352}
   m_Layer: 0
   m_Name: '[BuildingBlock] DistanceHandGrab'
   m_TagString: Untagged
@@ -2674,7 +2732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 950fb90f-e2f3-40e6-b56f-bdde2081b52b
+  instanceId: 70020c6a-210f-4a5c-b046-acfbddb32566
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -2703,6 +2761,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1515377036308009247}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &7405695956569077293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2791,6 +2850,21 @@ MonoBehaviour:
   _renderer: {fileID: 0}
   _customIcon: {fileID: 2800000, guid: aa3a2b3718100f84fb5d8ff9adb8ccb7, type: 3}
   _snappiness: 1
+--- !u!114 &7799050669959757352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491376857974329049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1c05e246f22904dacc379a267083b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transferOnSecondSelection: 0
+  _addNewPointsToFront: 0
+  _forwardElement: {fileID: 0}
 --- !u!1 &1491716618147559688
 GameObject:
   m_ObjectHideFlags: 0
@@ -2806,8 +2880,8 @@ GameObject:
   - component: {fileID: 1615686061191515922}
   - component: {fileID: 8493099390389096383}
   - component: {fileID: 6390362442839278224}
-  - component: {fileID: 2796114405932199725}
   - component: {fileID: 34173987482692957}
+  - component: {fileID: 3308890076902569878}
   m_Layer: 0
   m_Name: Black Pawn (2)
   m_TagString: Untagged
@@ -2845,7 +2919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 2516dcfc-f341-47bb-89a2-8624de924a4c
+  instanceId: c70ff4ac-a6db-4ff2-88de-cb2669a3923c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -2947,20 +3021,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &2796114405932199725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491716618147559688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 6124578229056440762}
 --- !u!64 &34173987482692957
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2983,6 +3043,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!95 &3308890076902569878
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491716618147559688}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1514101324591174428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3116,7 +3197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: b3397a19-59a8-49cd-a807-4877a04da7ca
+  instanceId: 5783fa5e-5c77-4105-853e-b9192ed2c67f
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -3145,6 +3226,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 8639019482735204328}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &920727922319808888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3248,8 +3330,8 @@ GameObject:
   - component: {fileID: 449069638295755678}
   - component: {fileID: 6346610408835200933}
   - component: {fileID: 6908105486900703704}
-  - component: {fileID: 3780447009131661234}
   - component: {fileID: 3877814651474963715}
+  - component: {fileID: 2833500259805129821}
   m_Layer: 0
   m_Name: White Rook
   m_TagString: Untagged
@@ -3287,7 +3369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 576c3805-1ce0-4d84-b08b-98f2504df701
+  instanceId: 9b4e9655-1cd2-448f-aefc-a7834ac2e8ab
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -3389,21 +3471,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &3780447009131661234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725966206225547166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 212425d05c4e3744d97ca3195f05d86a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 2673158660907850959}
-  _king: {fileID: 8405955492681178923}
 --- !u!64 &3877814651474963715
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3426,6 +3493,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 695bd15b69d9eac408b599c22f9de55d, type: 3}
+--- !u!95 &2833500259805129821
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725966206225547166}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2071609677280870781
 GameObject:
   m_ObjectHideFlags: 0
@@ -3476,7 +3564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: fa1e160f-3975-442d-9ffe-1e61ac42fa50
+  instanceId: 4acb1b66-172e-4673-9e2e-1390d0a169ee
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -3505,6 +3593,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 5367796043239647242}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &2065045449531312959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3608,8 +3697,8 @@ GameObject:
   - component: {fileID: 5766705774091704691}
   - component: {fileID: 492124744119692247}
   - component: {fileID: 369629418048490409}
-  - component: {fileID: 8405955492681178923}
   - component: {fileID: 4390224439135686935}
+  - component: {fileID: 2197428011117308319}
   m_Layer: 0
   m_Name: White King
   m_TagString: Untagged
@@ -3647,7 +3736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 10518666-b88b-43c7-9a6d-c6b1acb91068
+  instanceId: c6503007-fd55-4322-9cfa-724b8bfe0048
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -3749,23 +3838,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &8405955492681178923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2492168008557147983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9630a34c5c436a4093481120af633b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 8155117516962421350}
-  _rooks:
-  - {fileID: 3780447009131661234}
-  - {fileID: 8803183928108694301}
 --- !u!64 &4390224439135686935
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3788,6 +3860,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 763435837405bc24691af77936be360b, type: 3}
+--- !u!95 &2197428011117308319
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492168008557147983}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2519571744896245063
 GameObject:
   m_ObjectHideFlags: 0
@@ -3803,8 +3896,8 @@ GameObject:
   - component: {fileID: 4027575009850366315}
   - component: {fileID: 3645449017563755767}
   - component: {fileID: 4308711574325906442}
-  - component: {fileID: 2357509365342936619}
   - component: {fileID: 8373145715609244058}
+  - component: {fileID: 2877356427380167350}
   m_Layer: 0
   m_Name: White Pawn (2)
   m_TagString: Untagged
@@ -3842,7 +3935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 6d358d98-ffba-4aab-a6e3-b87d20b753a1
+  instanceId: b06d9d85-e78a-4bb4-85bb-2282e5897d50
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -3944,20 +4037,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &2357509365342936619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2519571744896245063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 1395330416487560341}
 --- !u!64 &8373145715609244058
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3980,6 +4059,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!95 &2877356427380167350
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2519571744896245063}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2567799543933525309
 GameObject:
   m_ObjectHideFlags: 0
@@ -3995,8 +4095,8 @@ GameObject:
   - component: {fileID: 6336482862821443645}
   - component: {fileID: 3867931719299070925}
   - component: {fileID: 8836114552322315095}
-  - component: {fileID: 5015542230796354936}
   - component: {fileID: 7201191226747993167}
+  - component: {fileID: 2245716216333348668}
   m_Layer: 0
   m_Name: White Bishop
   m_TagString: Untagged
@@ -4034,7 +4134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 8d221b12-2968-4503-9eb6-4deaf382f546
+  instanceId: 152aa78d-7ef5-4e96-ab20-f267109a2570
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -4136,20 +4236,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &5015542230796354936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2567799543933525309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd49f6721eacaec4ab70c782dd5018a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 2025306693849551940}
 --- !u!64 &7201191226747993167
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4172,6 +4258,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+--- !u!95 &2245716216333348668
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2567799543933525309}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2568762258890487960
 GameObject:
   m_ObjectHideFlags: 0
@@ -4353,8 +4460,8 @@ GameObject:
   - component: {fileID: 7438277951411892165}
   - component: {fileID: 6486626364028135683}
   - component: {fileID: 5551255230422545371}
-  - component: {fileID: 1236555406913462016}
   - component: {fileID: 5893263426776819537}
+  - component: {fileID: 8757959666873288096}
   m_Layer: 0
   m_Name: White Pawn (6)
   m_TagString: Untagged
@@ -4392,7 +4499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: b50b5c48-488a-4ffa-98f5-52ac26670a2f
+  instanceId: 221effa4-a6a8-47c8-9c4e-90f443938515
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -4494,20 +4601,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &1236555406913462016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2633822377461781791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 6565170427943101268}
 --- !u!64 &5893263426776819537
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4530,6 +4623,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!95 &8757959666873288096
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633822377461781791}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2681712346019293873
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,7 +4694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: e9773976-526e-4ae8-88d1-7588ba4a4e19
+  instanceId: 6de9adff-2c9d-491c-86e0-d335c18b7674
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -4609,6 +4723,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 566697676707395305}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &8111143153929756734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4747,7 +4862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 1c891bb8-52ad-4cd1-99d7-1c2fc2bfb2e6
+  instanceId: b0dd61c6-6d3f-41f9-8855-8c1702f93d0a
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -4776,6 +4891,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 4924313010861077069}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &3230150080808832296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4914,7 +5030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 4f73547b-2383-4c71-934e-7c27a9d71715
+  instanceId: abb0448f-b3dc-4754-b93f-f388c497d8e7
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -4943,6 +5059,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1740810310938945376}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &312036320329844533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5378,8 +5495,8 @@ GameObject:
   - component: {fileID: 5310978725907208198}
   - component: {fileID: 3603392605440371776}
   - component: {fileID: 4849301515835311438}
-  - component: {fileID: 616460693106335238}
   - component: {fileID: 3926523193216622255}
+  - component: {fileID: 7035559738196781645}
   m_Layer: 0
   m_Name: White Pawn (5)
   m_TagString: Untagged
@@ -5417,7 +5534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: cb3a0069-6eb8-4315-ac2d-3556faa19525
+  instanceId: 0de6e651-498f-4dce-b3bf-14399e0c2cb8
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -5519,20 +5636,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &616460693106335238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3865514406998537919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 2246645475269180928}
 --- !u!64 &3926523193216622255
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5555,6 +5658,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!95 &7035559738196781645
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3865514406998537919}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3917703929754200384
 GameObject:
   m_ObjectHideFlags: 0
@@ -5902,8 +6026,8 @@ GameObject:
   - component: {fileID: 4932089764624051342}
   - component: {fileID: 6700292203679356355}
   - component: {fileID: 2695642321872270743}
-  - component: {fileID: 7005270515473331971}
   - component: {fileID: 3048479986036231036}
+  - component: {fileID: 3199191145903069864}
   m_Layer: 0
   m_Name: White Knight
   m_TagString: Untagged
@@ -5941,7 +6065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 3ce3b4f4-86f7-4f9b-b87f-2e65e517fc4c
+  instanceId: e0576bb1-8d66-4550-aefb-91e971315610
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -6043,20 +6167,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &7005270515473331971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4337741994932346900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bac0be8bcd2be443b0e1e479d425f5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 8008453432640048667}
 --- !u!64 &3048479986036231036
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6079,6 +6189,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+--- !u!95 &3199191145903069864
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4337741994932346900}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4492889495527545595
 GameObject:
   m_ObjectHideFlags: 0
@@ -6212,7 +6343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: c959d9b2-9652-4d84-b94e-96e4e195ff6d
+  instanceId: 2d318d02-1e81-4a85-927f-0997de9b52b0
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -6241,6 +6372,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 3316075946839875966}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &5838409952294172278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6379,7 +6511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 9eaea6c4-73f3-496e-8568-5ddf3a8f5a37
+  instanceId: 37605fb8-b23a-4475-8b6d-3bb1e3fec3cd
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -6408,6 +6540,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 3079749949750331831}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &3858240875074614212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6546,7 +6679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 857dc2eb-b6c5-4f50-9488-16718496e64e
+  instanceId: 48484fb3-8c7e-431e-bbd9-bbf870d6f019
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -6575,6 +6708,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 4177394140085855622}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &6502652207927491464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6678,8 +6812,8 @@ GameObject:
   - component: {fileID: 6176085432347523542}
   - component: {fileID: 4414417301626108993}
   - component: {fileID: 5398255265124148045}
-  - component: {fileID: 6392147163630827929}
   - component: {fileID: 4971578935349731165}
+  - component: {fileID: 332313375614807498}
   m_Layer: 0
   m_Name: White Pawn (3)
   m_TagString: Untagged
@@ -6717,7 +6851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 55ad0ede-7913-4e89-b7b1-35235f7171a0
+  instanceId: 20bcae87-a7c1-4194-9103-0a1df977ee7e
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -6819,20 +6953,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &6392147163630827929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840844328395633811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 3807101089609154288}
 --- !u!64 &4971578935349731165
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6855,6 +6975,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!95 &332313375614807498
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4840844328395633811}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4910272961171851283
 GameObject:
   m_ObjectHideFlags: 0
@@ -6905,7 +7046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: ece24581-e83b-47ed-a68b-f5e6b727f5a3
+  instanceId: 9d5ddef5-5c08-4b23-8695-dcac12e4d0e1
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -6934,6 +7075,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 3190854300449346183}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &6909979083047763441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7072,7 +7214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 61475d0f-bd61-4693-9f3a-6620e2b09bca
+  instanceId: d57bab06-f003-41f8-919f-c59664aecd3c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -7101,6 +7243,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 8792438569985748545}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &6958097564124281424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7205,7 +7348,7 @@ GameObject:
   - component: {fileID: 6035228579322451808}
   - component: {fileID: 7394602448231174377}
   m_Layer: 0
-  m_Name: ChessPrefab
+  m_Name: ChessKinematicPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7225,9 +7368,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3370189932232285120}
-  - {fileID: 1462838041356372563}
-  - {fileID: 2729455384803487184}
-  - {fileID: 262878996042512763}
   - {fileID: 4976436489682273204}
   - {fileID: 4976436488128495573}
   m_Father: {fileID: 0}
@@ -7580,8 +7720,6 @@ GameObject:
   - component: {fileID: 4976436489682273209}
   - component: {fileID: 4976436489682273206}
   - component: {fileID: 4976436489682273207}
-  - component: {fileID: 8791521009650345236}
-  - component: {fileID: 2595015219796938168}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -7676,35 +7814,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f10c2e64b5383f04f840dea170590ffd, type: 3}
---- !u!114 &8791521009650345236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4976436489682273205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d0b497cefaf0b345bdbbecd85ced72c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _boardSize: 8
-  _blackPieces:
-  - {fileID: 0}
-  _whitePieces:
-  - {fileID: 0}
---- !u!114 &2595015219796938168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4976436489682273205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3758b7ac855666940ac77b575fe3c445, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5018003859393714286
 GameObject:
   m_ObjectHideFlags: 0
@@ -7720,8 +7829,8 @@ GameObject:
   - component: {fileID: 4741641791420899272}
   - component: {fileID: 7593565518231488058}
   - component: {fileID: 1199820846764914487}
-  - component: {fileID: 7105995250085752184}
   - component: {fileID: 5395699163393140618}
+  - component: {fileID: 2380522382449591866}
   m_Layer: 0
   m_Name: White Knight (1)
   m_TagString: Untagged
@@ -7759,7 +7868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 69ae5c00-2e47-41c2-b28f-ea9a3339a317
+  instanceId: 26446a1e-f0cd-497b-8aba-b999a39de1b5
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -7861,20 +7970,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &7105995250085752184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5018003859393714286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bac0be8bcd2be443b0e1e479d425f5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 11403954886445091}
 --- !u!64 &5395699163393140618
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7897,6 +7992,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 69faab6ae9c00a848a82d036ac8c75d4, type: 3}
+--- !u!95 &2380522382449591866
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5018003859393714286}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5089267824289321994
 GameObject:
   m_ObjectHideFlags: 0
@@ -7912,8 +8028,8 @@ GameObject:
   - component: {fileID: 1384448668371036879}
   - component: {fileID: 8964084339843494427}
   - component: {fileID: 4248986121558616350}
-  - component: {fileID: 5018528037922162092}
   - component: {fileID: 1800245942621120285}
+  - component: {fileID: 1224077501144196159}
   m_Layer: 0
   m_Name: Black Knight
   m_TagString: Untagged
@@ -7951,7 +8067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: e4cb42f6-a9af-4c38-9ca7-cf43741f0a30
+  instanceId: b82d4875-5948-4a6e-a840-48c0e72b32c8
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -8053,20 +8169,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &5018528037922162092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089267824289321994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bac0be8bcd2be443b0e1e479d425f5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 3487513526693723566}
 --- !u!64 &1800245942621120285
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8089,134 +8191,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
---- !u!1 &5120806911713739183
-GameObject:
+--- !u!95 &1224077501144196159
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 262878996042512763}
-  - component: {fileID: 1964042435094174094}
-  m_Layer: 0
-  m_Name: PieceMove
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &262878996042512763
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5120806911713739183}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.740494, y: -0.65804553, z: 19.401594}
-  m_LocalScale: {x: 6.666666, y: 6.666666, z: 6.666666}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4976436487641180920}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1964042435094174094
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5120806911713739183}
+  m_GameObject: {fileID: 5089267824289321994}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0cffba34c9b769443b61ea94516fc6d5, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5169759433851744656
 GameObject:
   m_ObjectHideFlags: 0
@@ -8350,7 +8345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 502645bb-e827-4a62-9d8c-3af01e882545
+  instanceId: 6a02bf15-0606-4bc9-8d8b-53ebee9e5acf
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -8379,6 +8374,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 157037189973804067}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &7337402823403083720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8482,8 +8478,8 @@ GameObject:
   - component: {fileID: 725593520154664275}
   - component: {fileID: 3541590306336457208}
   - component: {fileID: 1272330983748969322}
-  - component: {fileID: 6934738752278827225}
   - component: {fileID: 7135213972991043344}
+  - component: {fileID: 1664246921040271046}
   m_Layer: 0
   m_Name: Black Pawn (3)
   m_TagString: Untagged
@@ -8521,7 +8517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 5d2505cb-ac5f-4839-9462-24af08832f7a
+  instanceId: 6e190e1c-f4e4-4ca1-8f34-9af45de6d4fe
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -8623,20 +8619,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &6934738752278827225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5428991576396361598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 2086935906919671747}
 --- !u!64 &7135213972991043344
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8659,6 +8641,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!95 &1664246921040271046
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428991576396361598}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5625357165881834138
 GameObject:
   m_ObjectHideFlags: 0
@@ -8792,7 +8795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 408689f9-2f14-47e6-bc1b-9f608e637e2b
+  instanceId: aea2ec97-cab0-41d9-a15c-e6de89de90da
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -8821,6 +8824,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 549892202406106459}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &1412596245466467834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8924,8 +8928,8 @@ GameObject:
   - component: {fileID: 348713382334968140}
   - component: {fileID: 7900533283660046471}
   - component: {fileID: 1682039213922354231}
-  - component: {fileID: 2007636214682756196}
   - component: {fileID: 1266862855328033639}
+  - component: {fileID: 8608666795537446828}
   m_Layer: 0
   m_Name: White Pawn (4)
   m_TagString: Untagged
@@ -8963,7 +8967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 3d7ff6da-bff6-4f6f-a938-3635ff18beb5
+  instanceId: 53dd7e7f-6870-478c-aebc-7a9044abf97c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -9065,20 +9069,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &2007636214682756196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5856034056691673039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 4816397506800491929}
 --- !u!64 &1266862855328033639
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9101,6 +9091,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!95 &8608666795537446828
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5856034056691673039}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5920211810207812780
 GameObject:
   m_ObjectHideFlags: 0
@@ -9116,8 +9127,8 @@ GameObject:
   - component: {fileID: 5608541426100671755}
   - component: {fileID: 7824377955238964645}
   - component: {fileID: 7173046066135364947}
-  - component: {fileID: 5469584048805484074}
   - component: {fileID: 8227431708576950940}
+  - component: {fileID: 3821746777603551376}
   m_Layer: 0
   m_Name: Black Rook
   m_TagString: Untagged
@@ -9155,7 +9166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 8e05d112-339e-4239-937f-1c77d9236713
+  instanceId: 47a46cb0-a948-4213-afce-0e577e6d7f34
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -9257,21 +9268,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &5469584048805484074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5920211810207812780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 212425d05c4e3744d97ca3195f05d86a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 2317229373148039721}
-  _king: {fileID: 732235724799204446}
 --- !u!64 &8227431708576950940
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9294,6 +9290,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: c61872173bf5220469786c549644854f, type: 3}
+--- !u!95 &3821746777603551376
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5920211810207812780}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5925717524416229044
 GameObject:
   m_ObjectHideFlags: 0
@@ -9309,8 +9326,8 @@ GameObject:
   - component: {fileID: 2428548239951310596}
   - component: {fileID: 8091231799153508189}
   - component: {fileID: 112733508334864190}
-  - component: {fileID: 8125031197072603329}
   - component: {fileID: 5039262833001943314}
+  - component: {fileID: 3382307863309676202}
   m_Layer: 0
   m_Name: Black Pawn (5)
   m_TagString: Untagged
@@ -9348,7 +9365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 0a0fb129-c3fa-4ab0-a4c4-e662f80bef5b
+  instanceId: 2f274859-cb58-4cf1-baeb-2b6949da1b48
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -9450,20 +9467,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &8125031197072603329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5925717524416229044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 3051192707882749794}
 --- !u!64 &5039262833001943314
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9486,6 +9489,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!95 &3382307863309676202
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5925717524416229044}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5986603562918892074
 GameObject:
   m_ObjectHideFlags: 0
@@ -9536,7 +9560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 99e46c2d-5e8e-495e-ad4c-2637c0b85925
+  instanceId: 871b8929-9b59-40ed-bdb4-2925bee940a8
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -9565,6 +9589,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1515072287374895265}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &8415553008747371017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9732,6 +9757,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1156263228835010946}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &5050826031196724730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9870,7 +9896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 1bfce0b4-f508-405e-bf3e-430993d703e1
+  instanceId: 89e8f7b1-6743-4f49-b3bc-9f546be03890
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -9899,6 +9925,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 2467053066844875608}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &2634144882757742897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10002,8 +10029,8 @@ GameObject:
   - component: {fileID: 7143554982959619684}
   - component: {fileID: 2359204055135028349}
   - component: {fileID: 5850026432932083956}
-  - component: {fileID: 712381214777393245}
   - component: {fileID: 1286730475725057377}
+  - component: {fileID: 26163329905253059}
   m_Layer: 0
   m_Name: Black Bishop
   m_TagString: Untagged
@@ -10041,7 +10068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 847c69ae-e3c3-4492-9d77-6a0c1c8e2465
+  instanceId: 4d285190-f3e6-4415-a86e-defb98cbaaf0
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -10143,20 +10170,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &712381214777393245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6138377913773862166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd49f6721eacaec4ab70c782dd5018a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 8344896787167963926}
 --- !u!64 &1286730475725057377
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10179,6 +10192,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+--- !u!95 &26163329905253059
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138377913773862166}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6303786804721192405
 GameObject:
   m_ObjectHideFlags: 0
@@ -10229,7 +10263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 2485d637-1c25-4fef-9e81-bccc02e52fa0
+  instanceId: 6f1cf841-a0ec-472c-9560-ced29e3e6d9f
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -10258,6 +10292,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1075289457915877069}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &6558095788358344976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10396,7 +10431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: ce5d3f0b-07ec-42fc-bcae-90ca050bad0f
+  instanceId: f6a71ceb-ffbf-4cd2-9ad7-3c88f4cee0b6
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -10425,6 +10460,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 3574896178410928611}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &7640214968886932469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10528,8 +10564,8 @@ GameObject:
   - component: {fileID: 326501015561110995}
   - component: {fileID: 8245361839974336306}
   - component: {fileID: 7435445434602942098}
-  - component: {fileID: 9078659657122785921}
   - component: {fileID: 5972568026207702547}
+  - component: {fileID: 5065418195469278260}
   m_Layer: 0
   m_Name: Black Bishop (1)
   m_TagString: Untagged
@@ -10567,7 +10603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: b44d1524-8926-45d6-b2a6-4f91baf21530
+  instanceId: b5b8c046-2a3e-44bb-9611-506d99579d2a
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -10669,20 +10705,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &9078659657122785921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6411365311657521453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd49f6721eacaec4ab70c782dd5018a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 2021866733873933709}
 --- !u!64 &5972568026207702547
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10705,6 +10727,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 66ad00b166b914e47acce78daea25aa6, type: 3}
+--- !u!95 &5065418195469278260
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6411365311657521453}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6510205829481015719
 GameObject:
   m_ObjectHideFlags: 0
@@ -10886,8 +10929,8 @@ GameObject:
   - component: {fileID: 2403271227451153863}
   - component: {fileID: 5193097657167680223}
   - component: {fileID: 7196025921356175466}
-  - component: {fileID: 8558429964498350749}
   - component: {fileID: 5544384948477281511}
+  - component: {fileID: 3750509771476277453}
   m_Layer: 0
   m_Name: Black Rook (1)
   m_TagString: Untagged
@@ -10925,7 +10968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 20315a1e-16e8-4e42-a287-2121963df68f
+  instanceId: 95015e11-53d2-4ced-a3bc-fdae0f9a8e01
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -11027,21 +11070,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &8558429964498350749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6671627090413188528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 212425d05c4e3744d97ca3195f05d86a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 2490936027557184869}
-  _king: {fileID: 732235724799204446}
 --- !u!64 &5544384948477281511
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11064,6 +11092,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: c61872173bf5220469786c549644854f, type: 3}
+--- !u!95 &3750509771476277453
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671627090413188528}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6892184929649216676
 GameObject:
   m_ObjectHideFlags: 0
@@ -11079,8 +11128,8 @@ GameObject:
   - component: {fileID: 7646045788910145571}
   - component: {fileID: 4788661701062426647}
   - component: {fileID: 1368681113025847052}
-  - component: {fileID: 7444914479651904003}
   - component: {fileID: 4101199035921876395}
+  - component: {fileID: 8651618945647564601}
   m_Layer: 0
   m_Name: White Pawn
   m_TagString: Untagged
@@ -11118,7 +11167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: be9e7ec8-acc8-4399-a805-ddffe0173c0e
+  instanceId: 4c1111a2-c142-4f8d-9042-dd306c290904
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -11220,20 +11269,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &7444914479651904003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6892184929649216676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 3812066808500121478}
 --- !u!64 &4101199035921876395
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11256,6 +11291,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!95 &8651618945647564601
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6892184929649216676}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6928725197568923915
 GameObject:
   m_ObjectHideFlags: 0
@@ -11271,8 +11327,8 @@ GameObject:
   - component: {fileID: 6570307269468865596}
   - component: {fileID: 5081125161244742434}
   - component: {fileID: 8039456631911100636}
-  - component: {fileID: 7250927010579639239}
   - component: {fileID: 3914081869691417159}
+  - component: {fileID: 2462367496737784221}
   m_Layer: 0
   m_Name: Black Knight (1)
   m_TagString: Untagged
@@ -11310,7 +11366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: f06b9159-888f-427c-9b15-b19fe2ce54c8
+  instanceId: ab825d02-dea0-4fbd-8931-4a5d0f3d6d12
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -11412,20 +11468,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &7250927010579639239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6928725197568923915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bac0be8bcd2be443b0e1e479d425f5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 6739145399306582723}
 --- !u!64 &3914081869691417159
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11448,6 +11490,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 639050e749c3ce444a196d84e803b067, type: 3}
+--- !u!95 &2462367496737784221
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6928725197568923915}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7031028897322496065
 GameObject:
   m_ObjectHideFlags: 0
@@ -11830,7 +11893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 68474fc1-2bb2-4865-87a8-58fe528fb5dd
+  instanceId: 9cbbc41f-e53c-4821-b05b-8b44fb4e9aec
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -11859,6 +11922,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 8318869258501222329}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &5536543667072776772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11997,7 +12061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 2a1c3d6a-f27a-42a1-acc5-49d69e4ddb4d
+  instanceId: 7999945b-9105-4240-be3e-96fcaae4d40c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -12026,6 +12090,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 5052917338015075396}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &7844250370687833083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12164,7 +12229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 5f9d5be8-c15f-4c5c-bdfd-6f07b81b46c1
+  instanceId: c3f550e3-c2e8-44ab-b9ac-21c16253734d
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -12193,6 +12258,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 5952627571453134645}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &919003502356609706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12447,104 +12513,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &7767896753720125439
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1462838041356372563}
-  - component: {fileID: 4165868591740383667}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1462838041356372563
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7767896753720125439}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.740494, y: -0.65804553, z: 19.401594}
-  m_LocalScale: {x: 6.666666, y: 6.666666, z: 6.666666}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4976436487641180920}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4165868591740383667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7767896753720125439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95fafc368e8f04642894997930a04452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
-  _checkSound: {fileID: 0}
---- !u!1 &7768408840987691670
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2729455384803487184}
-  - component: {fileID: 962093356888532488}
-  m_Layer: 0
-  m_Name: AnimationManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2729455384803487184
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7768408840987691670}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.740494, y: -0.65804553, z: 19.401594}
-  m_LocalScale: {x: 6.666666, y: 6.666666, z: 6.666666}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4976436487641180920}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &962093356888532488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7768408840987691670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2cba2d41dd13ce44900ca05a62dc6ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _whiteAnimator: {fileID: 9100000, guid: 3b577880a079d5440a2abbd65e7f1ce4, type: 2}
-  _blackAnimator: {fileID: 9100000, guid: bfb2bebe5a815844fbcc88e1d89ff439, type: 2}
-  _whiteKnightAnimator: {fileID: 9100000, guid: b324a10c86d0e3544b6d9b6517b56f43, type: 2}
-  _blackKnightAnimator: {fileID: 9100000, guid: 87572761b5d00434d83ef7fd109c41c6, type: 2}
-  _whiteBishopAnimator: {fileID: 9100000, guid: 3b577880a079d5440a2abbd65e7f1ce4, type: 2}
-  _blackBishopAnimator: {fileID: 9100000, guid: 3b577880a079d5440a2abbd65e7f1ce4, type: 2}
-  _moveSpeed: 12.5
-  _moveSound: {fileID: 1964042435094174094}
 --- !u!1 &7861132289468766645
 GameObject:
   m_ObjectHideFlags: 0
@@ -12844,7 +12812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: da70267e-846b-42ab-9890-98481c519491
+  instanceId: 289b8934-6449-4331-b771-4f1831aca465
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -12873,6 +12841,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 2883610052144452090}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &732175343080425475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13011,7 +12980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: b6a7333e-ea3a-4fce-bf8e-25c9dcda7cdf
+  instanceId: 4b521331-cf37-4e64-bf83-082250cf84c9
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -13040,6 +13009,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 8769626140108543573}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &951748873230874475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13178,7 +13148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 583174be-50c3-455c-92e4-dddd1283d96e
+  instanceId: 0ed4be76-7363-486e-8d55-a3556341000b
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -13207,6 +13177,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 8667588234476218944}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &4980767825673172568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13428,7 +13399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: c842fea2-d0a8-4dce-a084-c63381985fca
+  instanceId: 292d0e41-33f7-4c2b-8965-5536385d2864
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -13457,6 +13428,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 4677234617744632552}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &4334884965843190232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13678,7 +13650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 87ed196b-8ef2-46e0-a9c5-4e139e167b76
+  instanceId: 5ffb87ae-e22d-4ac8-8109-3d5d64677d4d
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -13707,6 +13679,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 2020897118559606782}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &101774835886637201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13810,8 +13783,8 @@ GameObject:
   - component: {fileID: 5640845524652346625}
   - component: {fileID: 8522618440622848290}
   - component: {fileID: 3006207947544648512}
-  - component: {fileID: 2862908095753283522}
   - component: {fileID: 5586102550669427207}
+  - component: {fileID: 1696817831059915551}
   m_Layer: 0
   m_Name: Black Pawn (1)
   m_TagString: Untagged
@@ -13849,7 +13822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: d9294324-2314-4ca6-bba2-95b11d2c4e5d
+  instanceId: 37c198b3-e8e8-4c21-9d83-9ce285e33abe
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -13951,20 +13924,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &2862908095753283522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8823439503724198518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 8036508351684938148}
 --- !u!64 &5586102550669427207
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13987,6 +13946,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!95 &1696817831059915551
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8823439503724198518}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8877753692730162832
 GameObject:
   m_ObjectHideFlags: 0
@@ -14002,8 +13982,8 @@ GameObject:
   - component: {fileID: 1381474531154341534}
   - component: {fileID: 980596078902167070}
   - component: {fileID: 8909227144941797334}
-  - component: {fileID: 5654839773340173111}
   - component: {fileID: 5578516108276967087}
+  - component: {fileID: 5019388820623174306}
   m_Layer: 0
   m_Name: White Pawn (1)
   m_TagString: Untagged
@@ -14041,7 +14021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 855cc38b-369b-463f-a32d-b93eb0c9a35e
+  instanceId: 23c0d88e-a7e8-483e-9723-ae45dd10a592
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -14143,20 +14123,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &5654839773340173111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8877753692730162832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 0
-  _renderer: {fileID: 6950599676423554327}
 --- !u!64 &5578516108276967087
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14179,6 +14145,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6730016ba0e329c499d89e81bd550346, type: 3}
+--- !u!95 &5019388820623174306
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8877753692730162832}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8928865622396960539
 GameObject:
   m_ObjectHideFlags: 0
@@ -14194,8 +14181,8 @@ GameObject:
   - component: {fileID: 7400429309114371759}
   - component: {fileID: 7272343541692363635}
   - component: {fileID: 6178357915632730212}
-  - component: {fileID: 4071343443441785666}
   - component: {fileID: 1868701676957095849}
+  - component: {fileID: 562549915961656945}
   m_Layer: 0
   m_Name: Black Queen
   m_TagString: Untagged
@@ -14233,7 +14220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 5ae87017-bc9e-4c82-a222-bc9934742d75
+  instanceId: 6140d43a-e4a9-41cb-acc3-c5f20acf3da9
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -14335,20 +14322,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &4071343443441785666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8928865622396960539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 681a912e5651c3a4fb0c7b83945457e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 4622572994570026966}
 --- !u!64 &1868701676957095849
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14371,6 +14344,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
+--- !u!95 &562549915961656945
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928865622396960539}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8964526267598766873
 GameObject:
   m_ObjectHideFlags: 0
@@ -14504,7 +14498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 8f0c6854-3a2c-4666-bb55-20a8f635576e
+  instanceId: 00b7d069-c3f5-4ac5-8959-a96cdf2c5308
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -14533,6 +14527,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1179116202513600991}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &7902659577298926091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14636,8 +14631,8 @@ GameObject:
   - component: {fileID: 2994044356698159210}
   - component: {fileID: 7342915362483043763}
   - component: {fileID: 7680332209582760611}
-  - component: {fileID: 731726286792825660}
   - component: {fileID: 2340169784054628697}
+  - component: {fileID: 864122335088551236}
   m_Layer: 0
   m_Name: Black Pawn (7)
   m_TagString: Untagged
@@ -14675,7 +14670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: af83330c-30fa-441c-a249-41052ef16bc5
+  instanceId: 1bb3a679-9f78-4540-9dec-70b27c9e60bf
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -14777,20 +14772,6 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
---- !u!114 &731726286792825660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9090747393200174089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b312cecec205743ac8c1aed7c099fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pieceColor: 1
-  _renderer: {fileID: 670710615724217223}
 --- !u!64 &2340169784054628697
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14813,6 +14794,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8fbcce33444d4ce4db5b61f8d0eeb7aa, type: 3}
+--- !u!95 &864122335088551236
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9090747393200174089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9145843243264206790
 GameObject:
   m_ObjectHideFlags: 0
@@ -14863,7 +14865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 3423eab5-f29e-4b11-8dd9-e35d54366785
+  instanceId: 75e26620-d7ea-4159-8b6d-e872c8bba406
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -14892,6 +14894,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 4771388984197194727}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &2427923832396867133
 MonoBehaviour:
   m_ObjectHideFlags: 0

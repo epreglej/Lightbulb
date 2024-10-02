@@ -1,3 +1,4 @@
+using Oculus.Interaction;
 using UnityEngine;
 
 namespace ChessMainLoop
@@ -7,8 +8,8 @@ namespace ChessMainLoop
     public class PathPiece : MonoBehaviour
     {
         public static event PathSelect PathSelect;
-        [SerializeField]
-        private string _name;
+        [SerializeField] private Grabbable _grabbable;
+        [SerializeField] private string _name;
         public string Name { get => _name; }
 
         private Color _startColor;
@@ -32,6 +33,35 @@ namespace ChessMainLoop
         {
             _renderer = GetComponent<Renderer>();
             _startColor = _renderer.material.color;
+            _grabbable.WhenPointerEventRaised += ProcessPointerEvent;
+        }
+
+        private void OnMouseEnter() => HoverEnter();
+
+        private void OnMouseExit() => HoverEnd();
+
+        private void OnMouseDown() => Selected();
+
+        public void ProcessPointerEvent(PointerEvent evt)
+        {
+            switch (evt.Type)
+            {
+                case PointerEventType.Hover:
+                    HoverEnter();
+                    break;
+                case PointerEventType.Unhover:
+                    HoverEnd();
+                    break;
+                case PointerEventType.Select:
+                    Selected();
+                    break;
+                case PointerEventType.Unselect:
+                    break;
+                case PointerEventType.Move:
+                    break;
+                case PointerEventType.Cancel:
+                    break;
+            }
         }
 
         public void HoverEnter()

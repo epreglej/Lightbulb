@@ -15,11 +15,10 @@ namespace ChessMainLoop
         Both
     }
 
-    public abstract class Piece : MonoBehaviour// Grabbable
+    public abstract class Piece : MonoBehaviour
     {
         #region Private fields and corresponding public properties
-        [SerializeField]
-        private SideColor _pieceColor;
+        [SerializeField] private SideColor _pieceColor;
         public SideColor PieceColor { get => _pieceColor; }
         [SerializeField] private Renderer _renderer;
         private Vector3 _startPosition;
@@ -36,6 +35,9 @@ namespace ChessMainLoop
         public Pawn WasPawn { get => _wasPawn; set => _wasPawn = value; }
         #endregion
 
+        [SerializeField] private Grabbable _grabbable;
+        [SerializeField] private Animator _animator;
+
         public static event Selected Selected;
 
         public abstract void CreatePath();
@@ -44,44 +46,47 @@ namespace ChessMainLoop
 
         private void Start()
         {
-            //base.Start();
-
             try
             {
-                GetComponent<Animator>().runtimeAnimatorController = AnimationManager.Instance.Assign(this);
+                _animator.runtimeAnimatorController = AnimationManager.Instance.Assign(this);
             }
             catch
             {
+                Debug.LogError("Couldn't find animator for a piece.");
                 Destroy(this);
             }
-            if (_renderer == null) _renderer = GetComponent<Renderer>();
+            _grabbable.WhenPointerEventRaised += ProcessPointerEvent;
             _startPosition = transform.position;
             _startColor = _renderer.material.color;
         }
 
-        //public override void ProcessPointerEvent(PointerEvent evt)
-        //{
-        //    base.ProcessPointerEvent(evt);
+        private void OnMouseEnter() => PieceHowered();
 
-        //    switch (evt.Type)
-        //    {
-        //        case PointerEventType.Hover:
-        //            PieceHowered();
-        //            break;
-        //        case PointerEventType.Unhover:
-        //            HoverEnd();
-        //            break;
-        //        case PointerEventType.Select:
-        //            PieceSelected();
-        //            break;
-        //        case PointerEventType.Unselect:
-        //            break;
-        //        case PointerEventType.Move:
-        //            break;
-        //        case PointerEventType.Cancel:
-        //            break;
-        //    }
-        //}
+        private void OnMouseExit() => HoverEnd();
+
+        private void OnMouseDown() => PieceSelected();
+
+        public void ProcessPointerEvent(PointerEvent evt)
+        {
+            switch (evt.Type)
+            {
+                case PointerEventType.Hover:
+                    PieceHowered();
+                    break;
+                case PointerEventType.Unhover:
+                    HoverEnd();
+                    break;
+                case PointerEventType.Select:
+                    PieceSelected();
+                    break;
+                case PointerEventType.Unselect:
+                    break;
+                case PointerEventType.Move:
+                    break;
+                case PointerEventType.Cancel:
+                    break;
+            }
+        }        
 
         //If its turn players piece sets it as selected and sets path pieces for it. If the piece is target of enemy or castle calls select method of path object this piece is assing to.
         public void PieceSelected()
