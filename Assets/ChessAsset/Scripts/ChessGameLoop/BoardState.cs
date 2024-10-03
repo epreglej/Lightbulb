@@ -1,9 +1,10 @@
+using Digiphy;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace ChessMainLoop
 {
-    public class BoardState : MonoBehaviour
+    public class BoardState : Singleton<BoardState>
     {
         private Piece[,] _gridState;
         [SerializeField]
@@ -17,22 +18,6 @@ namespace ChessMainLoop
         private Queue<Piece> _promotedPieces;
         public static float Offset = 1.5f;
 
-        private static BoardState _instance;
-        public static BoardState Instance { get => _instance; }
-
-        private void Awake()
-        {
-            if (_instance != null && _instance != this)
-            {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                _instance = this;
-            }
-        }
-
-
         private void Start()
         {
             _gridState = new Piece[_boardSize, _boardSize];
@@ -42,9 +27,9 @@ namespace ChessMainLoop
 
         public void InitializeGrid()
         {
-            for(int i = 0; i < _gridState.GetLength(0); i++)
+            for(int i = 0; i < _boardSize; i++)
             {
-                for(int j = 0; j < _gridState.GetLength(1); j++)
+                for(int j = 0; j < _boardSize; j++)
                 {
                     _gridState[i, j] = null;
                 }
@@ -52,12 +37,14 @@ namespace ChessMainLoop
 
             for (int i = 0; i < _blackPieces.Count; i++) 
             {
-                _gridState[i / _boardSize, i % _boardSize] = _blackPieces[i];
+                var location = _blackPieces[i].Location;
+                _gridState[location.Row, location.Column] = _blackPieces[i];
             } 
 
             for(int i = 0; i < _whitePieces.Count; i++)
             {
-                _gridState[_boardSize - 1 - i / _boardSize, _boardSize - 1 - i % _boardSize] = _whitePieces[i];
+                var location = _whitePieces[i].Location;
+                _gridState[location.Row, location.Column] = _whitePieces[i];
             }
         }
 
@@ -65,59 +52,41 @@ namespace ChessMainLoop
         /// Retrieves current state of that fied on board
         /// </summary>
         /// <returns>Pice reference of the piece on the field, or null if not occupied</returns>
-        public Piece GetField(int _width, int _length)
+        public Piece GetField(int row, int column) => _gridState[row, column];
+
+        public void SetField(Piece _piece, int newRow, int newColumn)
         {
-            try
-            {
-                return _gridState[_width, _length];
-            }
-            catch
-            {
-                Debug.Log("Grid index out of bounds");
-                return null;
-            }
+            _gridState[_piece.Location.Row, _piece.Location.Column] = null;
+            _gridState[newRow, newColumn] = _piece;
+            _piece.Location = (newRow, newColumn);
         }
 
-        public void SetField(Piece _piece, int _widthNew, int _lengthNew)
+        public void ClearField(int row, int column)
         {
-            _gridState[(int)(_piece.transform.localPosition.x/ BoardState.Offset), (int)(_piece.transform.localPosition.z / BoardState.Offset)] = null;
-            _gridState[_widthNew, _lengthNew] = _piece;
-        }
-
-        public void ClearField(int _width, int _length)
-        {
-            _gridState[_width, _length] = null;
+            _gridState[row, column] = null;
         }
 
         /// <summary>
         /// Checks if cooridantes are inside board borders
         /// </summary>
-        public bool IsInBorders(int _x, int _y)
-        {
-            if(_x >= 0 && _x < _boardSize && _y >= 0 && _y < _boardSize)
-            {
-                return true;
-            }
-
-            return false;
-        }
+        public bool IsInBorders(int row, int column) => (row >= 0 && row < _boardSize && column >= 0 && column < _boardSize);
 
         /// <summary>
         /// Mocks the translation of the piece to the target position and check if it would result in check.
         /// </summary>
-        /// <returns>Weather translation performed on the piece would result in a check state</returns>
-        public SideColor CalculateCheckState(int _xOld, int _yOld, int _xNew, int _yNew)
+        /// <returns>Wether translation performed on the piece would result in a check state</returns>
+        public SideColor SimulateCheckState(int rowOld, int columnOld, int rowNew, int columnNew)
         {
-            Piece _missplaced = _gridState[_xNew, _yNew];
-            _gridState[_xNew, _yNew] = _gridState[_xOld, _yOld];
-            _gridState[_xOld, _yOld] = null;
+            Piece missplaced = _gridState[rowNew, columnNew];
+            _gridState[rowNew, columnNew] = _gridState[rowOld, columnOld];
+            _gridState[rowOld, columnOld] = null;
 
-            SideColor _checkSide = CheckStateCalculator.CalculateCheck(_gridState);
+            SideColor checkSide = CheckStateCalculator.CalculateCheck(_gridState);
 
-            _gridState[_xOld, _yOld] = _gridState[_xNew, _yNew];
-            _gridState[_xNew, _yNew] = _missplaced;
+            _gridState[rowOld, columnOld] = _gridState[rowNew, columnNew];
+            _gridState[rowNew, columnNew] = missplaced;
 
-            return _checkSide;
+            return checkSide;
         }
 
         public SideColor CheckIfGameOver()
@@ -150,11 +119,12 @@ namespace ChessMainLoop
         public void PromotePawn(Pawn _promotingPawn, Piece _piece, int _pieceIndex)
         {
             _promotedPieces.Enqueue(_piece);
-            int _xPosition = (int)(_promotingPawn.transform.localPosition.x / Offset);
-            int _yPosition = (int)(_promotingPawn.transform.localPosition.z / Offset);
-            MoveTracker.Instance.AddMove(_xPosition, _yPosition, _pieceIndex, _pieceIndex, GameManager.Instance.TurnCount - 1);
-            _gridState[_xPosition, _yPosition] = _piece;
+            //int _xPosition = (int)(_promotingPawn.transform.localPosition.x / Offset);
+            //int _yPosition = (int)(_promotingPawn.transform.localPosition.z / Offset);
+            MoveTracker.Instance.AddMove(_promotingPawn.Location.Row, _promotingPawn.Location.Column, _pieceIndex, _pieceIndex, GameManager.Instance.TurnCount - 1);
+            _gridState[_promotingPawn.Location.Row, _promotingPawn.Location.Column] = _piece;
             _piece.WasPawn = _promotingPawn;
+            _piece.Location = _promotingPawn.Location;
             _piece.transform.position = _promotingPawn.transform.position;
             _piece.transform.localPosition = new Vector3(_piece.transform.localPosition.x, 0, _piece.transform.localPosition.z);
             _promotingPawn.gameObject.SetActive(false);

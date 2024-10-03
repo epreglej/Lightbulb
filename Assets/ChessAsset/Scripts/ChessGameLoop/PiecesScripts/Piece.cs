@@ -1,5 +1,6 @@
 using Oculus.Interaction;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace ChessMainLoop
 {
@@ -21,7 +22,14 @@ namespace ChessMainLoop
         [SerializeField] private SideColor _pieceColor;
         public SideColor PieceColor { get => _pieceColor; }
         [SerializeField] private Renderer _renderer;
-        private Vector3 _startPosition;
+        [SerializeField] protected int _row;
+        [SerializeField] protected int _column;
+        public (int Row, int Column) Location 
+        { 
+            get => (_row, _column); 
+            set => Move(value.Row, value.Column);
+        }
+        private (int Row, int Column) _startLocation;
         private bool _isActive = false;
         public bool IsActive { get => _isActive; set { _isActive = false; _renderer.material.color = _startColor; } }
         private Color _startColor;
@@ -41,8 +49,8 @@ namespace ChessMainLoop
         public static event Selected Selected;
 
         public abstract void CreatePath();
-        public abstract bool IsAttackingKing(int _xPosition, int _yPosition);
-        public abstract bool CanMove(int _xPosition, int _yPosition);
+        public abstract bool IsAttackingKing(int row, int column);
+        public abstract bool CanMove(int row, int column);
 
         private void Start()
         {
@@ -56,7 +64,7 @@ namespace ChessMainLoop
                 Destroy(this);
             }
             _grabbable.WhenPointerEventRaised += ProcessPointerEvent;
-            _startPosition = transform.position;
+            _startLocation = (_row, _column);
             _startColor = _renderer.material.color;
         }
 
@@ -135,44 +143,41 @@ namespace ChessMainLoop
 
         public void Die()
         {
-            if (BoardState.Instance.GetField((int)(transform.localPosition.x / BoardState.Offset), (int)(transform.localPosition.z / BoardState.Offset)) == this)
+            if (BoardState.Instance.GetField(_row, _column) == this)
             {
-                BoardState.Instance.ClearField((int)(transform.localPosition.x / BoardState.Offset), (int)(transform.localPosition.z / BoardState.Offset));
+                BoardState.Instance.ClearField(_row, _column);
             }
             ObjectPool.Instance.AddPiece(this);
         }
 
         public void ResetPiece()
         {
-            transform.position = _startPosition;
+            Location = _startLocation;
             _renderer.material.color = _startColor;
             _wasPawn = null;
             _hasMoved = false;
         }
 
-        public virtual void Move(int _xPosition, int _yPosition)
+        protected virtual void Move(int newRow, int newColumn)
         {
-            int _xSelf = (int)(transform.localPosition.x / BoardState.Offset);
-            int _ySelf = (int)(transform.localPosition.z / BoardState.Offset);
-
-            MoveTracker.Instance.AddMove(_xSelf, _ySelf, _xPosition, _yPosition, GameManager.Instance.TurnCount);
-
-            //Checks if action being performed over the piece is en passant, and if it is marks it in move list
-            if(this is Pawn && GameManager.Instance.Passantable)
+            MoveTracker.Instance.AddMove(_row, _column, newRow, newColumn, GameManager.Instance.TurnCount);
+            if (this is Pawn && GameManager.Instance.Passantable)
             {
                 int _direction = PieceColor == SideColor.Black ? 1 : -1;
 
-                if (_yPosition * BoardState.Offset == GameManager.Instance.Passantable.transform.localPosition.z)
+                if (_column == GameManager.Instance.Passantable.Location.Column)
                 {
-                    if (_xSelf * BoardState.Offset == GameManager.Instance.Passantable.transform.localPosition.x
-                        && _xSelf!= _xPosition)
+                    if (_row  == GameManager.Instance.Passantable.Location.Row && _row != newRow)
                     {
-                        MoveTracker.Instance.AddMove(_xPosition - _direction, _yPosition, -1, -1, GameManager.Instance.TurnCount);
+                        MoveTracker.Instance.AddMove(newRow - _direction, newColumn, -1, -1, GameManager.Instance.TurnCount);
                     }
                 }
             }
 
-            BoardState.Instance.SetField(this, _xPosition, _yPosition);
+            _row = newRow;
+            _column = newColumn;
+            Vector3 newPosition = new Vector3(_row * BoardState.Offset, transform.localPosition.y, _column * BoardState.Offset);
+            transform.localPosition = newPosition;
 
             _hasMoved = true;
             GameManager.Instance.Passantable = null;

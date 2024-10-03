@@ -74,18 +74,18 @@ namespace ChessMainLoop
         /// <summary>
         /// Adds checks for making the piece passantable if it moved for two sapces and promoting the pawn if it reached the end of the board to Move method of base class.
         /// </summary>
-        public override void Move(int _xPosition, int _yPosition)
+        protected override void Move(int newRow, int newColumn)
         {
-            int _xPiece = (int)(transform.localPosition.x / BoardState.Offset);
-            base.Move(_xPosition, _yPosition);
+            int row = _row;
+            base.Move(newRow, newColumn);
 
 
-            if (Mathf.Abs(_xPiece - _xPosition) == 2)
+            if (Mathf.Abs(row - newRow) == 2)
             {
                 GameManager.Instance.Passantable = this;
             }
 
-            if (_xPosition == 0 || _xPosition == BoardState.Instance.BoardSize - 1)
+            if (newRow == 0 || newRow == BoardState.Instance.BoardSize - 1)
             {
                 GameManager.Instance.PawnPromoting(this);
             }

@@ -55,7 +55,7 @@ namespace ChessMainLoop
                  */
                 for (int i = 1; BoardState.Instance.IsInBorders(_xSource + i * _lookupTable[j, 0], _ySource + i * _lookupTable[j, 1]); i++)
                 {
-                    SideColor _checkSide = BoardState.Instance.CalculateCheckState(_xSource, _ySource, _xSource + i * _lookupTable[j, 0], _ySource + i * _lookupTable[j, 1]);
+                    SideColor _checkSide = BoardState.Instance.SimulateCheckState(_xSource, _ySource, _xSource + i * _lookupTable[j, 0], _ySource + i * _lookupTable[j, 1]);
                     _piece = BoardState.Instance.GetField(_xSource + i * _lookupTable[j, 0], _ySource + i * _lookupTable[j, 1]);
 
                     if (_piece == null)
@@ -110,7 +110,7 @@ namespace ChessMainLoop
 
             if (BoardState.Instance.IsInBorders(_xSource + _xDirection, _ySource + _yDirection))
             {
-                SideColor _checkSide = BoardState.Instance.CalculateCheckState(_xSource, _ySource, _xSource + _xDirection, _ySource + _yDirection);
+                SideColor _checkSide = BoardState.Instance.SimulateCheckState(_xSource, _ySource, _xSource + _xDirection, _ySource + _yDirection);
                 Piece _piece = BoardState.Instance.GetField(_xSource + _xDirection, _ySource + _yDirection);
 
                 if (_piece == null)
@@ -186,11 +186,11 @@ namespace ChessMainLoop
             _yCaller = (int)(_caller.transform.localPosition.z / BoardState.Offset);
             int _yMedian = (int)Mathf.Ceil((_yCaller + _yTarget) / 2f);
 
-            if(BoardState.Instance.CalculateCheckState(_xCaller, _yCaller, _xCaller, _yMedian) == _caller.PieceColor && _caller is King)
+            if(BoardState.Instance.SimulateCheckState(_xCaller, _yCaller, _xCaller, _yMedian) == _caller.PieceColor && _caller is King)
             {
                 return;
             }
-            else if (BoardState.Instance.CalculateCheckState(_xTarget, _yTarget, _xTarget, _yMedian) == _caller.PieceColor && _target is King)
+            else if (BoardState.Instance.SimulateCheckState(_xTarget, _yTarget, _xTarget, _yMedian) == _caller.PieceColor && _target is King)
             {
                 return;
             }

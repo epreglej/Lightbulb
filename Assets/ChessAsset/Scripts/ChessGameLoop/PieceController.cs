@@ -1,56 +1,15 @@
+using Digiphy;
 using System.Collections;
 using UnityEngine;
 
 namespace ChessMainLoop
 {
-    public class PieceController : MonoBehaviour
+    public class PieceController : Singleton<PieceController>
     {
         private Piece _activePiece;
         public bool AnyActive { get => _activePiece != null; }
-        [SerializeField]
-        private Camera _camera;
 
         public static event PieceMoved PieceMoved;
-
-        private static PieceController _instance;
-        public static PieceController Instance { get => _instance; }
-
-        private void Awake()
-        {
-            if (_instance != null && _instance != this)
-            {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                _instance = this;
-            }
-        }
-
-        //If user presses anywhere thats not a piece and currently selected piece exists, piece gets deselcted
-        //private void Update()
-        //{
-        //    if (Input.GetKeyDown(KeyCode.Mouse0) == false || AnyActive == false)
-        //    {
-        //        return;
-        //    }
-
-        //    RaycastHit _hit;
-        //    Ray _ray = _camera.ScreenPointToRay(Input.mousePosition);
-
-        //    if (Physics.Raycast(_ray, out _hit))
-        //    {
-        //        if (_hit.transform.TryGetComponent<PathPiece>(out PathPiece _path) || _hit.transform.TryGetComponent<Piece>(out Piece _piece))
-        //        {
-        //            return;
-        //        }
-        //    }
-
-        //    PieceMoved?.Invoke();
-        //    _activePiece.IsActive = false;
-        //    _activePiece = null;
-
-        //}
 
         void OnEnable()
         {
@@ -97,7 +56,7 @@ namespace ChessMainLoop
             //If its target isnt castling position does the regular piece moving.
             if (_assignedCastle == false)
             {
-                SideColor _checked = BoardState.Instance.CalculateCheckState(_xPiece, _yPiece, _xPath, _yPath);
+                SideColor _checked = BoardState.Instance.SimulateCheckState(_xPiece, _yPiece, _xPath, _yPath);
                 GameManager.Instance.CheckedSide = _checked;
 
                 _activePiece.Move(_xPath, _yPath);
@@ -129,7 +88,7 @@ namespace ChessMainLoop
                         yield return new WaitForSeconds(0.01f);
                     }
 
-                    _checked = BoardState.Instance.CalculateCheckState(_xPath, _yPath, _xPath, _yMedian > _yPiece ? _yMedian - 1 : _yMedian + 1);
+                    _checked = BoardState.Instance.SimulateCheckState(_xPath, _yPath, _xPath, _yMedian > _yPiece ? _yMedian - 1 : _yMedian + 1);
 
                     _assignedCastle.Move(_xPath, _yMedian > _yPiece ? _yMedian - 1 : _yMedian + 1);
                     _targetPosition.x = _xPath * BoardState.Offset;
@@ -154,7 +113,7 @@ namespace ChessMainLoop
                         yield return new WaitForSeconds(0.01f);
                     }
 
-                    _checked = BoardState.Instance.CalculateCheckState(_xPath, _yPath, _xPath, _yMedian);
+                    _checked = BoardState.Instance.SimulateCheckState(_xPath, _yPath, _xPath, _yMedian);
                     _assignedCastle.Move(_xPath, _yMedian);
 
                     _targetPosition.x = _xPath * BoardState.Offset;
