@@ -7,14 +7,14 @@ namespace ChessMainLoop
             PathManager.CreateDiagonalPath(this);
         }
 
-        public override bool IsAttackingKing(int _xPosition, int _yPosition)
+        public override bool IsAttackingKing(int row, int column)
         {
-            return CheckStateCalculator.IsAttackingKingDiagonal(_xPosition, _yPosition, PieceColor);
+            return CheckStateCalculator.IsAttackingKingDiagonal(row, column, PieceColor);
         }
 
-        public override bool CanMove(int _xPosition, int _yPosition)
+        public override bool CanMove(int row, int column)
         {
-            return GameEndCalculator.CanMoveDiagonal(_xPosition, _yPosition, PieceColor);
+            return GameEndCalculator.CanMoveDiagonal(row, column, PieceColor);
         }
     }
 }

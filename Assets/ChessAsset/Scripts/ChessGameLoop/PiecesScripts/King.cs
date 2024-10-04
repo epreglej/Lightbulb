@@ -26,51 +26,49 @@ namespace ChessMainLoop
 
         public override void CreatePath()
         {
-            int _xPosition = (int)(transform.localPosition.x / BoardState.Offset);
-            int _yPosition = (int)(transform.localPosition.z / BoardState.Offset);
-
-            bool _allowed;
+            bool allowed;
 
             //Checks surrounding of each position from lookup table for nearby enemy king. If there is no king present tries to create path on that position.
             for (int i = 0; i < LookupMoves.GetLength(0); i++)
             {
-                _allowed = true;
+                allowed = true;
+                int newRow = _row + LookupMoves[i, 0];
+                int newColumn = _column + LookupMoves[i, 1];
                 for (int j = 0; j < LookupMoves.GetLength(0); j++)
                 {
-                    if (BoardState.Instance.IsInBorders(_xPosition + LookupMoves[i, 0] + LookupMoves[j, 0], _yPosition + LookupMoves[i, 1] + LookupMoves[j, 1]))
+                    if (!BoardState.Instance.IsInBorders(newRow + LookupMoves[j, 0], newColumn + LookupMoves[j, 1])) continue;
+
+                    Piece piece = BoardState.Instance.GetField(newRow + LookupMoves[j, 0], newColumn + LookupMoves[j, 1]);
+                    if (piece is King && piece != this)
                     {
-                        if (BoardState.Instance.GetField(_xPosition + LookupMoves[i, 0] + LookupMoves[j, 0], _yPosition + LookupMoves[i, 1] + LookupMoves[j, 1]) is King
-                            && BoardState.Instance.GetField(_xPosition + LookupMoves[i, 0] + LookupMoves[j, 0], _yPosition + LookupMoves[i, 1] + LookupMoves[j, 1]) != this)
-                        {
-                            _allowed = false;
-                        }
+                        allowed = false;
                     }
                 }
-                if (_allowed)
+
+                if (allowed)
                 {
-                    PathManager.PathOneSpot(this, LookupMoves[i, 0], LookupMoves[i, 1]);
+                    PathManager.CreatePathInSpotDirection(this, LookupMoves[i, 0], LookupMoves[i, 1]);
                 }
             }
 
-            foreach(Piece _rook in _rooks)
+            if (HasMoved) return;
+
+            foreach(Piece rook in _rooks)
             {
-                if (_rook.HasMoved == false && HasMoved == false)
-                {
-                    PathManager.CastleSpot(this, _rook);
-                }
+                if (!rook.HasMoved) PathManager.CreateCastleSpot(this, rook);
             }
         }
 
-        public override bool IsAttackingKing(int _xPosition, int _yPosition)
+        public override bool IsAttackingKing(int row, int column)
         {
             return false;
         }
 
-        public override bool CanMove(int _xPosition, int _yPosition)
+        public override bool CanMove(int row, int column)
         {
             for (int i = 0; i < LookupMoves.GetLength(0); i++)
             {
-                if (GameEndCalculator.CanMoveToSpot(_xPosition, _yPosition, LookupMoves[i, 0], LookupMoves[i, 1], PieceColor))
+                if (GameEndCalculator.CanMoveToSpot(row, column, LookupMoves[i, 0], LookupMoves[i, 1], PieceColor))
                 {
                     return true;
                 }

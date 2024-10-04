@@ -64,7 +64,7 @@ namespace ChessMainLoop
         {
             Piece piece;
 
-            for (int j = 0; j < directionLookupTable.Length; j++)
+            for (int j = 0; j < directionLookupTable.GetLength(0); j++)
             {
                 for (int i = 1; BoardState.Instance.IsInBorders(row + i * directionLookupTable[j, 0], column + i * directionLookupTable[j, 1]); i++)
                 {

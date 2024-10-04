@@ -40,174 +40,120 @@ namespace ChessMainLoop
         /// </summary>
         private static void CreatePathOnDirection(Piece caller, int[,] lookupTable)
         {
-            GameObject path;
-            Vector3 position = new Vector3();
-            Piece piece;
-
             int startRow = caller.Location.Row;
             int startColumn = caller.Location.Column;
 
-            for (int j = 0; j < lookupTable.Length; j++)
+            for (int j = 0; j < lookupTable.GetLength(0); j++)
             {
-                /*Check field by field in current direction from lookup table until it reaches the edge of the board or enemy field.
-                 * On empty fields creates walk path indexed by name HighlightPathYellow and on enemy fields creates enemy path 
-                 * indexed by name HighlightPathRed
-                 */
-                for (int i = 1; BoardState.Instance.IsInBorders(startRow + i * lookupTable[j, 0], startColumn + i * lookupTable[j, 1]); i++)
+                for (int i = 1; ; i++)
                 {
-                    SideColor checkSide = BoardState.Instance.SimulateCheckState(startRow, startColumn, startRow + i * lookupTable[j, 0], startColumn + i * lookupTable[j, 1]);
-                    piece = BoardState.Instance.GetField(startRow + i * lookupTable[j, 0], startColumn + i * lookupTable[j, 1]);
-
-                    if (checkSide == caller.PieceColor || checkSide == SideColor.Both)
-                    {
-                        continue;
-                    }
-
-                    if (piece == null)
-                    {
-                        if (checkSide == caller.PieceColor || checkSide == SideColor.Both)
-                        {
-                            continue;
-                        }
-
-                        path = ObjectPool.Instance.GetHighlightPath("HighlightPathYellow");
-                        position.x = caller.transform.localPosition.x + i * BoardState.Offset * lookupTable[j, 0];
-                        position.z = caller.transform.localPosition.z + i * BoardState.Offset * lookupTable[j, 1];
-                        position.y = path.transform.localPosition.y;
-
-                        path.transform.localPosition = position;
-                    }
-                    else if (piece.PieceColor != caller.PieceColor)
-                    {
-                        if (checkSide == caller.PieceColor || checkSide == SideColor.Both)
-                        {
-                            break;
-                        }
-
-                        path = ObjectPool.Instance.GetHighlightPath("HighlightPathRed");
-                        path.GetComponent<PathPiece>().AssignPiece(piece);
-                        position.x = caller.transform.localPosition.x + i * BoardState.Offset * lookupTable[j, 0];
-                        position.z = caller.transform.localPosition.z + i * BoardState.Offset * lookupTable[j, 1];
-                        position.y = path.transform.localPosition.y;
-
-                        path.transform.localPosition = position;
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    int newRow = startRow + i * lookupTable[j, 0];
+                    int newColumn = startColumn + i * lookupTable[j, 1];
+                    if(!CreatePath(caller, startRow, startColumn, newRow, newColumn)) break;
                 }
             }
         }
 
         /// <summary>
         /// Checks if the field located at callers position translated by direction parameters is free to move. 
-        /// If it is empty creates walk path or if it contains an enemy creates enemy path.
         /// </summary>
-        public static void PathOneSpot(Piece _caller, int _xDirection, int _yDirection)
+        public static void CreatePathInSpotDirection(Piece caller, int rowDirection, int columnDirection)
         {
-            GameObject _path;
-            Vector3 _position = new Vector3();
+            int startRow = caller.Location.Row;
+            int startColumn = caller.Location.Column;
 
-            int _xSource = (int)(_caller.transform.localPosition.x / BoardState.Offset);
-            int _ySource = (int)(_caller.transform.localPosition.z / BoardState.Offset);
-
-            if (BoardState.Instance.IsInBorders(_xSource + _xDirection, _ySource + _yDirection))
-            {
-                SideColor _checkSide = BoardState.Instance.SimulateCheckState(_xSource, _ySource, _xSource + _xDirection, _ySource + _yDirection);
-                Piece _piece = BoardState.Instance.GetField(_xSource + _xDirection, _ySource + _yDirection);
-
-                if (_piece == null)
-                {
-                    if (_checkSide == _caller.PieceColor || _checkSide == SideColor.Both)
-                    {
-                        return;
-                    }
-                    _path = ObjectPool.Instance.GetHighlightPath("HighlightPathYellow");
-                    _position.x = _caller.transform.localPosition.x + _xDirection * BoardState.Offset;
-                    _position.z = _caller.transform.localPosition.z + _yDirection * BoardState.Offset;
-                    _position.y = _path.transform.localPosition.y;
-
-                    _path.transform.localPosition = _position;
-                }
-                else if (_piece.PieceColor != _caller.PieceColor)
-                {
-                    if (_checkSide == _caller.PieceColor || _checkSide == SideColor.Both)
-                    {
-                        return;
-                    }
-                    _path = ObjectPool.Instance.GetHighlightPath("HighlightPathRed");
-                    _path.GetComponent<PathPiece>().AssignPiece(_piece);
-                    _position.x = _caller.transform.localPosition.x + _xDirection * BoardState.Offset;
-                    _position.z = _caller.transform.localPosition.z + _yDirection * BoardState.Offset;
-                    _position.y = _path.transform.localPosition.y;
-
-                    _path.transform.localPosition = _position;
-
-                }
-            }
+            int newRow = startRow + rowDirection;
+            int newColumn = startColumn + columnDirection;
+            CreatePath(caller, startRow, startColumn, newRow, newColumn);
         }
 
-        public static void PassantSpot(Piece _target, int _xPosition, int _yPosition)
+        private static bool CreatePath(Piece caller, int startRow, int startColumn, int newRow, int newColumn)
         {
-            GameObject _path;
+            if (!BoardState.Instance.IsInBorders(newRow, newColumn)) return false;
+            SideColor checkSide = BoardState.Instance.SimulateCheckState(startRow, startColumn, newRow, newColumn);
+
+            if (checkSide == caller.PieceColor || checkSide == SideColor.Both) return false;
+
+            Piece piece = BoardState.Instance.GetField(newRow, newColumn);
+            GameObject path;
+            if (piece == null)
+            {
+                path = ObjectPool.Instance.GetHighlightPath("HighlightPathYellow");
+            }
+            else if (piece.PieceColor != caller.PieceColor)
+            {
+                path = ObjectPool.Instance.GetHighlightPath("HighlightPathRed");
+                path.GetComponent<PathPiece>().AssignPiece(piece);
+            }
+            else return false;
+
+            path.GetComponent<PathPiece>().Location = (newRow, newColumn);
+
+            Vector3 position = new Vector3();
+
+            position.x = newRow * BoardState.Offset;
+            position.z = newColumn * BoardState.Offset;
+            position.y = path.transform.localPosition.y;
+
+            path.transform.localPosition = position;
+            return true;
+        }
+
+        public static void CreatePassantSpot(Piece target, int row, int column)
+        {
+            PathPiece path = ObjectPool.Instance.GetHighlightPath("HighlightPathRed").GetComponent<PathPiece>();
+            path.AssignPiece(target);
+            path.Location = (row, column);
+
             Vector3 _position = new Vector3();
+            _position.x = row * BoardState.Offset; 
+            _position.z = column * BoardState.Offset; 
+            _position.y = path.transform.localPosition.y;
 
-            _path = ObjectPool.Instance.GetHighlightPath("HighlightPathRed");
-            _path.GetComponent<PathPiece>().AssignPiece(_target);
-            _position.x = _xPosition * BoardState.Offset; 
-            _position.z = _yPosition * BoardState.Offset; 
-            _position.y = _path.transform.localPosition.y;
-
-            _path.transform.localPosition = _position;
+            path.transform.localPosition = _position;
         }
 
         /// <summary>
         /// Checks if there is a piece that can be castled with at target location and if that castle action would result in check for turn player.
         /// </summary>
-        public static void CastleSpot(Piece _caller, Piece _target)
+        public static void CreateCastleSpot(Piece caller, Piece target)
         {
-            if (GameManager.Instance.CheckedSide == _caller.PieceColor)
+            if (GameManager.Instance.CheckedSide == caller.PieceColor) return;
+
+            int rowCaller = caller.Location.Row;
+            int columnCaller = caller.Location.Column;
+            int rowTarget = target.Location.Row;
+            int columnTarget = target.Location.Column;
+
+            //Check to see if there are any pieces between rook and king
+            do
+            {
+                columnCaller += columnTarget > columnCaller ? 1 : -1;
+                if (BoardState.Instance.GetField(rowCaller, columnCaller) != null) return;
+            } while (columnCaller != columnTarget);
+
+            columnCaller = caller.Location.Column;
+            int columnMedian = (int)Mathf.Ceil((columnCaller + columnTarget) / 2f);
+
+            if(BoardState.Instance.SimulateCheckState(rowCaller, columnCaller, rowCaller, columnMedian) == caller.PieceColor)
+            {
+                return;
+            }
+            if (BoardState.Instance.SimulateCheckState(rowTarget, columnTarget, rowTarget, columnMedian) == caller.PieceColor)
             {
                 return;
             }
 
-            int _xCaller = (int)(_caller.transform.localPosition.x / BoardState.Offset);
-            int _yCaller = (int)(_caller.transform.localPosition.z / BoardState.Offset);
-            int _xTarget = (int)(_target.transform.localPosition.x / BoardState.Offset);
-            int _yTarget = (int)(_target.transform.localPosition.z / BoardState.Offset);
+            PathPiece path = ObjectPool.Instance.GetHighlightPath("HighlightPathYellow").GetComponent<PathPiece>();
+            path.Location = (rowTarget, columnTarget);
 
-            _yCaller+= _yTarget > _yCaller ? 1 : -1;
-            while (_yCaller != _yTarget)
-            {
-                if (BoardState.Instance.GetField(_xCaller, _yCaller) != null)
-                {
-                    return;
-                }
-                _yCaller += _yTarget > _yCaller ? 1 : -1;
-            }
+            Vector3 position = new Vector3();
+            path.AssignCastle(target);
+            position.x = rowTarget * BoardState.Offset;
+            position.z = columnTarget * BoardState.Offset;
+            position.y = path.transform.localPosition.y;
 
-            _yCaller = (int)(_caller.transform.localPosition.z / BoardState.Offset);
-            int _yMedian = (int)Mathf.Ceil((_yCaller + _yTarget) / 2f);
-
-            if(BoardState.Instance.SimulateCheckState(_xCaller, _yCaller, _xCaller, _yMedian) == _caller.PieceColor && _caller is King)
-            {
-                return;
-            }
-            else if (BoardState.Instance.SimulateCheckState(_xTarget, _yTarget, _xTarget, _yMedian) == _caller.PieceColor && _target is King)
-            {
-                return;
-            }
-
-            Vector3 _position = new Vector3();
-            PathPiece _path = ObjectPool.Instance.GetHighlightPath("HighlightPathYellow").GetComponent<PathPiece>();
-            _path.AssignCastle(_target);
-            _position.x = _xTarget * BoardState.Offset;
-            _position.z = _yTarget * BoardState.Offset;
-            _position.y = _path.transform.localPosition.y;
-
-            _path.transform.localPosition = _position;
+            path.transform.localPosition = position;
         }
 
     }

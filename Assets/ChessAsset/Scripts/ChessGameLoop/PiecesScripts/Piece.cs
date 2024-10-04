@@ -20,28 +20,29 @@ namespace ChessMainLoop
     {
         #region Private fields and corresponding public properties
         [SerializeField] private SideColor _pieceColor;
-        public SideColor PieceColor { get => _pieceColor; }
         [SerializeField] private Renderer _renderer;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private Grabbable _grabbable;
         [SerializeField] protected int _row;
         [SerializeField] protected int _column;
-        public (int Row, int Column) Location => (_row, _column); 
-        private (int Row, int Column) _startLocation;
-        [SerializeField] private Animator _animator;
-        public Animator Animator => _animator;
         private bool _isActive = false;
-        public bool IsActive { get => _isActive; set { _isActive = false; _renderer.material.color = _startColor; } }
         private Color _startColor;
+        private (int Row, int Column) _startLocation;
         private bool _hasMoved = false;
-        public bool HasMoved { get => _hasMoved; set => _hasMoved = value; }
-        private PathPiece _assignedAsEnemy = null;
-        public PathPiece AssignedAsEnemy { get => _assignedAsEnemy; set => _assignedAsEnemy = value; }
         private PathPiece _assignedAsCastle = null;
-        public PathPiece AssignedAsCastle { get => _assignedAsCastle; set { _assignedAsCastle = value; _renderer.material.color = _startColor; } }
+        private PathPiece _assignedAsEnemy = null;
         private Pawn _wasPawn = null;
+
+        public SideColor PieceColor { get => _pieceColor; }
+        public (int Row, int Column) Location => (_row, _column); 
+        public Animator Animator => _animator;
+        public bool IsActive { get => _isActive; set { _isActive = false; _renderer.material.color = _startColor; } }
+        public bool HasMoved { get => _hasMoved; set => _hasMoved = value; }
+        public PathPiece AssignedAsEnemy { get => _assignedAsEnemy; set => _assignedAsEnemy = value; }
+        public PathPiece AssignedAsCastle { get => _assignedAsCastle; set { _assignedAsCastle = value; _renderer.material.color = _startColor; } }
         public Pawn WasPawn { get => _wasPawn; set => _wasPawn = value; }
         #endregion
 
-        [SerializeField] private Grabbable _grabbable;
 
         public static event Selected Selected;
 
@@ -183,6 +184,7 @@ namespace ChessMainLoop
         public void PiecePromoted(Pawn promotingPawn)
         {
             WasPawn = promotingPawn;
+            HasMoved = true;
             _row = promotingPawn.Location.Row;
             _column = promotingPawn.Location.Column;
             transform.localPosition = promotingPawn.transform.localPosition;

@@ -21,15 +21,15 @@ namespace ChessMainLoop
         {
             for (int i = 0; i < LookupMoves.GetLength(0); i++)
             {
-                PathManager.PathOneSpot(this, LookupMoves[i, 0], LookupMoves[i, 1]);
+                PathManager.CreatePathInSpotDirection(this, LookupMoves[i, 0], LookupMoves[i, 1]);
             }
         }
 
-        public override bool IsAttackingKing(int _xPosition, int _yPosition)
+        public override bool IsAttackingKing(int row, int column)
         {
             for (int i = 0; i < LookupMoves.GetLength(0); i++)
             {
-                if (CheckStateCalculator.IsEnemyKingAtLocation(_xPosition, _yPosition, LookupMoves[i, 0], LookupMoves[i, 1], PieceColor))
+                if (CheckStateCalculator.IsEnemyKingAtLocation(row, column, LookupMoves[i, 0], LookupMoves[i, 1], PieceColor))
                 {
                     return true;
                 }
@@ -38,11 +38,11 @@ namespace ChessMainLoop
             return false;
         }
 
-        public override bool CanMove(int _xPosition, int _yPosition)
+        public override bool CanMove(int row, int column)
         {
             for (int i = 0; i < LookupMoves.GetLength(0); i++)
             {
-                if (GameEndCalculator.CanMoveToSpot(_xPosition, _yPosition, LookupMoves[i, 0], LookupMoves[i, 1], PieceColor))
+                if (GameEndCalculator.CanMoveToSpot(row, column, LookupMoves[i, 0], LookupMoves[i, 1], PieceColor))
                 {
                     return true;
                 }

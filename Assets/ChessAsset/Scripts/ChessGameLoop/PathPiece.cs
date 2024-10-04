@@ -7,20 +7,31 @@ namespace ChessMainLoop
 
     public class PathPiece : MonoBehaviour
     {
-        public static event PathSelect PathSelect;
         [SerializeField] private Grabbable _grabbable;
         [SerializeField] private string _name;
-        public string Name { get => _name; }
         private int _row;
         private int _column;
-        public (int Row, int Column) Location => (_row, _column);
-
         private Color _startColor;
         private Renderer _renderer;
         private Piece _assignedPiece = null;
-        public Piece AssignedPiece { get => _assignedPiece; set => _assignedPiece = value; }
         private Piece _assignedCastle = null;
+
+        public string Name { get => _name; }
+        public (int Row, int Column) Location
+        {
+            get => (_row, _column);
+            set
+            {
+                _row = value.Row;
+                _column = value.Column;
+            }
+        }
+
+        public Piece AssignedPiece { get => _assignedPiece; set => _assignedPiece = value; }
         public Piece AssignedCastle { get => _assignedCastle; set => _assignedCastle = value; }
+
+        public static event PathSelect PathSelect;
+
 
         void OnEnable()
         {

@@ -8,9 +8,9 @@ namespace ChessMainLoop
             PathManager.CreateVerticalPath(this);
         }
 
-        public override bool IsAttackingKing(int _xPosition, int _yPosition)
+        public override bool IsAttackingKing(int row, int column)
         {
-            return CheckStateCalculator.IsAttackingKingVertical(_xPosition, _yPosition, PieceColor) || CheckStateCalculator.IsAttackingKingDiagonal(_xPosition, _yPosition, PieceColor);
+            return CheckStateCalculator.IsAttackingKingVertical(row, column, PieceColor) || CheckStateCalculator.IsAttackingKingDiagonal(row, column, PieceColor);
         }
 
         public override bool CanMove(int _xPosition, int _yPosition)

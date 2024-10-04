@@ -6,69 +6,48 @@ namespace ChessMainLoop
     {
         public override void CreatePath()
         {
-            int _xSource = (int)(transform.localPosition.x / BoardState.Offset);
-            int _ySource = (int)(transform.localPosition.z / BoardState.Offset);
-
-            int _direction = PieceColor == SideColor.Black ? 1 : -1;
+            int direction = PieceColor == SideColor.Black ? 1 : -1;
 
             //Following two sections check if there are enemy pieces diagonally in looking direction of the pawn, and if there are creates attack path under them
-            if (BoardState.Instance.IsInBorders(_xSource + _direction, _ySource + 1) == true)
-            {
-                if (BoardState.Instance.GetField(_xSource + _direction, _ySource + 1) != null ? BoardState.Instance.GetField(_xSource + _direction, _ySource + 1).PieceColor != PieceColor : false)
-                {
-                    PathManager.PathOneSpot(this, _direction, 1);
-                }
-            }
-
-            if (BoardState.Instance.IsInBorders(_xSource + _direction, _ySource - 1) == true)
-            {
-                if (BoardState.Instance.GetField(_xSource + _direction, _ySource - 1) != null ? BoardState.Instance.GetField(_xSource + _direction, _ySource - 1).PieceColor != PieceColor : false)
-                {
-                    PathManager.PathOneSpot(this, _direction, -1);
-                }
-            }
+            CreateAttackSpace(direction, 1);
+            CreateAttackSpace(direction, -1);
 
             //Following two sections check left and right of the pawn for enemy pawns, and if they are passantable creates attack field behind them
-            if (BoardState.Instance.IsInBorders(_xSource, _ySource + 1) == true)
-            {
-                if (BoardState.Instance.GetField(_xSource, _ySource + 1) != null ? BoardState.Instance.GetField(_xSource, _ySource + 1) == GameManager.Instance.Passantable : false)
-                {
-                    PathManager.PassantSpot(BoardState.Instance.GetField(_xSource, _ySource + 1), _xSource + _direction, _ySource + 1);
-                }
-            }
-
-            if (BoardState.Instance.IsInBorders(_xSource, _ySource - 1) == true)
-            {
-                if (BoardState.Instance.GetField(_xSource, _ySource - 1) != null ? BoardState.Instance.GetField(_xSource, _ySource - 1) == GameManager.Instance.Passantable : false)
-                {
-                    if (BoardState.Instance.GetField(_xSource, _ySource - 1) is Pawn ? GameManager.Instance.Passantable : false)
-                        PathManager.PassantSpot(BoardState.Instance.GetField(_xSource, _ySource - 1), _xSource + _direction, _ySource - 1);
-                }
-            }
+            CreatePassantSpace(1);
+            CreatePassantSpace(-1);
 
             //Following sections check if path forward in the direction pawn is facing is empty for one and two spaces, and if they are creates walk path them.
-            if (BoardState.Instance.IsInBorders(_xSource + _direction, _ySource)== false)
-            {
-                return;
-            }
+            if (BoardState.Instance.IsInBorders(_row + direction, _column)) return;
+            Piece piece = BoardState.Instance.GetField(_row + direction, _column);
+            if (piece != null) return;
 
-            if (BoardState.Instance.GetField(_xSource + _direction, _ySource) != null) 
-            {
-                return;
-            }
+            PathManager.CreatePathInSpotDirection(this, direction, 0);
 
-            PathManager.PathOneSpot(this, _direction, 0);
+            if (!BoardState.Instance.IsInBorders(_row + direction * 2, _column)) return;
+            piece = BoardState.Instance.GetField(_row + direction * 2, _column);
+            if (HasMoved || piece != null) return;
 
-            if (BoardState.Instance.IsInBorders(_xSource + _direction * 2, _ySource) == false)
-            {
-                return;
-            }
+            PathManager.CreatePathInSpotDirection(this, direction * 2, 0);
+        }
 
-            if (HasMoved == false && BoardState.Instance.GetField(_xSource + _direction * 2, _ySource) == null)
+        private void CreateAttackSpace(int rowDirection, int columnDirection)
+        {
+            if (!BoardState.Instance.IsInBorders(_row + rowDirection, _column + columnDirection) == true) return;
+            Piece piece = BoardState.Instance.GetField(_row + rowDirection, _column +columnDirection);
+            if (piece != null && piece.PieceColor != PieceColor)
             {
-                PathManager.PathOneSpot(this, _direction * 2, 0);
+                PathManager.CreatePathInSpotDirection(this, rowDirection, columnDirection);
             }
-       
+        }
+
+        private void CreatePassantSpace(int columnDirection)
+        {
+            if (!BoardState.Instance.IsInBorders(_row, _column + columnDirection) == true) return;
+            Piece piece = BoardState.Instance.GetField(_row, _column + columnDirection);
+            if (piece != null && piece.PieceColor != PieceColor && piece == GameManager.Instance.Passantable)
+            {
+                PathManager.CreatePathInSpotDirection(this, 0, columnDirection);
+            }
         }
 
         /// <summary>
@@ -76,11 +55,9 @@ namespace ChessMainLoop
         /// </summary>
         public override void Move(int newRow, int newColumn)
         {
-            int row = _row;
             base.Move(newRow, newColumn);
 
-
-            if (Mathf.Abs(row - newRow) == 2)
+            if (Mathf.Abs(_row - newRow) == 2)
             {
                 GameManager.Instance.Passantable = this;
             }
@@ -88,20 +65,19 @@ namespace ChessMainLoop
             if (newRow == 0 || newRow == BoardState.Instance.BoardSize - 1)
             {
                 GameManager.Instance.PawnPromoting(this);
-            }
-    
+            }    
         }
 
-        public override bool IsAttackingKing(int _xPosition, int _yPosition)
+        public override bool IsAttackingKing(int row, int column)
         {
             int _direction = PieceColor == SideColor.Black ? 1 : -1;
 
-            if (CheckStateCalculator.IsEnemyKingAtLocation(_xPosition, _yPosition, _direction, 1, PieceColor))
+            if (CheckStateCalculator.IsEnemyKingAtLocation(row, column, _direction, 1, PieceColor))
             {
                 return true;            
             }
 
-            if (CheckStateCalculator.IsEnemyKingAtLocation(_xPosition, _yPosition, _direction, -1, PieceColor))
+            if (CheckStateCalculator.IsEnemyKingAtLocation(row, column, _direction, -1, PieceColor))
             {
                 return true;
             }        
@@ -109,65 +85,40 @@ namespace ChessMainLoop
             return false;
         }
 
-        public override bool CanMove(int _xPosition, int _yPosition)
+        public override bool CanMove(int row, int column)
         {
             int _direction = PieceColor == SideColor.Black ? 1 : -1;
 
             //Following two sections perform checks if there are attackable units diagonally in looking direction of the pawn, and if moving to them would not resolve in a check for turn player
-            if (BoardState.Instance.IsInBorders(_xPosition + _direction, _yPosition + 1))
+            if (BoardState.Instance.IsInBorders(row + _direction, column + 1))
             {
-                if (BoardState.Instance.GetField(_xPosition + _direction, _yPosition + 1) != null ?
-                    BoardState.Instance.GetField(_xPosition + _direction, _yPosition + 1).PieceColor != PieceColor : false)
+                Piece piece = BoardState.Instance.GetField(row + _direction, column + 1);
+                if (piece != null && piece.PieceColor != PieceColor)
                 {
-                    if (GameEndCalculator.CanMoveToSpot(_xPosition, _yPosition, _direction, 1, PieceColor))
+                    if (GameEndCalculator.CanMoveToSpot(row, column, _direction, 1, PieceColor))
                     {
                         return true;
                     }
                 }
             }
 
-            if (BoardState.Instance.IsInBorders(_xPosition + _direction, _yPosition - 1))
+            if (BoardState.Instance.IsInBorders(row + _direction, column - 1))
             {
-                if (BoardState.Instance.GetField(_xPosition + _direction, _yPosition - 1) != null ?
-                BoardState.Instance.GetField(_xPosition + _direction, _yPosition - 1).PieceColor != PieceColor : false)
+                Piece piece = BoardState.Instance.GetField(row + _direction, column - 1);
+                if (piece != null && piece.PieceColor != PieceColor)
                 {
-                    if (GameEndCalculator.CanMoveToSpot(_xPosition, _yPosition, _direction, -1, PieceColor))
+                    if (GameEndCalculator.CanMoveToSpot(row, column, _direction, -1, PieceColor))
                     {
                         return true;
                     }
                 }
             }
 
-            //Following sections check if one and two spaces in looking direction of the pawn are awailable for moving to
-            if (BoardState.Instance.IsInBorders(_xPosition + _direction, _yPosition) == false)
-            {
-                return false;
-            }
+            //Following sections check if one in looking direction of the pawn is awailable for moving to
+            if (!BoardState.Instance.IsInBorders(row + _direction, column)) return false;
+            if (BoardState.Instance.GetField(row + _direction, column) != null) return false;
 
-            if (BoardState.Instance.GetField(_xPosition + _direction, _yPosition) != null)
-            {
-                return false;
-            }
-
-            if(GameEndCalculator.CanMoveToSpot(_xPosition, _yPosition, _direction, 0, PieceColor))
-            {
-                return true;
-            }
-
-            if (BoardState.Instance.IsInBorders(_xPosition + _direction, _yPosition) == false)
-            {
-                return false;
-            }
-
-            if (BoardState.Instance.GetField(_xPosition + _direction * 2, _yPosition) != null)
-            {
-                return false;
-            }
-
-            if (GameEndCalculator.CanMoveToSpot(_xPosition, _yPosition, _direction * 2, 0, PieceColor))
-            {
-                return true;
-            }
+            if (GameEndCalculator.CanMoveToSpot(row, column, _direction, 0, PieceColor)) return true;
 
             return false;
         }

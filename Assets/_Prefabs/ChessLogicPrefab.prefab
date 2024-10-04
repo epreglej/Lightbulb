@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: a502c6fe-dca3-4770-985b-fc43149ca17c
+  instanceId: 0a2d7ef4-3762-4f0d-ab8c-7f59311238ca
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -78,8 +78,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 3446422206415536337}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &5078381507850055551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,7 +285,7 @@ Transform:
   m_GameObject: {fileID: 77755604374065054}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -0.175, z: 0}
+  m_LocalPosition: {x: 1.5, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 6db7d804-78c0-4aaf-9213-8f058c66df15
+  instanceId: 5c48324c-ff68-4489-9c5d-5ff477aada41
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -422,8 +422,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 6404813636164028203}
-  _grabbable: {fileID: 2856841782966871664}
   _animator: {fileID: 6748248824096092237}
+  _grabbable: {fileID: 2856841782966871664}
+  _row: 1
+  _column: 0
 --- !u!64 &147531416023968710
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -522,7 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: b716ed0d-f7b8-4c96-bde6-9df803c492ca
+  instanceId: fbb00631-6874-4452-84f7-f88904e54ea0
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -638,8 +640,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 6547247245058021418}
-  _grabbable: {fileID: 7918373768059216425}
   _animator: {fileID: 8817412795198596480}
+  _grabbable: {fileID: 7918373768059216425}
+  _row: 7
+  _column: 4
 --- !u!64 &8049040754909429014
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -738,7 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: b808bd5c-3de8-4852-86bf-2a676dbb0040
+  instanceId: 71dd1ac3-edf6-4cd0-adce-cd902efaaedc
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -852,10 +856,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212425d05c4e3744d97ca3195f05d86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pieceColor: 1
+  _pieceColor: 0
   _renderer: {fileID: 8697303473831980621}
-  _grabbable: {fileID: 7530832975334244055}
   _animator: {fileID: 3586807683345383719}
+  _grabbable: {fileID: 7530832975334244055}
+  _row: 7
+  _column: 7
   _king: {fileID: 8405955492681178923}
 --- !u!64 &3109138417560409399
 MeshCollider:
@@ -950,7 +956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 30455e04-1725-4401-a9e0-3b4f5aeb1b25
+  instanceId: c9ad61b5-1569-4f55-9a79-54b5c404984c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -978,7 +984,7 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 7165000158634868496}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _movingEnabled: 0
 --- !u!114 &2952337293029920855
 MonoBehaviour:
@@ -1123,7 +1129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 63c9fc82-cfec-439e-8cc7-61d7578de6da
+  instanceId: 526a9a89-b2f7-48da-9f91-944b17ae9de3
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -1239,8 +1245,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 295087360878421221}
-  _grabbable: {fileID: 3090658745107811325}
   _animator: {fileID: 7129886507457269343}
+  _grabbable: {fileID: 3090658745107811325}
+  _row: 0
+  _column: 4
   _rooks:
   - {fileID: 5469584048805484074}
   - {fileID: 8558429964498350749}
@@ -1420,7 +1428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 748361d4-dbd2-46d0-98c5-283bfa85cbeb
+  instanceId: 327883fd-fdee-4039-96ce-9ba871ad0095
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -1448,8 +1456,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 1542159736266496177}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &4850246636704365195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1572,7 +1580,7 @@ Transform:
   m_GameObject: {fileID: 1237071645594612128}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -0.175, z: 6}
+  m_LocalPosition: {x: 1.5, y: -0.15, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1593,7 +1601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: e4ba13ad-3695-411c-874b-c5e930e54731
+  instanceId: c70c1612-3170-4b71-a26d-67d3c9f5010d
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -1709,8 +1717,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 908246749492327953}
-  _grabbable: {fileID: 6384820752957636272}
   _animator: {fileID: 2481854093266876922}
+  _grabbable: {fileID: 6384820752957636272}
+  _row: 1
+  _column: 4
 --- !u!64 &4319753722132027193
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1788,7 +1798,7 @@ Transform:
   m_GameObject: {fileID: 1254750977228516904}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: -0.175, z: 10.5}
+  m_LocalPosition: {x: 9, y: -0.15, z: 10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1809,7 +1819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 7fd82332-dfa1-43a4-953c-801504d9b57b
+  instanceId: 552e7146-6008-4304-afbf-69430a2ab3f9
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -1925,8 +1935,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 7988893415967012406}
-  _grabbable: {fileID: 6444717341526575040}
   _animator: {fileID: 3338410250676501994}
+  _grabbable: {fileID: 6444717341526575040}
+  _row: 6
+  _column: 7
 --- !u!64 &4066757892952539206
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2020,7 +2032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: cb21181e-3f2a-4a82-a3c3-5fd840d19538
+  instanceId: 7a7fc094-32a6-41df-ba77-4c235c98712d
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -2048,8 +2060,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 5596755601631561826}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &110191713712083520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2188,7 +2200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 3abf68e2-f8d9-49de-87ca-fa652daeecf7
+  instanceId: 47d73731-c9fc-403e-85dd-f672453d9a58
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -2216,8 +2228,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 4749849978041494675}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &1724703020388935960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2340,7 +2352,7 @@ Transform:
   m_GameObject: {fileID: 1401774763832568396}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -0.175, z: 9}
+  m_LocalPosition: {x: 1.5, y: -0.15, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2361,7 +2373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 24327df3-555c-4f1c-9621-550290943972
+  instanceId: ffef97e3-0a1a-4850-b152-381f49d302e0
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -2477,8 +2489,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 2001865382206340707}
-  _grabbable: {fileID: 2975140421210248124}
   _animator: {fileID: 8198227822156257711}
+  _grabbable: {fileID: 2975140421210248124}
+  _row: 1
+  _column: 6
 --- !u!64 &6917481137109315752
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2660,7 +2674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: c50bbbfa-a07f-4878-96c5-75fc766883b9
+  instanceId: 433093db-729c-4b24-bf0a-a255fbd3b61c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -2776,8 +2790,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 2962551410223805850}
-  _grabbable: {fileID: 8459155050488180819}
   _animator: {fileID: 2266710970383631614}
+  _grabbable: {fileID: 8459155050488180819}
+  _row: 7
+  _column: 5
 --- !u!64 &1590398997394957258
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2872,7 +2888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: a49d5ca0-2e0b-4eaa-ac90-0060e6cbeffd
+  instanceId: d835d53b-bec4-4016-8627-8f5ebaaedf95
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -2900,7 +2916,7 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 1515377036308009247}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _movingEnabled: 0
 --- !u!114 &7405695956569077293
 MonoBehaviour:
@@ -3039,7 +3055,7 @@ Transform:
   m_GameObject: {fileID: 1491716618147559688}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -0.175, z: 3}
+  m_LocalPosition: {x: 1.5, y: -0.15, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3060,7 +3076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 2f9bb14c-2fe8-4b8d-8b57-b6974d99ba28
+  instanceId: 04f8ca84-ad96-413c-b440-520983951f4c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -3176,8 +3192,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 6124578229056440762}
-  _grabbable: {fileID: 3914762358736379959}
   _animator: {fileID: 3308890076902569878}
+  _grabbable: {fileID: 3914762358736379959}
+  _row: 1
+  _column: 2
 --- !u!64 &34173987482692957
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3354,7 +3372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 06866ff2-d14a-4f61-baf6-e2bcd0f74608
+  instanceId: eb423222-cb87-4034-88bf-8669c2962c81
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -3382,8 +3400,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 8639019482735204328}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &920727922319808888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3527,7 +3545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: b314b035-3ef2-4360-814d-6fd6d67d61f1
+  instanceId: 6ffb2e67-3aff-4655-9d18-dce731ccf0b7
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -3641,10 +3659,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212425d05c4e3744d97ca3195f05d86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pieceColor: 1
+  _pieceColor: 0
   _renderer: {fileID: 2673158660907850959}
-  _grabbable: {fileID: 5185836382094434869}
   _animator: {fileID: 2833500259805129821}
+  _grabbable: {fileID: 5185836382094434869}
+  _row: 7
+  _column: 0
   _king: {fileID: 8405955492681178923}
 --- !u!64 &3877814651474963715
 MeshCollider:
@@ -3739,7 +3759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: d59aa2dc-2d3c-4f26-af45-af3f399cdf6b
+  instanceId: fc855eba-0477-42a4-a226-e6df42ebaf15
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -3767,8 +3787,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 5367796043239647242}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &2065045449531312959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3912,7 +3932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 43f5d3d8-8c35-4a11-bcc8-789511c4e33f
+  instanceId: defad711-0431-4179-afbd-5f557e723f52
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -4028,8 +4048,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 8155117516962421350}
-  _grabbable: {fileID: 4223525449633989458}
   _animator: {fileID: 2197428011117308319}
+  _grabbable: {fileID: 4223525449633989458}
+  _row: 7
+  _column: 3
   _rooks:
   - {fileID: 3780447009131661234}
   - {fileID: 8803183928108694301}
@@ -4110,7 +4132,7 @@ Transform:
   m_GameObject: {fileID: 2519571744896245063}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: -0.175, z: 3}
+  m_LocalPosition: {x: 9, y: -0.15, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4131,7 +4153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 2f94a61c-c1c9-42da-a60e-4958126fa978
+  instanceId: 3613d67b-40e1-4129-a8f3-881f8be10328
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -4247,8 +4269,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 1395330416487560341}
-  _grabbable: {fileID: 1891713823109580025}
   _animator: {fileID: 2877356427380167350}
+  _grabbable: {fileID: 1891713823109580025}
+  _row: 6
+  _column: 2
 --- !u!64 &8373145715609244058
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4347,7 +4371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: ab3076a6-f742-4acf-b1b9-07c4447a1f5c
+  instanceId: 6aa96630-8121-45c1-a723-6dbeb2cca2b8
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -4463,8 +4487,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 2025306693849551940}
-  _grabbable: {fileID: 6987624049631764529}
   _animator: {fileID: 2245716216333348668}
+  _grabbable: {fileID: 6987624049631764529}
+  _row: 7
+  _column: 2
 --- !u!64 &7201191226747993167
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4708,7 +4734,7 @@ Transform:
   m_GameObject: {fileID: 2633822377461781791}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: -0.175, z: 9}
+  m_LocalPosition: {x: 9, y: -0.15, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4729,7 +4755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: d6182b7a-d601-4c6b-bae1-8075c9337c81
+  instanceId: 491ed785-b10f-47b8-bac9-57965bb41012
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -4845,8 +4871,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 6565170427943101268}
-  _grabbable: {fileID: 2122351726998533949}
   _animator: {fileID: 8757959666873288096}
+  _grabbable: {fileID: 2122351726998533949}
+  _row: 6
+  _column: 6
 --- !u!64 &5893263426776819537
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4940,7 +4968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 54eecb06-7ae8-47ab-8e5d-1a85e19cf50e
+  instanceId: 72881c69-5050-4cc3-ae2d-8a4ec3726874
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -4968,8 +4996,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 566697676707395305}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &8111143153929756734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5108,7 +5136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: dd4623ca-b17b-4cc4-9739-04e9bf021bc1
+  instanceId: b350ecc0-51e0-4333-86b8-a4325ba15632
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -5136,8 +5164,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 4924313010861077069}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &3230150080808832296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5276,7 +5304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 6036f6d8-3425-4302-a437-e12e27cb5d95
+  instanceId: b3f0fee8-ef5c-40e3-aa00-8c5915d26ac8
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -5304,8 +5332,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 1740810310938945376}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &312036320329844533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5760,7 +5788,7 @@ Transform:
   m_GameObject: {fileID: 3865514406998537919}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: -0.175, z: 7.5}
+  m_LocalPosition: {x: 9, y: -0.15, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5781,7 +5809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 20690c04-d6bc-41b8-a64c-1eec4d6848a1
+  instanceId: 22efb65c-529e-4aef-a08b-635e641c73de
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -5897,8 +5925,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 2246645475269180928}
-  _grabbable: {fileID: 7499779868466001422}
   _animator: {fileID: 7035559738196781645}
+  _grabbable: {fileID: 7499779868466001422}
+  _row: 6
+  _column: 5
 --- !u!64 &3926523193216622255
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6329,7 +6359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 0d22fd73-fcb7-4af3-93c0-5ac519c9d156
+  instanceId: b2aa5cbc-5a8d-4c4a-b16f-c2df4ba0f1a3
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -6445,8 +6475,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 8008453432640048667}
-  _grabbable: {fileID: 7975900884619417255}
   _animator: {fileID: 3199191145903069864}
+  _grabbable: {fileID: 7975900884619417255}
+  _row: 7
+  _column: 1
 --- !u!64 &3048479986036231036
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6623,7 +6655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 23c0a604-d6ae-48f3-991e-71c3a5a6fd79
+  instanceId: 62173e66-8d85-41b2-8c4c-61388273fa68
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -6651,7 +6683,7 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 3316075946839875966}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _movingEnabled: 0
 --- !u!114 &5838409952294172278
 MonoBehaviour:
@@ -6791,7 +6823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: b9b70091-8baa-4c70-bb41-cbf295ce1fc8
+  instanceId: 62b1d127-48a9-4a5b-8540-9ef127534b09
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -6819,8 +6851,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 3079749949750331831}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &3858240875074614212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6959,7 +6991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 253cc10d-4706-426e-9063-9f6dd30d529d
+  instanceId: 8e9ce03a-7491-4b40-afc5-8ab91c20faca
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -6987,8 +7019,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 4177394140085855622}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &6502652207927491464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7111,7 +7143,7 @@ Transform:
   m_GameObject: {fileID: 4840844328395633811}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: -0.175, z: 4.5}
+  m_LocalPosition: {x: 9, y: -0.15, z: 4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7132,7 +7164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 2cda594b-3be9-46d5-86e1-4f818bfea122
+  instanceId: 662e0e83-f6b6-4c07-8e93-c6fecba5c35a
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -7248,8 +7280,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 3807101089609154288}
-  _grabbable: {fileID: 2361863718079821389}
   _animator: {fileID: 332313375614807498}
+  _grabbable: {fileID: 2361863718079821389}
+  _row: 6
+  _column: 3
 --- !u!64 &4971578935349731165
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7343,7 +7377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 32c3c1ea-cbb8-4f7d-9a4f-1f1690792e80
+  instanceId: 3ddbe5a0-f63f-40bd-98b4-0c54c69b0aca
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -7371,8 +7405,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 3190854300449346183}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &6909979083047763441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7511,7 +7545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 92a6f399-68db-46d3-a0a5-674979759436
+  instanceId: 1bfa8645-af7a-4d4d-acca-77036cfcaa34
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -7539,8 +7573,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 8792438569985748545}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &6958097564124281424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7913,7 +7947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc3d4b6653847b44a64cd77bbc29312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
 --- !u!1 &4976436489122403619
 GameObject:
   m_ObjectHideFlags: 0
@@ -8130,9 +8163,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _boardSize: 8
   _blackPieces:
-  - {fileID: 0}
+  - {fileID: 5469584048805484074}
+  - {fileID: 5018528037922162092}
+  - {fileID: 712381214777393245}
+  - {fileID: 4071343443441785666}
+  - {fileID: 732235724799204446}
+  - {fileID: 9078659657122785921}
+  - {fileID: 7250927010579639239}
+  - {fileID: 8558429964498350749}
+  - {fileID: 8125326511591933260}
+  - {fileID: 2862908095753283522}
+  - {fileID: 2796114405932199725}
+  - {fileID: 6934738752278827225}
+  - {fileID: 5085610398672495372}
+  - {fileID: 8125031197072603329}
+  - {fileID: 3179025870086547334}
+  - {fileID: 731726286792825660}
   _whitePieces:
-  - {fileID: 0}
+  - {fileID: 3780447009131661234}
+  - {fileID: 7005270515473331971}
+  - {fileID: 5015542230796354936}
+  - {fileID: 8405955492681178923}
+  - {fileID: 2696591568732518126}
+  - {fileID: 1269760451044515687}
+  - {fileID: 7105995250085752184}
+  - {fileID: 8803183928108694301}
+  - {fileID: 7444914479651904003}
+  - {fileID: 5654839773340173111}
+  - {fileID: 2357509365342936619}
+  - {fileID: 6392147163630827929}
+  - {fileID: 2007636214682756196}
+  - {fileID: 616460693106335238}
+  - {fileID: 1236555406913462016}
+  - {fileID: 2897646794953784835}
 --- !u!114 &2595015219796938168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8200,7 +8263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: e9ec5bf0-97be-4545-938b-f973ef24ab4b
+  instanceId: 5e3a1784-7152-43e7-baed-f11fdba00695
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -8316,8 +8379,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 11403954886445091}
-  _grabbable: {fileID: 4370250675157678698}
   _animator: {fileID: 2380522382449591866}
+  _grabbable: {fileID: 4370250675157678698}
+  _row: 7
+  _column: 6
 --- !u!64 &5395699163393140618
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8416,7 +8481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: a1c9dc20-1fca-4ff7-8505-66ba60a1c4df
+  instanceId: 38daa2ab-b8ec-4e2d-8269-fd85d596d16f
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -8532,8 +8597,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 3487513526693723566}
-  _grabbable: {fileID: 2173304159424386908}
   _animator: {fileID: 1224077501144196159}
+  _grabbable: {fileID: 2173304159424386908}
+  _row: 0
+  _column: 1
 --- !u!64 &1800245942621120285
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8838,7 +8905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 8137d984-3ae8-4684-829d-e37044607722
+  instanceId: c3377e6b-57cc-45dc-9c1a-3ee8329188ce
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -8866,7 +8933,7 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 157037189973804067}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _movingEnabled: 0
 --- !u!114 &7337402823403083720
 MonoBehaviour:
@@ -8990,7 +9057,7 @@ Transform:
   m_GameObject: {fileID: 5428991576396361598}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -0.175, z: 4.5}
+  m_LocalPosition: {x: 1.5, y: -0.15, z: 4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9011,7 +9078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 12dd7164-1634-4f7d-8e15-a569a0151ca7
+  instanceId: 51d6ee41-d052-40da-8463-b4d394b0ef69
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -9127,8 +9194,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 2086935906919671747}
-  _grabbable: {fileID: 9009845755645454219}
   _animator: {fileID: 1664246921040271046}
+  _grabbable: {fileID: 9009845755645454219}
+  _row: 1
+  _column: 3
 --- !u!64 &7135213972991043344
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9305,7 +9374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 6ad69c3c-8ee8-4163-8035-3b12edff9bea
+  instanceId: 9d643d78-096f-43dc-bdb0-4bce2d8e82e2
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -9333,8 +9402,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 549892202406106459}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &1412596245466467834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9457,7 +9526,7 @@ Transform:
   m_GameObject: {fileID: 5856034056691673039}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: -0.175, z: 6}
+  m_LocalPosition: {x: 9, y: -0.15, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9478,7 +9547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 9ddeb578-785e-4c46-9c1e-084ea7ebc62c
+  instanceId: d52fe344-e8d9-4dbc-a21a-3e06bce412d7
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -9594,8 +9663,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 4816397506800491929}
-  _grabbable: {fileID: 580648378077430738}
   _animator: {fileID: 8608666795537446828}
+  _grabbable: {fileID: 580648378077430738}
+  _row: 6
+  _column: 4
 --- !u!64 &1266862855328033639
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9694,7 +9765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: ed765b8f-3ba5-4d8a-a67d-a7e0e311126a
+  instanceId: be22deeb-d059-4c23-9f82-940ab0c31489
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -9810,8 +9881,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 2317229373148039721}
-  _grabbable: {fileID: 1549066551812832031}
   _animator: {fileID: 3821746777603551376}
+  _grabbable: {fileID: 1549066551812832031}
+  _row: 0
+  _column: 0
   _king: {fileID: 732235724799204446}
 --- !u!64 &8227431708576950940
 MeshCollider:
@@ -9890,7 +9963,7 @@ Transform:
   m_GameObject: {fileID: 5925717524416229044}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -0.175, z: 7.5}
+  m_LocalPosition: {x: 1.5, y: -0.15, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9911,7 +9984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 9e6c938a-3566-4dc1-a809-b647cb95e364
+  instanceId: 34edfa43-7808-4ce5-a21d-83ee7e34745d
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -10027,8 +10100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 3051192707882749794}
-  _grabbable: {fileID: 8695132306976557335}
   _animator: {fileID: 3382307863309676202}
+  _grabbable: {fileID: 8695132306976557335}
+  _row: 1
+  _column: 5
 --- !u!64 &5039262833001943314
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10122,7 +10197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: c3027ea9-3c6b-48ff-9e5f-0ce22885efce
+  instanceId: e0d53a45-529b-4b9b-8d50-d544ec684dfe
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -10150,7 +10225,7 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 1515072287374895265}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _movingEnabled: 0
 --- !u!114 &8415553008747371017
 MonoBehaviour:
@@ -10458,7 +10533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 537f384e-4edc-46dc-8eb6-5616c4f60749
+  instanceId: 9769f3aa-6d8f-458b-bc3e-0a3fa754f4dd
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -10486,7 +10561,7 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 2467053066844875608}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _movingEnabled: 0
 --- !u!114 &2634144882757742897
 MonoBehaviour:
@@ -10631,7 +10706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: de11c307-ca76-438b-ac27-9eedd3c99853
+  instanceId: 1fff19cc-358c-4dec-a7a3-9798bb554ea2
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -10747,8 +10822,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 8344896787167963926}
-  _grabbable: {fileID: 799049926276708325}
   _animator: {fileID: 26163329905253059}
+  _grabbable: {fileID: 799049926276708325}
+  _row: 0
+  _column: 2
 --- !u!64 &1286730475725057377
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10842,7 +10919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 79fb850d-fde3-4da9-84a5-da08a212057e
+  instanceId: 78de127d-4600-4aeb-834b-631490a7afc9
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -10870,8 +10947,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 1075289457915877069}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &6558095788358344976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11010,7 +11087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 24af0532-d6c9-454f-a2c5-6dc220677017
+  instanceId: 7e06383d-fcdc-4411-b1ac-cc1d1fb4c520
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -11038,7 +11115,7 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 3574896178410928611}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _movingEnabled: 0
 --- !u!114 &7640214968886932469
 MonoBehaviour:
@@ -11183,7 +11260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 2b624020-5f5f-408a-9ef0-1ebf16ea09ff
+  instanceId: e79eba5c-72af-457a-a51d-871b60f9e821
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -11299,8 +11376,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 2021866733873933709}
-  _grabbable: {fileID: 1272415617573343577}
   _animator: {fileID: 5065418195469278260}
+  _grabbable: {fileID: 1272415617573343577}
+  _row: 0
+  _column: 5
 --- !u!64 &5972568026207702547
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11565,7 +11644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: fa76a924-dff7-4f4b-b4ba-0202ae89bf6f
+  instanceId: 01258021-d5de-44c2-92fc-ac9fee3489fa
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -11681,8 +11760,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 2490936027557184869}
-  _grabbable: {fileID: 1185619565679805421}
   _animator: {fileID: 3750509771476277453}
+  _grabbable: {fileID: 1185619565679805421}
+  _row: 0
+  _column: 7
   _king: {fileID: 732235724799204446}
 --- !u!64 &5544384948477281511
 MeshCollider:
@@ -11761,7 +11842,7 @@ Transform:
   m_GameObject: {fileID: 6892184929649216676}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: -0.175, z: 0}
+  m_LocalPosition: {x: 9, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11782,7 +11863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 17c6b666-35cc-40d7-aea6-bf37069a9da8
+  instanceId: bb124c48-22ba-4154-9a6e-62d736b3db11
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -11898,8 +11979,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 3812066808500121478}
-  _grabbable: {fileID: 3920033269782718287}
   _animator: {fileID: 8651618945647564601}
+  _grabbable: {fileID: 3920033269782718287}
+  _row: 6
+  _column: 0
 --- !u!64 &4101199035921876395
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11998,7 +12081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: f9695e8f-dc36-479b-9459-b6ee4a72d4e9
+  instanceId: fc5282c8-7b87-427c-ad0e-b6539c176323
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -12114,8 +12197,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 6739145399306582723}
-  _grabbable: {fileID: 1847498344695411966}
   _animator: {fileID: 2462367496737784221}
+  _grabbable: {fileID: 1847498344695411966}
+  _row: 0
+  _column: 6
 --- !u!64 &3914081869691417159
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12541,7 +12626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: dc907506-fbff-421b-969a-b9bb751c52e5
+  instanceId: 01567e81-fe9b-4e04-8c73-f87daa074953
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -12569,8 +12654,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 8318869258501222329}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &5536543667072776772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12709,7 +12794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 2493b44e-18aa-40f0-bb02-896f58df5933
+  instanceId: e80761c9-8abe-4d61-8ab7-677d5841ae28
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -12737,8 +12822,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 5052917338015075396}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &7844250370687833083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12877,7 +12962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 0b19b715-e5a5-4b5e-b7b2-f6342a92a9a8
+  instanceId: 0d18d317-2fa7-4e6a-9d4f-18f55f533913
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -12905,7 +12990,7 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 5952627571453134645}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
+  _throwWhenUnselected: 0
   _movingEnabled: 0
 --- !u!114 &919003502356609706
 MonoBehaviour:
@@ -13558,7 +13643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 0dc19ac6-ed08-4bc9-898b-ca66bd2697c4
+  instanceId: 7b7aa2f5-ce14-4d66-b029-26909ea98709
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -13586,8 +13671,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 2883610052144452090}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &732175343080425475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13726,7 +13811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: d0fb9aa3-8341-4ebf-bd41-1716aee07c66
+  instanceId: 82c834ca-d072-4aae-85ac-a7b15d4d9300
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -13754,8 +13839,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 8769626140108543573}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &951748873230874475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13894,7 +13979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 87bdbafd-c64f-44f6-8d48-9703385b2ca9
+  instanceId: 971f0cab-81dc-4067-b246-5dfeb1d3d13b
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -13922,8 +14007,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 8667588234476218944}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &4980767825673172568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14145,7 +14230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 0ad3291a-b17a-4262-a6f9-948487e8544a
+  instanceId: 729823e3-666a-4313-8418-1b782b07583c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -14173,8 +14258,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 4677234617744632552}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &4334884965843190232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14396,7 +14481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: bc55262a-97d4-424a-9248-b678773b5068
+  instanceId: bfe9afb8-c914-4cbc-9f1c-6e6caa30d8a5
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -14424,8 +14509,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 2020897118559606782}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &101774835886637201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14548,7 +14633,7 @@ Transform:
   m_GameObject: {fileID: 8823439503724198518}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -0.175, z: 1.5}
+  m_LocalPosition: {x: 1.5, y: -0.15, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14569,7 +14654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: e2eb4def-9501-48c6-9d7c-7563a474654a
+  instanceId: b34934a1-4bf3-41f3-94ca-9a60511c1aa6
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -14685,8 +14770,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 8036508351684938148}
-  _grabbable: {fileID: 5826718261976735752}
   _animator: {fileID: 1696817831059915551}
+  _grabbable: {fileID: 5826718261976735752}
+  _row: 1
+  _column: 1
 --- !u!64 &5586102550669427207
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14764,7 +14851,7 @@ Transform:
   m_GameObject: {fileID: 8877753692730162832}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: -0.175, z: 1.5}
+  m_LocalPosition: {x: 9, y: -0.15, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14785,7 +14872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: cfa327fa-a571-4e22-af01-ffd556fe201a
+  instanceId: 8481c117-1a6a-4f64-b06d-bdd3cb4c1e1a
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -14901,8 +14988,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 0
   _renderer: {fileID: 6950599676423554327}
-  _grabbable: {fileID: 774939928707700165}
   _animator: {fileID: 5019388820623174306}
+  _grabbable: {fileID: 774939928707700165}
+  _row: 6
+  _column: 1
 --- !u!64 &5578516108276967087
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15001,7 +15090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 3936a201-a4b7-4f4a-a267-b582ad09957f
+  instanceId: 60cd35d5-afad-47e1-bace-c69168565022
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -15117,8 +15206,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 4622572994570026966}
-  _grabbable: {fileID: 1386804676580958885}
   _animator: {fileID: 562549915961656945}
+  _grabbable: {fileID: 1386804676580958885}
+  _row: 0
+  _column: 3
 --- !u!64 &1868701676957095849
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15295,7 +15386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: b2b0e3b9-6b3a-4d9c-864c-350ebd168c47
+  instanceId: 402ebeb8-2241-4c2e-9036-414295b68d7a
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -15323,8 +15414,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 1179116202513600991}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &7902659577298926091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15447,7 +15538,7 @@ Transform:
   m_GameObject: {fileID: 9090747393200174089}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -0.175, z: 10.5}
+  m_LocalPosition: {x: 1.5, y: -0.15, z: 10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15468,7 +15559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: a1bb38df-05e7-4c57-92ba-7405744aa1bd
+  instanceId: 2490b336-9ef8-4432-b03a-f8b043ce6442
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -15584,8 +15675,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pieceColor: 1
   _renderer: {fileID: 670710615724217223}
-  _grabbable: {fileID: 2878848851945790268}
   _animator: {fileID: 864122335088551236}
+  _grabbable: {fileID: 2878848851945790268}
+  _row: 1
+  _column: 7
 --- !u!64 &2340169784054628697
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15679,7 +15772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: c9d75bbe-9115-4477-9604-63eb554aab7e
+  instanceId: e2a02247-2fdc-449c-9bec-bd23e6058417
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -15707,8 +15800,8 @@ MonoBehaviour:
   _maxGrabPoints: -1
   _rigidbody: {fileID: 4771388984197194727}
   _kinematicWhileSelected: 1
-  _throwWhenUnselected: 1
-  _movingEnabled: 1
+  _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &2427923832396867133
 MonoBehaviour:
   m_ObjectHideFlags: 0
