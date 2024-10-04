@@ -24,12 +24,10 @@ namespace ChessMainLoop
         [SerializeField] private Renderer _renderer;
         [SerializeField] protected int _row;
         [SerializeField] protected int _column;
-        public (int Row, int Column) Location 
-        { 
-            get => (_row, _column); 
-            set => Move(value.Row, value.Column);
-        }
+        public (int Row, int Column) Location => (_row, _column); 
         private (int Row, int Column) _startLocation;
+        [SerializeField] private Animator _animator;
+        public Animator Animator => _animator;
         private bool _isActive = false;
         public bool IsActive { get => _isActive; set { _isActive = false; _renderer.material.color = _startColor; } }
         private Color _startColor;
@@ -44,7 +42,6 @@ namespace ChessMainLoop
         #endregion
 
         [SerializeField] private Grabbable _grabbable;
-        [SerializeField] private Animator _animator;
 
         public static event Selected Selected;
 
@@ -152,13 +149,14 @@ namespace ChessMainLoop
 
         public void ResetPiece()
         {
-            Location = _startLocation;
+            _row = _startLocation.Row; 
+            _column = _startLocation.Column;
             _renderer.material.color = _startColor;
             _wasPawn = null;
             _hasMoved = false;
         }
 
-        protected virtual void Move(int newRow, int newColumn)
+        public virtual void Move(int newRow, int newColumn)
         {
             MoveTracker.Instance.AddMove(_row, _column, newRow, newColumn, GameManager.Instance.TurnCount);
             if (this is Pawn && GameManager.Instance.Passantable)
@@ -174,13 +172,21 @@ namespace ChessMainLoop
                 }
             }
 
+            BoardState.Instance.SetField(this, newRow, newColumn);
             _row = newRow;
             _column = newColumn;
-            Vector3 newPosition = new Vector3(_row * BoardState.Offset, transform.localPosition.y, _column * BoardState.Offset);
-            transform.localPosition = newPosition;
 
             _hasMoved = true;
             GameManager.Instance.Passantable = null;
+        }
+
+        public void PiecePromoted(Pawn promotingPawn)
+        {
+            WasPawn = promotingPawn;
+            _row = promotingPawn.Location.Row;
+            _column = promotingPawn.Location.Column;
+            transform.localPosition = promotingPawn.transform.localPosition;
+            transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z);
         }
     }
 }

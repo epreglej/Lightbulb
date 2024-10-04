@@ -79,25 +79,23 @@ namespace ChessMainLoop
             return _checkSide == SideColor.Both ? _turnPlayer == SideColor.White ? SideColor.Black : SideColor.White : _checkSide;
         }
 
-        //public void ChangeTurn()
-        //{
-        //    if (!PhotonNetwork.IsMasterClient) return;
-
-        //    if (_turnPlayer == SideColor.White)
-        //    {
-        //        _turnPlayer = SideColor.Black;
-        //    }
-        //    else if (_turnPlayer == SideColor.Black)
-        //    {
-        //        _turnPlayer = SideColor.White;
-        //    }
-        //    SideColor _winner = BoardState.Instance.CheckIfGameOver();
-        //    if (_winner != SideColor.None)
-        //    {
-        //        GameEnd(_winner);
-        //    }
-        //    _turnCount++;
-        //}
+        public void ChangeTurn()
+        {
+            if (_turnPlayer == SideColor.White)
+            {
+                _turnPlayer = SideColor.Black;
+            }
+            else if (_turnPlayer == SideColor.Black)
+            {
+                _turnPlayer = SideColor.White;
+            }
+            SideColor _winner = BoardState.Instance.CheckIfGameOver();
+            if (_winner != SideColor.None)
+            {
+                GameEnd(_winner);
+            }
+            _turnCount++;
+        }
 
         public void GameEnd(SideColor _winner)
         {

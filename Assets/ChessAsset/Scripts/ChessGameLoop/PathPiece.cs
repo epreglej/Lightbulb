@@ -11,6 +11,9 @@ namespace ChessMainLoop
         [SerializeField] private Grabbable _grabbable;
         [SerializeField] private string _name;
         public string Name { get => _name; }
+        private int _row;
+        private int _column;
+        public (int Row, int Column) Location => (_row, _column);
 
         private Color _startColor;
         private Renderer _renderer;

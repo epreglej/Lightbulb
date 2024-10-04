@@ -16,7 +16,7 @@ namespace ChessMainLoop
             {
                 if (BoardState.Instance.GetField(_xSource + _direction, _ySource + 1) != null ? BoardState.Instance.GetField(_xSource + _direction, _ySource + 1).PieceColor != PieceColor : false)
                 {
-                    PathCalculator.PathOneSpot(this, _direction, 1);
+                    PathManager.PathOneSpot(this, _direction, 1);
                 }
             }
 
@@ -24,7 +24,7 @@ namespace ChessMainLoop
             {
                 if (BoardState.Instance.GetField(_xSource + _direction, _ySource - 1) != null ? BoardState.Instance.GetField(_xSource + _direction, _ySource - 1).PieceColor != PieceColor : false)
                 {
-                    PathCalculator.PathOneSpot(this, _direction, -1);
+                    PathManager.PathOneSpot(this, _direction, -1);
                 }
             }
 
@@ -33,7 +33,7 @@ namespace ChessMainLoop
             {
                 if (BoardState.Instance.GetField(_xSource, _ySource + 1) != null ? BoardState.Instance.GetField(_xSource, _ySource + 1) == GameManager.Instance.Passantable : false)
                 {
-                    PathCalculator.PassantSpot(BoardState.Instance.GetField(_xSource, _ySource + 1), _xSource + _direction, _ySource + 1);
+                    PathManager.PassantSpot(BoardState.Instance.GetField(_xSource, _ySource + 1), _xSource + _direction, _ySource + 1);
                 }
             }
 
@@ -42,7 +42,7 @@ namespace ChessMainLoop
                 if (BoardState.Instance.GetField(_xSource, _ySource - 1) != null ? BoardState.Instance.GetField(_xSource, _ySource - 1) == GameManager.Instance.Passantable : false)
                 {
                     if (BoardState.Instance.GetField(_xSource, _ySource - 1) is Pawn ? GameManager.Instance.Passantable : false)
-                        PathCalculator.PassantSpot(BoardState.Instance.GetField(_xSource, _ySource - 1), _xSource + _direction, _ySource - 1);
+                        PathManager.PassantSpot(BoardState.Instance.GetField(_xSource, _ySource - 1), _xSource + _direction, _ySource - 1);
                 }
             }
 
@@ -57,7 +57,7 @@ namespace ChessMainLoop
                 return;
             }
 
-            PathCalculator.PathOneSpot(this, _direction, 0);
+            PathManager.PathOneSpot(this, _direction, 0);
 
             if (BoardState.Instance.IsInBorders(_xSource + _direction * 2, _ySource) == false)
             {
@@ -66,7 +66,7 @@ namespace ChessMainLoop
 
             if (HasMoved == false && BoardState.Instance.GetField(_xSource + _direction * 2, _ySource) == null)
             {
-                PathCalculator.PathOneSpot(this, _direction * 2, 0);
+                PathManager.PathOneSpot(this, _direction * 2, 0);
             }
        
         }
@@ -74,7 +74,7 @@ namespace ChessMainLoop
         /// <summary>
         /// Adds checks for making the piece passantable if it moved for two sapces and promoting the pawn if it reached the end of the board to Move method of base class.
         /// </summary>
-        protected override void Move(int newRow, int newColumn)
+        public override void Move(int newRow, int newColumn)
         {
             int row = _row;
             base.Move(newRow, newColumn);
@@ -96,12 +96,12 @@ namespace ChessMainLoop
         {
             int _direction = PieceColor == SideColor.Black ? 1 : -1;
 
-            if (CheckStateCalculator.KingAtLocation(_xPosition, _yPosition, _direction, 1, PieceColor))
+            if (CheckStateCalculator.IsEnemyKingAtLocation(_xPosition, _yPosition, _direction, 1, PieceColor))
             {
                 return true;            
             }
 
-            if (CheckStateCalculator.KingAtLocation(_xPosition, _yPosition, _direction, -1, PieceColor))
+            if (CheckStateCalculator.IsEnemyKingAtLocation(_xPosition, _yPosition, _direction, -1, PieceColor))
             {
                 return true;
             }        

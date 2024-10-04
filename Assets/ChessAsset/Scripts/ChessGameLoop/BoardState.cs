@@ -54,11 +54,10 @@ namespace ChessMainLoop
         /// <returns>Pice reference of the piece on the field, or null if not occupied</returns>
         public Piece GetField(int row, int column) => _gridState[row, column];
 
-        public void SetField(Piece _piece, int newRow, int newColumn)
+        public void SetField(Piece piece, int newRow, int newColumn)
         {
-            _gridState[_piece.Location.Row, _piece.Location.Column] = null;
-            _gridState[newRow, newColumn] = _piece;
-            _piece.Location = (newRow, newColumn);
+            _gridState[piece.Location.Row, piece.Location.Column] = null;
+            _gridState[newRow, newColumn] = piece;
         }
 
         public void ClearField(int row, int column)
@@ -116,18 +115,13 @@ namespace ChessMainLoop
         /// <summary>
         /// Replaces pawn being promoted with the selected piece.
         /// </summary>
-        public void PromotePawn(Pawn _promotingPawn, Piece _piece, int _pieceIndex)
+        public void PromotePawn(Pawn promotingPawn, Piece piece, int pieceIndex)
         {
-            _promotedPieces.Enqueue(_piece);
-            //int _xPosition = (int)(_promotingPawn.transform.localPosition.x / Offset);
-            //int _yPosition = (int)(_promotingPawn.transform.localPosition.z / Offset);
-            MoveTracker.Instance.AddMove(_promotingPawn.Location.Row, _promotingPawn.Location.Column, _pieceIndex, _pieceIndex, GameManager.Instance.TurnCount - 1);
-            _gridState[_promotingPawn.Location.Row, _promotingPawn.Location.Column] = _piece;
-            _piece.WasPawn = _promotingPawn;
-            _piece.Location = _promotingPawn.Location;
-            _piece.transform.position = _promotingPawn.transform.position;
-            _piece.transform.localPosition = new Vector3(_piece.transform.localPosition.x, 0, _piece.transform.localPosition.z);
-            _promotingPawn.gameObject.SetActive(false);
+            _promotedPieces.Enqueue(piece);
+            MoveTracker.Instance.AddMove(promotingPawn.Location.Row, promotingPawn.Location.Column, pieceIndex, pieceIndex, GameManager.Instance.TurnCount - 1);
+            _gridState[promotingPawn.Location.Row, promotingPawn.Location.Column] = piece;
+            piece.PiecePromoted(promotingPawn);
+            promotingPawn.gameObject.SetActive(false);
         }
     }
 }

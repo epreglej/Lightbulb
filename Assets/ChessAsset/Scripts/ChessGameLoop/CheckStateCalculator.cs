@@ -4,12 +4,13 @@ namespace ChessMainLoop
     {
         public static SideColor CalculateCheck(Piece[,] grid)
         {
-            bool _whiteCheck = false;
-            bool _blackCheck = false;
+            bool whiteCheck = false;
+            bool blackCheck = false;
+            int gridSize = grid.GetLength(0);
 
-            for(int i = 0; i < grid.GetLength(0); i++)
+            for(int i = 0; i < gridSize; i++)
             {
-                for(int j = 0; j < grid.GetLength(1); j++)
+                for(int j = 0; j < gridSize; j++)
                 {
                     if (grid[i, j] == null)
                     {
@@ -20,17 +21,17 @@ namespace ChessMainLoop
                     {
                         if (grid[i, j].PieceColor == SideColor.Black)
                         {
-                            _whiteCheck = true;
+                            whiteCheck = true;
                         }
                         else
                         {
-                            _blackCheck = true;
+                            blackCheck = true;
                         }
                     }
                 }            
             }
 
-            return _whiteCheck ? _blackCheck ? SideColor.Both : SideColor.White : _blackCheck ? SideColor.Black : SideColor.None;
+            return whiteCheck ? blackCheck ? SideColor.Both : SideColor.White : blackCheck ? SideColor.Black : SideColor.None;
         }
 
         private static readonly int[,] DiagonalLookup =
@@ -49,61 +50,47 @@ namespace ChessMainLoop
            { 0, -1 }
         };
 
-        public static bool SearchForKingDiagonal(int _xPosition, int _yPosition, SideColor _attackerColor)
+        public static bool IsAttackingKingDiagonal(int row, int column, SideColor attackerColor)
         {
-            return SearchForKing(_xPosition,_yPosition, DiagonalLookup, _attackerColor);
+            return IsAttackingKingInDirection(row, column, DiagonalLookup, attackerColor);
         }
 
-        public static bool SearchForKingVertical(int _xPosition, int _yPosition, SideColor _attackerColor)
+        public static bool IsAttackingKingVertical(int row, int column, SideColor attackerColor)
         {
-            return SearchForKing(_xPosition, _yPosition, VerticalLookup, _attackerColor);
+            return IsAttackingKingInDirection(row, column, VerticalLookup, attackerColor);
         }
 
-        private static bool SearchForKing(int _xPosition, int _yPosition, int[,] _lookupTable, SideColor _attackerColor)
+        private static bool IsAttackingKingInDirection(int row, int column, int[,] directionLookupTable, SideColor attackerColor)
         {
-            Piece _piece;
+            Piece piece;
 
-            for (int j = 0; j < DiagonalLookup.GetLength(0); j++)
+            for (int j = 0; j < directionLookupTable.Length; j++)
             {
-                for (int i = 1; BoardState.Instance.IsInBorders(_xPosition + i * _lookupTable[j, 0], _yPosition + i * _lookupTable[j, 1]); i++)
+                for (int i = 1; BoardState.Instance.IsInBorders(row + i * directionLookupTable[j, 0], column + i * directionLookupTable[j, 1]); i++)
                 {
-                    _piece = BoardState.Instance.GetField(_xPosition + i * _lookupTable[j, 0], _yPosition + i * _lookupTable[j, 1]);
+                    piece = BoardState.Instance.GetField(row + i * directionLookupTable[j, 0], column + i * directionLookupTable[j, 1]);
 
-                    if (_piece != null)
-                    {
-                        if(_piece is King && _piece.PieceColor != _attackerColor)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            break; 
-                        }
-                    }
+                    if (piece == null) continue;
+
+                    if (piece is King && piece.PieceColor != attackerColor) return true;
+                    else break;
                 }
             }
 
             return false;
         }
 
-        public static bool KingAtLocation(int _xPosition, int _yPosition, int _xDirection, int _yDirection, SideColor _attackerColor)
+        public static bool IsEnemyKingAtLocation(int row, int column, int rowDirection, int columnDirection, SideColor attackerColor)
         {
 
-            if (BoardState.Instance.IsInBorders(_xPosition + _xDirection, _yPosition + _yDirection))
+            if (BoardState.Instance.IsInBorders(row + rowDirection, column + columnDirection))
             {
-                Piece _piece = BoardState.Instance.GetField(_xPosition + _xDirection, _yPosition + _yDirection);
-                if (_piece != null)
-                {
-                    if (_piece is King && _piece.PieceColor != _attackerColor)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
+                Piece piece = BoardState.Instance.GetField(row + rowDirection, column + columnDirection);
+
+                if (piece == null) return false;
+                if(piece is King && piece.PieceColor != attackerColor) return true;
             }
+
             return false;
         }
     }

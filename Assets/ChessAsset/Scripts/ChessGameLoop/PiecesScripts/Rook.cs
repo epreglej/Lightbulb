@@ -9,20 +9,20 @@ namespace ChessMainLoop
 
         public override void CreatePath()
         {
-            PathCalculator.VerticalPath(this);
+            PathManager.CreateVerticalPath(this);
             if (_king == null)
             {
                 return;
             }
             if (_king.HasMoved == false && HasMoved == false)
             {
-                PathCalculator.CastleSpot(this, _king);
+                PathManager.CastleSpot(this, _king);
             }
         }
 
         public override bool IsAttackingKing(int _xPosition, int _yPosition)
         {
-            return CheckStateCalculator.SearchForKingVertical(_xPosition, _yPosition, PieceColor);
+            return CheckStateCalculator.IsAttackingKingVertical(_xPosition, _yPosition, PieceColor);
         }
 
         public override bool CanMove(int _xPosition, int _yPosition)

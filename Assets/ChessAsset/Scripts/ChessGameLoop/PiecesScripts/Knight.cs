@@ -21,7 +21,7 @@ namespace ChessMainLoop
         {
             for (int i = 0; i < LookupMoves.GetLength(0); i++)
             {
-                PathCalculator.PathOneSpot(this, LookupMoves[i, 0], LookupMoves[i, 1]);
+                PathManager.PathOneSpot(this, LookupMoves[i, 0], LookupMoves[i, 1]);
             }
         }
 
@@ -29,7 +29,7 @@ namespace ChessMainLoop
         {
             for (int i = 0; i < LookupMoves.GetLength(0); i++)
             {
-                if (CheckStateCalculator.KingAtLocation(_xPosition, _yPosition, LookupMoves[i, 0], LookupMoves[i, 1], PieceColor))
+                if (CheckStateCalculator.IsEnemyKingAtLocation(_xPosition, _yPosition, LookupMoves[i, 0], LookupMoves[i, 1], PieceColor))
                 {
                     return true;
                 }

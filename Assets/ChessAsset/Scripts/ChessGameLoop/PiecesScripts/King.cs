@@ -48,7 +48,7 @@ namespace ChessMainLoop
                 }
                 if (_allowed)
                 {
-                    PathCalculator.PathOneSpot(this, LookupMoves[i, 0], LookupMoves[i, 1]);
+                    PathManager.PathOneSpot(this, LookupMoves[i, 0], LookupMoves[i, 1]);
                 }
             }
 
@@ -56,7 +56,7 @@ namespace ChessMainLoop
             {
                 if (_rook.HasMoved == false && HasMoved == false)
                 {
-                    PathCalculator.CastleSpot(this, _rook);
+                    PathManager.CastleSpot(this, _rook);
                 }
             }
         }

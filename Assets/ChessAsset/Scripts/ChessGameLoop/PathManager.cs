@@ -5,7 +5,7 @@ namespace ChessMainLoop
     /// <summary>
     /// Contains methods for calculating viable positions piece can move to, and placing path fields on them with appropriate color
     /// </summary>
-    public static class PathCalculator
+    public static class PathManager
     {
         #region Lookup tables for movement directions
         private static readonly int[,] DiagonalLookup =
@@ -25,67 +25,72 @@ namespace ChessMainLoop
         };
         #endregion
 
-        public static void DiagonalPath(Piece _caller)
+        public static void CreateDiagonalPath(Piece caller)
         {
-            CalculatePath(_caller, DiagonalLookup);
+            CreatePathOnDirection(caller, DiagonalLookup);
         }
 
-        public static void VerticalPath(Piece _caller)
+        public static void CreateVerticalPath(Piece caller)
         {
-            CalculatePath(_caller, VerticalLookup);
+            CreatePathOnDirection(caller, VerticalLookup);
         }
 
         /// <summary>
         /// Checks for available spots for directions specified in lookup table and sets path field on them. Stops at first enemy or unavailable field in each direction.
         /// </summary>
-        private static void CalculatePath(Piece _caller, int[,] _lookupTable)
+        private static void CreatePathOnDirection(Piece caller, int[,] lookupTable)
         {
-            GameObject _path;
-            Vector3 _position = new Vector3();
-            Piece _piece;
+            GameObject path;
+            Vector3 position = new Vector3();
+            Piece piece;
 
-            int _xSource = (int)(_caller.transform.localPosition.x / BoardState.Offset);
-            int _ySource = (int)(_caller.transform.localPosition.z / BoardState.Offset);
+            int startRow = caller.Location.Row;
+            int startColumn = caller.Location.Column;
 
-            for (int j = 0; j < DiagonalLookup.GetLength(0); j++)
+            for (int j = 0; j < lookupTable.Length; j++)
             {
                 /*Check field by field in current direction from lookup table until it reaches the edge of the board or enemy field.
                  * On empty fields creates walk path indexed by name HighlightPathYellow and on enemy fields creates enemy path 
                  * indexed by name HighlightPathRed
                  */
-                for (int i = 1; BoardState.Instance.IsInBorders(_xSource + i * _lookupTable[j, 0], _ySource + i * _lookupTable[j, 1]); i++)
+                for (int i = 1; BoardState.Instance.IsInBorders(startRow + i * lookupTable[j, 0], startColumn + i * lookupTable[j, 1]); i++)
                 {
-                    SideColor _checkSide = BoardState.Instance.SimulateCheckState(_xSource, _ySource, _xSource + i * _lookupTable[j, 0], _ySource + i * _lookupTable[j, 1]);
-                    _piece = BoardState.Instance.GetField(_xSource + i * _lookupTable[j, 0], _ySource + i * _lookupTable[j, 1]);
+                    SideColor checkSide = BoardState.Instance.SimulateCheckState(startRow, startColumn, startRow + i * lookupTable[j, 0], startColumn + i * lookupTable[j, 1]);
+                    piece = BoardState.Instance.GetField(startRow + i * lookupTable[j, 0], startColumn + i * lookupTable[j, 1]);
 
-                    if (_piece == null)
+                    if (checkSide == caller.PieceColor || checkSide == SideColor.Both)
                     {
-                        if (_checkSide == _caller.PieceColor || _checkSide == SideColor.Both)
+                        continue;
+                    }
+
+                    if (piece == null)
+                    {
+                        if (checkSide == caller.PieceColor || checkSide == SideColor.Both)
                         {
                             continue;
                         }
 
-                        _path = ObjectPool.Instance.GetHighlightPath("HighlightPathYellow");
-                        _position.x = _caller.transform.localPosition.x + i * BoardState.Offset * _lookupTable[j, 0];
-                        _position.z = _caller.transform.localPosition.z + i * BoardState.Offset * _lookupTable[j, 1];
-                        _position.y = _path.transform.localPosition.y;
+                        path = ObjectPool.Instance.GetHighlightPath("HighlightPathYellow");
+                        position.x = caller.transform.localPosition.x + i * BoardState.Offset * lookupTable[j, 0];
+                        position.z = caller.transform.localPosition.z + i * BoardState.Offset * lookupTable[j, 1];
+                        position.y = path.transform.localPosition.y;
 
-                        _path.transform.localPosition = _position;
+                        path.transform.localPosition = position;
                     }
-                    else if (_piece.PieceColor != _caller.PieceColor)
+                    else if (piece.PieceColor != caller.PieceColor)
                     {
-                        if (_checkSide == _caller.PieceColor || _checkSide == SideColor.Both)
+                        if (checkSide == caller.PieceColor || checkSide == SideColor.Both)
                         {
                             break;
                         }
 
-                        _path = ObjectPool.Instance.GetHighlightPath("HighlightPathRed");
-                        _path.GetComponent<PathPiece>().AssignPiece(_piece);
-                        _position.x = _caller.transform.localPosition.x + i * BoardState.Offset * _lookupTable[j, 0];
-                        _position.z = _caller.transform.localPosition.z + i * BoardState.Offset * _lookupTable[j, 1];
-                        _position.y = _path.transform.localPosition.y;
+                        path = ObjectPool.Instance.GetHighlightPath("HighlightPathRed");
+                        path.GetComponent<PathPiece>().AssignPiece(piece);
+                        position.x = caller.transform.localPosition.x + i * BoardState.Offset * lookupTable[j, 0];
+                        position.z = caller.transform.localPosition.z + i * BoardState.Offset * lookupTable[j, 1];
+                        position.y = path.transform.localPosition.y;
 
-                        _path.transform.localPosition = _position;
+                        path.transform.localPosition = position;
                         break;
                     }
                     else
