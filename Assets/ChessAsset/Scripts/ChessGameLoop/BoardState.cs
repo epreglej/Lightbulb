@@ -22,7 +22,7 @@ namespace ChessMainLoop
         {
             _gridState = new Piece[_boardSize, _boardSize];
             InitializeGrid();
-
+            _promotedPieces = new Queue<Piece>();  
         }
 
         public void InitializeGrid()
