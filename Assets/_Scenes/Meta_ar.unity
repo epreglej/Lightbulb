@@ -27591,9 +27591,9 @@ MonoBehaviour:
   _chessPrefab: {fileID: 4976436487641180921, guid: fccbfaf34c45cb847b1b146d8c809427, type: 3}
   _logicChessPrefab: {fileID: 4976436487641180921, guid: a17b286fe60bff349a4cdc052efb29d1, type: 3}
   _synchronizationLocationPrefab: {fileID: 6595554126162911961, guid: a2b9a926cde9bbb43909e617c71da572, type: 3}
-  _roomType: 2
+  _roomType: 4
   _chessOffest: {x: -0.176, y: -0.0319427, z: -0.096}
-  _logicChessOffest: {x: -0.495, y: 0.862, z: -2.812}
+  _logicChessOffest: {x: 0.495, y: 0, z: 2.812}
 --- !u!4 &1417234827
 Transform:
   m_ObjectHideFlags: 0
@@ -37516,7 +37516,7 @@ MonoBehaviour:
   _anchorPrefab: {fileID: -5685593780201781808, guid: 75439a169a0114347ad3954eb9211113, type: 3}
   _placeCommand: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   _rightController: {fileID: 1076869685}
-  _roomType: 2
+  _roomType: 3
 --- !u!4 &1996439084
 Transform:
   m_ObjectHideFlags: 0

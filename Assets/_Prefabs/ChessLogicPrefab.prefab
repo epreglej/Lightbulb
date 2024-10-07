@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: b035f532-ab4b-4d10-b42c-db7fd91790bd
+  instanceId: 94b8cc14-a7ed-4051-a4b7-f24db51bab0f
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -79,6 +79,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 3446422206415536337}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &5078381507850055551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +281,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77755604374065054}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -746,7 +747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: e7943439-53cf-4758-a5e2-ecf17f813d15
+  instanceId: 6d7d8c0e-6c5b-4f14-9e68-1b5421d388f3
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -775,6 +776,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 7165000158634868496}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &2952337293029920855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,7 +981,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898919076243688640}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -1092,7 +1094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 60805c0c-1169-4e3a-9f2a-137e377d0074
+  instanceId: 52a8844f-8d96-4e8a-9385-3f9e3ef76759
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -1121,6 +1123,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1542159736266496177}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &4850246636704365195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1322,7 +1325,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237071645594612128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -1611,7 +1614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 197ad6b5-c344-4b9d-bacb-343302ad79da
+  instanceId: 4ab0a615-97d4-45bb-96cb-092b1d1f82fb
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -1640,6 +1643,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 5596755601631561826}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &110191713712083520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1778,7 +1782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 561dac7b-348a-456b-8087-96935ac40d2d
+  instanceId: 731b2583-4172-4263-92f8-4ec64b2c2d41
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -1807,6 +1811,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 4749849978041494675}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &1724703020388935960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2008,7 +2013,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401774763832568396}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -2298,7 +2303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: b6e15990-9cd7-4f7d-b259-2aad22afcfdd
+  instanceId: 7b3bad60-0897-4858-a51b-e7bd938f3120
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -2327,6 +2332,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1515377036308009247}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &7405695956569077293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2543,7 +2549,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491716618147559688}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -2656,7 +2662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 223d48da-9480-40c7-beac-fccb922ed2b0
+  instanceId: c0a2e054-9b15-41c5-8c95-7c9827bd52bb
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -2685,6 +2691,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 8639019482735204328}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &920727922319808888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3000,7 +3007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 9588d110-bab4-458e-aee3-c275a4fd9632
+  instanceId: 38b78a15-96be-486d-9db2-a70e1d33e602
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -3029,6 +3036,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 5367796043239647242}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &2065045449531312959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3874,7 +3882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: d0c42c4e-a3d6-454e-8fda-16286a010a8a
+  instanceId: ef763116-fb91-495a-8564-5ba9a9774cef
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -3903,6 +3911,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 566697676707395305}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &8111143153929756734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4169,7 +4178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: d376decc-44c0-4ab2-afa8-52e5d84d450e
+  instanceId: 406ecbd0-6d66-4184-9656-fe15c110111c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -4198,6 +4207,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 4924313010861077069}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &3230150080808832296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4336,7 +4346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 2bd7e24b-3c61-4506-9061-9edd6e32d759
+  instanceId: a633e95c-c956-4d62-9e24-1a9ab12c1448
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -4365,6 +4375,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1740810310938945376}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &312036320329844533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4855,7 +4866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: ca1b9ee0-ebd5-47ba-9707-bc6bf46e5912
+  instanceId: 10db307d-1ae7-4f5d-8dcc-cbf19ea9cfc6
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -4884,6 +4895,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 3316075946839875966}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &5838409952294172278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5022,7 +5034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 631ba06e-6e14-479b-a1a5-8aefbb8c274c
+  instanceId: a1b613f3-0dbb-4819-839c-46f7e3f30357
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -5051,6 +5063,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 3079749949750331831}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &3858240875074614212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5189,7 +5202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 41535142-55dc-4272-ae95-19dc7c6b12b6
+  instanceId: 313a721d-b7f3-4316-8ffe-215051fbe322
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -5218,6 +5231,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 4177394140085855622}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &6502652207927491464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5532,7 +5546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 1e373ccd-7366-43bd-8008-3928c33397d4
+  instanceId: 36ceccd2-57a8-485a-b1a2-7dc0a1d2d804
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -5561,6 +5575,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 3190854300449346183}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &6909979083047763441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5699,7 +5714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 805d8e15-c35b-4760-86dd-4865abe21567
+  instanceId: 9f83e5d8-ca44-4386-bdd3-69327472fe70
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -5728,6 +5743,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 8792438569985748545}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &6958097564124281424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5907,6 +5923,7 @@ MonoBehaviour:
   - {fileID: 6035228579322451808}
   - {fileID: 7394602448231174377}
   - {fileID: 4165868591740383667}
+  - {fileID: 2180136746687979272}
 --- !u!64 &4347960956093517099
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6620,7 +6637,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5089267824289321994}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -6861,7 +6878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 6f150a5b-9091-4605-a813-7814f5ac6edd
+  instanceId: ddaa883b-9348-4be4-b96e-f15ccd532001
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -6890,6 +6907,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 157037189973804067}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &7337402823403083720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7091,7 +7109,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5428991576396361598}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -7166,7 +7184,7 @@ GameObject:
   - component: {fileID: 8711338642429701758}
   - component: {fileID: 6621129651974414788}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: WinnerTetx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7375,7 +7393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 94f8aa66-cd2c-45c5-ab6f-15fd52542938
+  instanceId: a0b2d637-5c0f-4291-bd97-f3f2180e6cce
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -7404,6 +7422,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 549892202406106459}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &1412596245466467834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7782,7 +7801,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5920211810207812780}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -7958,7 +7977,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5925717524416229044}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -8071,7 +8090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: de61fb82-10ec-4bdd-8eee-3ca0aefe61d8
+  instanceId: a6e6ba08-499e-4842-ba32-bbe0e7854bde
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -8100,6 +8119,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1515072287374895265}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &8415553008747371017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8267,6 +8287,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1156263228835010946}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 0
 --- !u!114 &5050826031196724730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8405,7 +8426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 3e267cb1-388b-4af0-998b-c7345547ccfb
+  instanceId: 19ea4675-679a-4752-97bc-11472906d4b2
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -8434,6 +8455,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 2467053066844875608}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &2634144882757742897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8635,7 +8657,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6138377913773862166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -8748,7 +8770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 8f0c9bc2-c9d6-4812-bc1f-6b791ec271d3
+  instanceId: 838f6f1d-7888-438c-bbf4-831feb387818
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -8777,6 +8799,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1075289457915877069}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &6558095788358344976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8915,7 +8938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: f5aeb29c-d96d-4ee3-8b9d-97c654fae472
+  instanceId: 8d03d8e0-5be9-4747-8c66-48663fcb6a87
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -8944,6 +8967,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 3574896178410928611}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &7640214968886932469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9145,7 +9169,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6411365311657521453}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -9322,7 +9346,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6671627090413188528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -9674,7 +9698,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6928725197568923915}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -9787,7 +9811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: bd0156b2-c959-4771-87c5-584e94069f97
+  instanceId: d2be685c-8170-4e0b-94a9-581f8d7b439e
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -9816,6 +9840,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 8318869258501222329}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &5536543667072776772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9954,7 +9979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 15cb3fb1-28a2-48fb-8d00-283221e52c92
+  instanceId: 5c74dfae-9d7f-422d-94c4-5b124b7ee6df
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -9983,6 +10008,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 5052917338015075396}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &7844250370687833083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10121,7 +10147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: f41581a8-f400-4645-a130-d6bc82966510
+  instanceId: 8d57863c-d976-449f-b8e2-ab20532de052
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -10150,6 +10176,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 5952627571453134645}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &919003502356609706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10284,6 +10311,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _checkSound: {fileID: 3596867797016865256}
   _winnerText: {fileID: 6621129651974414788}
+  _blackInteractors:
+  - {fileID: 2827366593133712182}
+  - {fileID: 4806552471917041488}
+  - {fileID: 7616175313080294018}
+  - {fileID: 4796307394758922300}
+  - {fileID: 2808093352661869767}
+  - {fileID: 2071609677280870781}
+  - {fileID: 1552244469360345763}
+  - {fileID: 7476421238045144879}
+  - {fileID: 4035002426301403}
+  - {fileID: 5708154910898594520}
+  - {fileID: 9077072238163462774}
+  - {fileID: 1377275292465561198}
+  - {fileID: 1363183797621577026}
+  - {fileID: 6303786804721192405}
+  - {fileID: 8519071544578784899}
+  - {fileID: 1116102644155933895}
+  _whiteInteractors:
+  - {fileID: 4910272961171851283}
+  - {fileID: 8432434200831266048}
+  - {fileID: 2681712346019293873}
+  - {fileID: 8017686476694076999}
+  - {fileID: 8021977888809753059}
+  - {fileID: 9145843243264206790}
+  - {fileID: 4939917649775326468}
+  - {fileID: 8011952095760469100}
+  - {fileID: 6379817993476016075}
+  - {fileID: 5404650359711338788}
+  - {fileID: 1491376857974329049}
+  - {fileID: 7632252395640955494}
+  - {fileID: 4571385228419913280}
+  - {fileID: 6054626505638326145}
+  - {fileID: 5986603562918892074}
+  - {fileID: 793528154534863119}
 --- !u!1 &7768408840987691670
 GameObject:
   m_ObjectHideFlags: 0
@@ -10386,7 +10447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: a0370012-daf6-49d7-9388-6eb3c6676105
+  instanceId: 8fe36095-38f5-4c3d-847e-e63569f8ed96
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -10415,6 +10476,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 2883610052144452090}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &732175343080425475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10553,7 +10615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 810b1b5e-6feb-4ea5-85de-21e8e539b6b9
+  instanceId: 1c5d0023-06da-4c28-8a4c-a32851492c57
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -10582,6 +10644,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 8769626140108543573}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &951748873230874475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10720,7 +10783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 090efab7-e1b7-4ba1-99a2-b48b62ecf6f1
+  instanceId: 9fc26132-b4a6-47b2-9515-fdeb4630bfa0
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -10749,6 +10812,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 8667588234476218944}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &4980767825673172568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10887,7 +10951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: d936280a-5f2a-4a22-b51c-cdd08f973598
+  instanceId: 3ce8d2b9-b30e-4cf7-8b4b-8331b4ae78b2
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -10916,6 +10980,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 4677234617744632552}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &4334884965843190232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11054,7 +11119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 8135b273-0532-4414-951d-f5594059e622
+  instanceId: eacfc5a2-8993-496c-b25b-af120a34207c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -11083,6 +11148,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 2020897118559606782}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &101774835886637201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11284,7 +11350,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8823439503724198518}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -11636,7 +11702,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8928865622396960539}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -11749,7 +11815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: c5a6e2d4-29bf-4d4f-920f-99422882dbd5
+  instanceId: 65cf69cc-2e21-4626-9e41-10ffcf3e27df
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -11778,6 +11844,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1179116202513600991}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &7902659577298926091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11979,7 +12046,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9090747393200174089}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -12092,7 +12159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 3f1827c2-c682-46d8-999e-0954e37e833e
-  instanceId: 7af82d0e-7f0f-483a-9c33-78491c26f0c0
+  instanceId: 81b75429-fe76-43f3-9801-7cea27132125
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 20b9ad69-c205-488d-a6b2-d3d7ca6c1e53
@@ -12121,6 +12188,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 4771388984197194727}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 0
+  _movingEnabled: 0
 --- !u!114 &2427923832396867133
 MonoBehaviour:
   m_ObjectHideFlags: 0

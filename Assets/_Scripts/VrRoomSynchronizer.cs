@@ -11,8 +11,6 @@ namespace Digiphy
         [SerializeField] private Transform _player;
         [SerializeField] private Transform _playerAnchor;
         [SerializeField] private Transform _synchronizerExpectedLocation;
-        [SerializeField] private Transform _logicChessLocation;
-        [SerializeField] private GameObject _logicChessPrefab;
 
         public void SynchronizeRoomWithAr(NetworkRunner runner, Transform locationProvider)
         {
@@ -27,8 +25,6 @@ namespace Digiphy
             _player.Rotate(locationProvider.transform.rotation.eulerAngles);
 
             _labModel.parent = null;
-
-            runner.Spawn(_logicChessPrefab, _logicChessLocation.position, Quaternion.identity);
         }
     }
 }

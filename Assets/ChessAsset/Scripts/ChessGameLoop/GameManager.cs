@@ -1,4 +1,5 @@
 using Fusion;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -20,9 +21,11 @@ namespace ChessMainLoop
         private Pawn _passantable = null;
         public Pawn Passantable { get => _passantable; set => _passantable = value; }
         private Pawn _promotingPawn = null;
-        [SerializeField]
-        private AudioSource _checkSound;
+        [SerializeField] private AudioSource _checkSound;
         [SerializeField] private TextMeshPro _winnerText;
+        [SerializeField] private List<GameObject> _blackInteractors;
+        [SerializeField] private List<GameObject> _whiteInteractors;
+
         private bool _isPieceMoving = false;
         public bool IsPieceMoving { get => _isPieceMoving; set => _isPieceMoving = value; }
 
@@ -48,10 +51,18 @@ namespace ChessMainLoop
             if (Runner.IsSharedModeMasterClient)
             {
                 _localPlayer = SideColor.White;
+                foreach(GameObject interactor in _blackInteractors)
+                {
+                    interactor.SetActive(false);
+                }
             }
             else
             {
                 _localPlayer = SideColor.Black;
+                foreach (GameObject interactor in _whiteInteractors)
+                {
+                    interactor.SetActive(false);
+                }
             }
         }
 
