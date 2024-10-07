@@ -126,6 +126,7 @@ namespace ChessMainLoop
             _gridState[promotingPawn.Location.Row, promotingPawn.Location.Column] = piece;
             piece.PiecePromoted(promotingPawn);
             promotingPawn.gameObject.SetActive(false);
+            piece.HasMoved = true;
         }
     }
 }

@@ -159,81 +159,81 @@ namespace ChessMainLoop
             _pawnPromotionMenu.SetActive(true);
         }
 
-        public void SelectedQueen()
-        {
-            if (GameManager.Instance.IsPieceMoving == true)
-            {
-                return;
-            }
+        //public void SelectedQueen()
+        //{
+        //    if (GameManager.Instance.IsPieceMoving == true)
+        //    {
+        //        return;
+        //    }
 
-            if (_pawnColor == SideColor.Black)
-            {
-                GameManager.Instance.SelectedPromotion(Instantiate(_blackQueen), -2);
-            }
-            else
-            {
-                GameManager.Instance.SelectedPromotion(Instantiate(_whiteQueen), -3);
-            }
-            _pawnColor = SideColor.None;
-            _pawnPromotionMenu.SetActive(false);
-        }
+        //    if (_pawnColor == SideColor.Black)
+        //    {
+        //        GameManager.Instance.SelectedPromotion(Instantiate(_blackQueen), -2);
+        //    }
+        //    else
+        //    {
+        //        GameManager.Instance.SelectedPromotion(Instantiate(_whiteQueen), -3);
+        //    }
+        //    _pawnColor = SideColor.None;
+        //    _pawnPromotionMenu.SetActive(false);
+        //}
 
-        public void SelectedRook()
-        {
-            if (GameManager.Instance.IsPieceMoving == true)
-            {
-                return;
-            }
+        //public void SelectedRook()
+        //{
+        //    if (GameManager.Instance.IsPieceMoving == true)
+        //    {
+        //        return;
+        //    }
 
-            if (_pawnColor == SideColor.Black)
-            {
-                GameManager.Instance.SelectedPromotion(Instantiate(_blackRook), -4);
-            }
-            else
-            {
-                GameManager.Instance.SelectedPromotion(Instantiate(_whiteRook), -5);
-            }
-            _pawnColor = SideColor.None;
-            _pawnPromotionMenu.SetActive(false);
-        }
+        //    if (_pawnColor == SideColor.Black)
+        //    {
+        //        GameManager.Instance.SelectedPromotion(Instantiate(_blackRook), -4);
+        //    }
+        //    else
+        //    {
+        //        GameManager.Instance.SelectedPromotion(Instantiate(_whiteRook), -5);
+        //    }
+        //    _pawnColor = SideColor.None;
+        //    _pawnPromotionMenu.SetActive(false);
+        //}
 
-        public void SelectedBishop()
-        {
-            if (GameManager.Instance.IsPieceMoving == true)
-            {
-                return;
-            }
+        //public void SelectedBishop()
+        //{
+        //    if (GameManager.Instance.IsPieceMoving == true)
+        //    {
+        //        return;
+        //    }
 
-            if (_pawnColor == SideColor.Black)
-            {
-                GameManager.Instance.SelectedPromotion(Instantiate(_blackBishop), -6);
-            }
-            else
-            {
-                GameManager.Instance.SelectedPromotion(Instantiate(_whiteBishop), -7);
-            }
-            _pawnColor = SideColor.None;
-            _pawnPromotionMenu.SetActive(false);
-        }
+        //    if (_pawnColor == SideColor.Black)
+        //    {
+        //        GameManager.Instance.SelectedPromotion(Instantiate(_blackBishop), -6);
+        //    }
+        //    else
+        //    {
+        //        GameManager.Instance.SelectedPromotion(Instantiate(_whiteBishop), -7);
+        //    }
+        //    _pawnColor = SideColor.None;
+        //    _pawnPromotionMenu.SetActive(false);
+        //}
 
-        public void SelectedKnight()
-        {
-            if (GameManager.Instance.IsPieceMoving == true)
-            {
-                return;
-            }
+        //public void SelectedKnight()
+        //{
+        //    if (GameManager.Instance.IsPieceMoving == true)
+        //    {
+        //        return;
+        //    }
 
-            if (_pawnColor == SideColor.Black)
-            {
-                GameManager.Instance.SelectedPromotion(Instantiate(_blackKnight), -8);
-            }
-            else
-            {
-                GameManager.Instance.SelectedPromotion(Instantiate(_whiteKnight), -9);
-            }
-            _pawnColor = SideColor.None;
-            _pawnPromotionMenu.SetActive(false);
-        }
+        //    if (_pawnColor == SideColor.Black)
+        //    {
+        //        GameManager.Instance.SelectedPromotion(Instantiate(_blackKnight), -8);
+        //    }
+        //    else
+        //    {
+        //        GameManager.Instance.SelectedPromotion(Instantiate(_whiteKnight), -9);
+        //    }
+        //    _pawnColor = SideColor.None;
+        //    _pawnPromotionMenu.SetActive(false);
+        //}
 
         public void SaveGame()
         {

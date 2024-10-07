@@ -111,7 +111,7 @@ namespace ChessMainLoop
             }
 
             _activePiece = null;
-            GameManager.Instance.IsPieceMoving = false;
+            if(!GameManager.Instance.IsPromotingPawn) GameManager.Instance.IsPieceMoving = false;
             GameManager.Instance.ChangeTurn();
         }
 
@@ -137,8 +137,6 @@ namespace ChessMainLoop
             targetPositionRook.x = callerRow * BoardState.Offset;
             targetPositionRook.y = 0;
             targetPositionRook.z = rookNewColumn * BoardState.Offset;
-
-
 
             king.Move(callerRow, columnMedian);
             AnimationManager.Instance.MovePiece(king, targetPositionKing, null);

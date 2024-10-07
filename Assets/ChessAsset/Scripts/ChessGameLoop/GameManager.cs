@@ -21,6 +21,8 @@ namespace ChessMainLoop
         private Pawn _passantable = null;
         public Pawn Passantable { get => _passantable; set => _passantable = value; }
         private Pawn _promotingPawn = null;
+        public bool IsPromotingPawn => _promotingPawn != null;
+        public (int Row, int Column) PromotingPawnLocation => _promotingPawn.Location;
         [SerializeField] private AudioSource _checkSound;
         [SerializeField] private TextMeshPro _winnerText;
         [SerializeField] private List<GameObject> _blackInteractors;
@@ -122,18 +124,23 @@ namespace ChessMainLoop
         public void PawnPromoting(Pawn _pawn)
         {
             _promotingPawn = _pawn;
-            UIManagerGameLoop.Instance.PawnPromotionMenu(_pawn.PieceColor);
+            PromotionController.Instance.PawnPromotionMenu(_pawn.PieceColor);
         }
 
         /// <summary>
         /// Replaces pawn that is getting promoted with selected piece, then checks for checkmate.
         /// </summary>
-        public void SelectedPromotion(Piece _piece, int _pieceIndex)
+        public void SelectedPromotion(Piece _piece, int _pieceIndex, (int Row, int Column) pawnLocation)
         {
-            _piece.transform.parent = _promotingPawn.transform.parent;            
-            _piece.transform.localScale = _promotingPawn.transform.localScale;
-            BoardState.Instance.PromotePawn(_promotingPawn, _piece, _pieceIndex);
+            Pawn pawn = (Pawn)BoardState.Instance.GetField(pawnLocation.Row, pawnLocation.Column);
 
+            _piece.transform.parent = pawn.transform.parent;            
+            _piece.transform.localScale = pawn.transform.localScale;
+            _piece.HasMoved = true;
+            BoardState.Instance.PromotePawn(pawn, _piece, _pieceIndex);
+
+            pawn = null;
+            _isPieceMoving = false;
             SideColor _winner = BoardState.Instance.CheckIfGameOver();
             if (_winner != SideColor.None)
             {
@@ -148,8 +155,6 @@ namespace ChessMainLoop
 
                 GameEnd(_winner);
             }
-
-            _promotingPawn = null;
         }
     }
 }
