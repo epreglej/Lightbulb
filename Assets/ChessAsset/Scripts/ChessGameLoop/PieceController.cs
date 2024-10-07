@@ -92,24 +92,26 @@ namespace ChessMainLoop
         /// </summary>
         private IEnumerator PieceRegularMover(int oldRow, int oldColumn, int newRow, int newColumn, int enemyRow, int enemyColumn)
         {
-            Vector3 _targetPosition = new Vector3();
+            Vector3 targetPosition = new Vector3();
 
-            SideColor _checked = BoardState.Instance.SimulateCheckState(oldRow, oldColumn, newRow, newColumn);
-            GameManager.Instance.CheckedSide = _checked;
+            SideColor checkSide = BoardState.Instance.SimulateCheckState(oldRow, oldColumn, newRow, newColumn);
+            GameManager.Instance.CheckedSide = checkSide;
+
 
             Piece movingPiece = BoardState.Instance.GetField(oldRow, oldColumn); 
-            movingPiece.Move(newRow, newColumn);
-
-            _targetPosition.x = newRow * BoardState.Offset;
-            _targetPosition.y = movingPiece.transform.localPosition.y;
-            _targetPosition.z = newColumn * BoardState.Offset;
+            targetPosition.x = newRow * BoardState.Offset;
+            targetPosition.y = movingPiece.transform.localPosition.y;
+            targetPosition.z = newColumn * BoardState.Offset;
             Piece enemy = null;
             if(BoardState.Instance.IsInBorders(enemyRow, enemyColumn)) enemy = BoardState.Instance.GetField(enemyRow, enemyColumn);
-            AnimationManager.Instance.MovePiece(movingPiece, _targetPosition, enemy);            
+
+            movingPiece.Move(newRow, newColumn);
+            AnimationManager.Instance.MovePiece(movingPiece, targetPosition, enemy);            
             while (AnimationManager.Instance.IsActive == true)
             {
                 yield return null;
             }
+
             _activePiece = null;
             GameManager.Instance.IsPieceMoving = false;
             GameManager.Instance.ChangeTurn();
