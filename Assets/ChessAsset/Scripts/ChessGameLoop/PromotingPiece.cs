@@ -18,6 +18,7 @@ namespace ChessMainLoop
         private void Start()
         {
             _grabbable.WhenPointerEventRaised += ProcessPointerEvent;
+            _startColor = _renderer.material.color;
         }
 
         private void OnMouseEnter() => PieceHowered();
