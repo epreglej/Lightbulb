@@ -120,9 +120,14 @@ namespace ChessMainLoop
             Vector3 targetPositionKing = new Vector3();
             Vector3 targetPositionRook = new Vector3();
 
+            Piece firstPiece = BoardState.Instance.GetField(callerRow, callerColumn);
+            Piece secondPiece = BoardState.Instance.GetField(castleRow, castleColumn);
+            Piece king = firstPiece is King ? firstPiece : secondPiece;
+            Piece rook = firstPiece is Rook ? firstPiece : secondPiece;
+
             //If target is a castling position performs special castling action. Position calculations are done differently if the target is a King or a Rook          
-            int columnMedian = (int)Mathf.Ceil((callerColumn + castleColumn) / 2f);
-            int rookNewColumn = columnMedian > callerColumn ? columnMedian - 1 : columnMedian + 1;
+            int columnMedian = (int)Mathf.Ceil((king.Location.Column + rook.Location.Column) / 2f);
+            int rookNewColumn = columnMedian > king.Location.Column ? columnMedian - 1 : columnMedian + 1;
             SideColor checkedSide;
 
             targetPositionKing.x = callerRow * BoardState.Offset;
@@ -133,11 +138,7 @@ namespace ChessMainLoop
             targetPositionRook.y = 0;
             targetPositionRook.z = rookNewColumn * BoardState.Offset;
 
-            Piece firstPiece = BoardState.Instance.GetField(callerRow, callerColumn);
-            Piece secondPiece = BoardState.Instance.GetField(castleRow, castleColumn);
 
-            Piece king = firstPiece is King ? firstPiece : secondPiece;
-            Piece rook = firstPiece is Rook ? firstPiece : secondPiece;
 
             king.Move(callerRow, columnMedian);
             AnimationManager.Instance.MovePiece(king, targetPositionKing, null);
