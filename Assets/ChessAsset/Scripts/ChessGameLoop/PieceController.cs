@@ -111,7 +111,7 @@ namespace ChessMainLoop
             }
 
             _activePiece = null;
-            if(!GameManager.Instance.IsPromotingPawn) GameManager.Instance.IsPieceMoving = false;
+            GameManager.Instance.IsPieceMoving = false;
             GameManager.Instance.ChangeTurn();
         }
 

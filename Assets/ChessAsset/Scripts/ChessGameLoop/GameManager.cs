@@ -137,10 +137,9 @@ namespace ChessMainLoop
             _piece.transform.parent = pawn.transform.parent;            
             _piece.transform.localScale = pawn.transform.localScale;
             _piece.HasMoved = true;
+            _promotingPawn = null;
             BoardState.Instance.PromotePawn(pawn, _piece, _pieceIndex);
 
-            pawn = null;
-            _isPieceMoving = false;
             SideColor _winner = BoardState.Instance.CheckIfGameOver();
             if (_winner != SideColor.None)
             {

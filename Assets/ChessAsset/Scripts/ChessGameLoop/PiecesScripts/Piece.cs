@@ -97,7 +97,8 @@ namespace ChessMainLoop
         //If its turn players piece sets it as selected and sets path pieces for it. If the piece is target of enemy or castle calls select method of path object this piece is assing to.
         public void PieceSelected()
         {
-            if (_isActive == false && GameManager.Instance.TurnPlayer == _pieceColor && _assignedAsCastle == false && GameManager.Instance.IsPieceMoving == false && GameManager.Instance.IsPlayerTurn) 
+            if (_isActive == false && GameManager.Instance.TurnPlayer == _pieceColor && _assignedAsCastle == false 
+                && GameManager.Instance.IsPieceMoving == false && GameManager.Instance.IsPromotingPawn == false && GameManager.Instance.IsPlayerTurn) 
             {
                 _isActive = true;
                 Selected?.Invoke(this);
