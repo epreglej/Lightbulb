@@ -50,6 +50,7 @@ namespace ChessMainLoop
                     int newRow = startRow + i * lookupTable[j, 0];
                     int newColumn = startColumn + i * lookupTable[j, 1];
                     if(!CreatePath(caller, startRow, startColumn, newRow, newColumn)) break;
+                    if (BoardState.Instance.GetField(newRow, newColumn) != null) break;
                 }
             }
         }

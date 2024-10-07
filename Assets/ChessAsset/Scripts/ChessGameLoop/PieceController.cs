@@ -61,9 +61,7 @@ namespace ChessMainLoop
 
             if (_assignedCastle)
             {
-                int castleRow = _assignedCastle.Location.Row;
-                int castleColumn = _assignedCastle.Location.Column;
-                RPC_CastleMove(oldRow, oldColumn, newRow, newColumn, castleRow, castleColumn);
+                RPC_CastleMove(oldRow, oldColumn, newRow, newColumn);
             }
             else
             {
@@ -82,9 +80,9 @@ namespace ChessMainLoop
         }
 
         [Rpc(sources: RpcSources.All, targets: RpcTargets.All, HostMode = RpcHostMode.SourceIsServer)]
-        public void RPC_CastleMove(int oldRow, int oldColumn, int newRow, int newColumn, int castleRow, int castleColumn)
+        public void RPC_CastleMove(int oldRow, int oldColumn, int castleRow, int castleColumn)
         {
-            StartCoroutine(PieceCastleMover(oldRow, oldColumn, newRow, newColumn, castleRow, castleColumn));
+            StartCoroutine(PieceCastleMover(oldRow, oldColumn, castleRow, castleColumn));
         }
 
         /// <summary>
@@ -117,40 +115,40 @@ namespace ChessMainLoop
             GameManager.Instance.ChangeTurn();
         }
 
-        private IEnumerator PieceCastleMover(int oldRow, int oldColumn, int newRow, int newColumn, int castleRow, int castleColumn)
+        private IEnumerator PieceCastleMover(int callerRow, int callerColumn, int castleRow, int castleColumn)
         {
             Vector3 targetPositionKing = new Vector3();
             Vector3 targetPositionRook = new Vector3();
 
             //If target is a castling position performs special castling action. Position calculations are done differently if the target is a King or a Rook          
-            int columnMedian = (int)Mathf.Ceil((oldColumn + newColumn) / 2f);
-            int rookNewColumn = columnMedian > oldColumn ? columnMedian - 1 : columnMedian + 1;
+            int columnMedian = (int)Mathf.Ceil((callerColumn + castleColumn) / 2f);
+            int rookNewColumn = columnMedian > callerColumn ? columnMedian - 1 : columnMedian + 1;
             SideColor checkedSide;
 
-            targetPositionKing.x = newRow * BoardState.Offset;
+            targetPositionKing.x = callerRow * BoardState.Offset;
             targetPositionKing.y = 0;
             targetPositionKing.z = columnMedian * BoardState.Offset;
 
-            targetPositionRook.x = newRow * BoardState.Offset;
+            targetPositionRook.x = callerRow * BoardState.Offset;
             targetPositionRook.y = 0;
             targetPositionRook.z = rookNewColumn * BoardState.Offset;
 
-            Piece firstPiece = BoardState.Instance.GetField(oldRow, oldColumn);
+            Piece firstPiece = BoardState.Instance.GetField(callerRow, callerColumn);
             Piece secondPiece = BoardState.Instance.GetField(castleRow, castleColumn);
 
             Piece king = firstPiece is King ? firstPiece : secondPiece;
             Piece rook = firstPiece is Rook ? firstPiece : secondPiece;
 
-            king.Move(newRow, columnMedian);
+            king.Move(callerRow, columnMedian);
             AnimationManager.Instance.MovePiece(king, targetPositionKing, null);
             while (AnimationManager.Instance.IsActive == true)
             {
                 yield return null;
             }
 
-            checkedSide = BoardState.Instance.SimulateCheckState(oldRow, rook.Location.Column, newRow, rookNewColumn);
+            checkedSide = BoardState.Instance.SimulateCheckState(callerRow, rook.Location.Column, callerRow, rookNewColumn);
 
-            rook.Move(newRow, rookNewColumn);
+            rook.Move(callerRow, rookNewColumn);
             AnimationManager.Instance.MovePiece(rook, targetPositionRook, null);
             while (AnimationManager.Instance.IsActive == true)
             {
