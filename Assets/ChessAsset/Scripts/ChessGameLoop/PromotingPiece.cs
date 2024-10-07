@@ -20,6 +20,12 @@ namespace ChessMainLoop
             _grabbable.WhenPointerEventRaised += ProcessPointerEvent;
         }
 
+        private void OnMouseEnter() => PieceHowered();
+
+        private void OnMouseExit() => HoverEnd();
+
+        private void OnMouseDown() => PieceSelected();
+
         public void ProcessPointerEvent(PointerEvent evt)
         {
             switch (evt.Type)
