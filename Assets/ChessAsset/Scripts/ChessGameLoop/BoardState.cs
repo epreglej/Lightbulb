@@ -68,7 +68,11 @@ namespace ChessMainLoop
         /// <summary>
         /// Checks if cooridantes are inside board borders
         /// </summary>
-        public bool IsInBorders(int row, int column) => (row >= 0 && row < _boardSize && column >= 0 && column < _boardSize);
+        public bool IsInBorders(int row, int column)
+        {
+            bool check = (row >= 0 && row < _boardSize && column >= 0 && column < _boardSize);
+            return check;
+        }
 
         /// <summary>
         /// Mocks the translation of the piece to the target position and check if it would result in check.

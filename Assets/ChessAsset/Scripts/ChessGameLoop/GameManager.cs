@@ -1,10 +1,12 @@
+using Fusion;
+using TMPro;
 using UnityEngine;
 
 namespace ChessMainLoop
 {
     public delegate void PieceMoved();
 
-    public class GameManager : MonoBehaviour
+    public class GameManager : NetworkBehaviour
     {
         private int _turnCount = 0;
         public int TurnCount { get => _turnCount; }
@@ -19,9 +21,8 @@ namespace ChessMainLoop
         public Pawn Passantable { get => _passantable; set => _passantable = value; }
         private Pawn _promotingPawn = null;
         [SerializeField]
-        private CameraControl _camera;
-        [SerializeField]
         private AudioSource _checkSound;
+        [SerializeField] private TextMeshPro _winnerText;
         private bool _isPieceMoving = false;
         public bool IsPieceMoving { get => _isPieceMoving; set => _isPieceMoving = value; }
 
@@ -39,31 +40,20 @@ namespace ChessMainLoop
                 _instance = this;
             }
         }
-        private void Start()
+
+        public override void Spawned()
         {
             _checkedSide = SideColor.None;
-            //if (PhotonNetwork.IsMasterClient)
-            //{
-            //    _turnPlayer = SideColor.White;
-            //    _localPlayer = SideColor.White;
-            //}
-            //else
-            //{
-            //    _localPlayer = SideColor.Black;
-            //}
+            _turnPlayer = SideColor.White;
+            if (Runner.IsSharedModeMasterClient)
+            {
+                _localPlayer = SideColor.White;
+            }
+            else
+            {
+                _localPlayer = SideColor.Black;
+            }
         }
-
-        //public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        //{
-        //    if (stream.IsWriting)
-        //    {
-        //        stream.SendNext(_turnPlayer);
-        //    }
-        //    else
-        //    {
-        //        _turnPlayer = (SideColor)stream.ReceiveNext();
-        //    }
-        //}
 
         /// <summary>
         /// Returns color of checked player and if there is a check plays check sound.
@@ -99,8 +89,8 @@ namespace ChessMainLoop
 
         public void GameEnd(SideColor _winner)
         {
-            UIManagerGameLoop.Instance.GameOver(_winner);
-            _camera.enabled = false;
+            _winnerText.gameObject.SetActive(true);
+            _winnerText.text = $"{_winner.ToString()} is the winner!!!";
             _turnPlayer = SideColor.None;
         }
 
@@ -111,7 +101,6 @@ namespace ChessMainLoop
         {
             ObjectPool.Instance.ResetPieces();
             BoardState.Instance.ResetPieces();
-            _camera.enabled = true;
             MoveTracker.Instance.ResetMoves();
             _turnCount = 0;
             _turnPlayer = SideColor.White;
@@ -123,7 +112,6 @@ namespace ChessMainLoop
         {
             _promotingPawn = _pawn;
             UIManagerGameLoop.Instance.PawnPromotionMenu(_pawn.PieceColor);
-            _camera.enabled = false;
         }
 
         /// <summary>
@@ -131,7 +119,6 @@ namespace ChessMainLoop
         /// </summary>
         public void SelectedPromotion(Piece _piece, int _pieceIndex)
         {
-            _camera.enabled = true;
             _piece.transform.parent = _promotingPawn.transform.parent;            
             _piece.transform.localScale = _promotingPawn.transform.localScale;
             BoardState.Instance.PromotePawn(_promotingPawn, _piece, _pieceIndex);

@@ -1,4 +1,5 @@
 using Digiphy;
+using Fusion;
 using System.Collections;
 using UnityEngine;
 
@@ -37,22 +38,22 @@ namespace ChessMainLoop
                 _path.AssignedCastle.AssignedAsCastle = null;
             }        
             PieceMoved?.Invoke();
-            if (_assignedCastle) StartCoroutine(PieceRegularMover(_path, _assignedEnemy, _assignedCastle));
-            else StartCoroutine(PieceCastleMover(_path, _assignedEnemy, _assignedCastle));
+            if (_assignedCastle) StartCoroutine(PieceCastleMover(_path, _assignedEnemy, _assignedCastle));
+            else StartCoroutine(PieceRegularMover(_path, _assignedEnemy));
             _activePiece.IsActive = false;
         }
 
         /// <summary>
         /// Moves the selected piece to target path position. Has special cases for castling.
         /// </summary>
-        private IEnumerator PieceRegularMover(PathPiece _path, Piece _assignedEnemy, Piece _assignedCastle)
+        private IEnumerator PieceRegularMover(PathPiece _path, Piece _assignedEnemy)
         {
             int oldRow = _activePiece.Location.Row;
             int oldColumn = _activePiece.Location.Column;
             int newRow = _path.Location.Row;
             int newColumn = _path.Location.Column;
 
-            Vector3 _targetPosition=new Vector3();
+            Vector3 _targetPosition = new Vector3();
 
             SideColor _checked = BoardState.Instance.SimulateCheckState(oldRow, oldColumn, newRow, newColumn);
             GameManager.Instance.CheckedSide = _checked;
@@ -62,7 +63,7 @@ namespace ChessMainLoop
             _targetPosition.x = newRow * BoardState.Offset;
             _targetPosition.y = _activePiece.transform.localPosition.y;
             _targetPosition.z = newColumn * BoardState.Offset;
-            AnimationManager.Instance.MovePiece(_activePiece, _targetPosition, _assignedEnemy);
+            AnimationManager.Instance.MovePiece(_activePiece, _targetPosition, _assignedEnemy);            
             while (AnimationManager.Instance.IsActive == true)
             {
                 yield return null;

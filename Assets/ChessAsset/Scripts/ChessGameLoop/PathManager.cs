@@ -126,11 +126,12 @@ namespace ChessMainLoop
             int columnTarget = target.Location.Column;
 
             //Check to see if there are any pieces between rook and king
-            do
+            columnCaller += columnTarget > columnCaller ? 1 : -1;
+            while (columnCaller != columnTarget) 
             {
-                columnCaller += columnTarget > columnCaller ? 1 : -1;
                 if (BoardState.Instance.GetField(rowCaller, columnCaller) != null) return;
-            } while (columnCaller != columnTarget);
+                columnCaller += columnTarget > columnCaller ? 1 : -1;
+            }
 
             columnCaller = caller.Location.Column;
             int columnMedian = (int)Mathf.Ceil((columnCaller + columnTarget) / 2f);

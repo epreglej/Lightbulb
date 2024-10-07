@@ -8,7 +8,7 @@ namespace Digiphy
         {
             if (VrRoomSynchronizer.Instance == null) return;
 
-            VrRoomSynchronizer.Instance.SynchronizeRoomWithAr(transform);
+            VrRoomSynchronizer.Instance.SynchronizeRoomWithAr(Runner, transform);
         }
     }
 }

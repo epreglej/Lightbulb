@@ -16,9 +16,11 @@ namespace Digiphy
         }
 
         [SerializeField] private GameObject _chessPrefab;
+        [SerializeField] private GameObject _logicChessPrefab;
         [SerializeField] private GameObject _synchronizationLocationPrefab;
         [SerializeField] private RoomType _roomType;
         [SerializeField] private Vector3 _chessOffest;
+        [SerializeField] private Vector3 _logicChessOffest;
         private NetworkRunner _runner;
 
         public void PlayerJoined(NetworkRunner runner, PlayerRef player)
@@ -63,6 +65,7 @@ namespace Digiphy
                 new Vector3(0, oldRotation.y + 90, 0));
             NetworkObject synchronizationLocation = _runner.Spawn(_synchronizationLocationPrefab, pose.position + _chessOffest, pose.rotation);
             NetworkObject chess = _runner.Spawn(_chessPrefab, pose.position + _chessOffest, pose.rotation);
+            NetworkObject logicChess = _runner.Spawn(_logicChessPrefab, pose.position + _chessOffest + _logicChessOffest, pose.rotation);
         }
     }
 }

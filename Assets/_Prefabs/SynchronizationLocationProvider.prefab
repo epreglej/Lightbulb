@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7750322050299755290}
   - component: {fileID: 3872982422854783752}
   m_Layer: 0
-  m_Name: SyncroniztionLocationProvider
+  m_Name: SynchronizationLocationProvider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,3 +1,5 @@
+using Fusion;
+using Fusion.Addons.ConnectionManagerAddon;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,21 +10,25 @@ namespace Digiphy
         [SerializeField] private Transform _labModel;
         [SerializeField] private Transform _player;
         [SerializeField] private Transform _playerAnchor;
-        [SerializeField] private Transform _chessExpectedLocation;
+        [SerializeField] private Transform _synchronizerExpectedLocation;
+        [SerializeField] private Transform _logicChessLocation;
+        [SerializeField] private GameObject _logicChessPrefab;
 
-        public void SynchronizeRoomWithAr(Transform locationProvider)
+        public void SynchronizeRoomWithAr(NetworkRunner runner, Transform locationProvider)
         {
             //Vector3 displacement = chess.position - _chessExpectedLocation.position;
 
-            _labModel.parent = _chessExpectedLocation;
+            _labModel.parent = _synchronizerExpectedLocation;
 
-            _chessExpectedLocation.transform.rotation = locationProvider.rotation;
+            _synchronizerExpectedLocation.transform.rotation = locationProvider.rotation;
             //_chessExpectedLocation.transform.Rotate(0, 180, 0);
-            _chessExpectedLocation.transform.position = locationProvider.position;
+            _synchronizerExpectedLocation.transform.position = locationProvider.position;
             _player.position = new Vector3(_playerAnchor.position.x, _player.position.y, _playerAnchor.position.z);
             _player.Rotate(locationProvider.transform.rotation.eulerAngles);
 
             _labModel.parent = null;
+
+            runner.Spawn(_logicChessPrefab, _logicChessLocation.position, Quaternion.identity);
         }
     }
 }

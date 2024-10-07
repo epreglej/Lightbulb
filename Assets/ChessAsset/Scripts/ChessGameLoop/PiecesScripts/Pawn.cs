@@ -13,11 +13,11 @@ namespace ChessMainLoop
             CreateAttackSpace(direction, -1);
 
             //Following two sections check left and right of the pawn for enemy pawns, and if they are passantable creates attack field behind them
-            CreatePassantSpace(1);
-            CreatePassantSpace(-1);
+            CreatePassantSpace(direction, 1);
+            CreatePassantSpace(direction, -1);
 
             //Following sections check if path forward in the direction pawn is facing is empty for one and two spaces, and if they are creates walk path them.
-            if (BoardState.Instance.IsInBorders(_row + direction, _column)) return;
+            if (!BoardState.Instance.IsInBorders(_row + direction, _column)) return;
             Piece piece = BoardState.Instance.GetField(_row + direction, _column);
             if (piece != null) return;
 
@@ -40,13 +40,13 @@ namespace ChessMainLoop
             }
         }
 
-        private void CreatePassantSpace(int columnDirection)
+        private void CreatePassantSpace(int rowDirection, int columnDirection)
         {
             if (!BoardState.Instance.IsInBorders(_row, _column + columnDirection) == true) return;
             Piece piece = BoardState.Instance.GetField(_row, _column + columnDirection);
             if (piece != null && piece.PieceColor != PieceColor && piece == GameManager.Instance.Passantable)
             {
-                PathManager.CreatePathInSpotDirection(this, 0, columnDirection);
+                PathManager.CreatePassantSpot(piece, _row + rowDirection, _column + columnDirection);
             }
         }
 
@@ -55,9 +55,11 @@ namespace ChessMainLoop
         /// </summary>
         public override void Move(int newRow, int newColumn)
         {
+            int oldRow = _row;
+
             base.Move(newRow, newColumn);
 
-            if (Mathf.Abs(_row - newRow) == 2)
+            if (Mathf.Abs(oldRow - newRow) == 2)
             {
                 GameManager.Instance.Passantable = this;
             }

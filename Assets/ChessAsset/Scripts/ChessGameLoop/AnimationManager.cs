@@ -20,11 +20,10 @@ namespace ChessMainLoop
         private RuntimeAnimatorController _blackBishopAnimator;
         #endregion
 
-        [SerializeField]
-        private float _moveSpeed = 20f;
-        [SerializeField]
-        private AudioSource _moveSound;
+        [SerializeField] private float _moveSpeed = 20f;
+        [SerializeField] private AudioSource _moveSound;
         private bool _isActive = false;
+
         public bool IsActive { get => _isActive; }
 
         private static AnimationManager _instance;
@@ -89,37 +88,51 @@ namespace ChessMainLoop
         /// </summary>
         private IEnumerator MoveAnimation(Piece piece, Vector3 target, Piece killTarget)
         {
-            //Performs animation to raise the piece and tilt it
-            piece.Animator.SetInteger("State", 1);
-            while (piece.Animator.GetCurrentAnimatorStateInfo(0).IsName("Travel") == false)
+            Vector3 upLocation = new Vector3(piece.transform.localPosition.x, piece.transform.localPosition.y + 3, piece.transform.localPosition.z);
+            Vector3 upRotation = piece.transform.eulerAngles;
+
+            int rotation = 45;
+            if (piece.PieceColor == SideColor.White) rotation *= -1;
+            if(piece is Bishop) rotation *= -1;
+            if (piece is King || piece is Knight) upRotation.x = rotation;
+            else upRotation.z = rotation;
+
+            Quaternion upQuaternion = Quaternion.Euler(upRotation);
+            while (piece.transform.localPosition != upLocation || piece.transform.rotation != upQuaternion)
             {
-                yield return new WaitForSeconds(0.001f);
+                piece.transform.localPosition = Vector3.MoveTowards(piece.transform.localPosition, upLocation, _moveSpeed * Time.deltaTime);
+                piece.transform.rotation = Quaternion.RotateTowards(piece.transform.rotation, upQuaternion, 15 * _moveSpeed * Time.deltaTime);
+                yield return null;
             }
 
             //performs translation to target position
             target.y = piece.transform.localPosition.y;
             while (piece.transform.localPosition != target)
             {
-                piece.transform.localPosition = Vector3.MoveTowards(piece.transform.localPosition, target, _moveSpeed * (Time.deltaTime));
-                yield return new WaitForSeconds(0.001f);
+                piece.transform.localPosition = Vector3.MoveTowards(piece.transform.localPosition, target, _moveSpeed * Time.deltaTime);
+                yield return null;
             }
 
             _moveSound.Play();
 
             //Perfoms root motion animation that puts piece back down
-            piece.Animator.SetInteger("State", 2);
             if (killTarget != null)
             {
                 killTarget.Die();
             }
 
-            while (piece.Animator.GetCurrentAnimatorStateInfo(0).IsName("StartState") == false)
+            Vector3 downLocation = new Vector3(piece.transform.localPosition.x, piece.transform.localPosition.y - 3, piece.transform.localPosition.z);
+            Vector3 downRotation = piece.transform.eulerAngles;
+            downRotation.x = 0f;
+            downRotation.z = 0f;
+            Quaternion downQuaternion = Quaternion.Euler(downRotation);
+            while (piece.transform.localPosition != downLocation || piece.transform.rotation != downQuaternion)
             {
-                yield return new WaitForSeconds(0.001f);
+                piece.transform.localPosition = Vector3.MoveTowards(piece.transform.localPosition, downLocation, _moveSpeed * Time.deltaTime);
+                piece.transform.rotation = Quaternion.RotateTowards(piece.transform.rotation, downQuaternion, 15 * _moveSpeed * Time.deltaTime);
+                yield return null;
             }
 
-            target.y = piece.transform.localPosition.y;
-            piece.transform.localPosition = target;
             _isActive = false;
         }
     }
