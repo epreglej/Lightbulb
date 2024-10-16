@@ -9,7 +9,6 @@
 // <author>developer@exitgames.com</author>
 // --------------------------------------------------------------------------------
 
-using System;
 using UnityEngine;
 
 namespace Photon.Voice.Unity.UtilityScripts

@@ -8,8 +8,6 @@
 // <author>developer@photonengine.com</author>
 // ----------------------------------------------------------------------------
 
-using System;
-
 namespace Photon.Voice
 {
     /// <summary>

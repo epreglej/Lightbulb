@@ -1,4 +1,4 @@
-using Fusion;
+using Digiphy;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -7,7 +7,7 @@ namespace ChessMainLoop
 {
     public delegate void PieceMoved();
 
-    public class GameManager : NetworkBehaviour
+    public class GameManager : SingletonNetworked<GameManager>
     {
         private int _turnCount = 0;
         public int TurnCount { get => _turnCount; }
@@ -30,21 +30,6 @@ namespace ChessMainLoop
 
         private bool _isPieceMoving = false;
         public bool IsPieceMoving { get => _isPieceMoving; set => _isPieceMoving = value; }
-
-        private static GameManager _instance;
-        public static GameManager Instance { get => _instance; }
-
-        private void Awake()
-        {
-            if (_instance != null && _instance != this)
-            {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                _instance = this;
-            }
-        }
 
         public override void Spawned()
         {

@@ -1,48 +1,22 @@
 using Digiphy;
 using Fusion;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ChessMainLoop
 {
-    public class PromotionController :  NetworkBehaviour
+    public class PromotionController :  SingletonNetworked<PromotionController>
     {
-        private static PromotionController _instance;
-        public static PromotionController Instance { get => _instance; }
-
-        private void Awake()
-        {
-            if (_instance != null && _instance != this)
-            {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                _instance = this;
-            }
-        }
-
         [SerializeField] private GameObject _blackPieces;
         [SerializeField] private GameObject _whitePieces;
 
-        [SerializeField]
-        private Queen _whiteQueen;
-        [SerializeField]
-        private Queen _blackQueen;
-        [SerializeField]
-        private Bishop _whiteBishop;
-        [SerializeField]
-        private Bishop _blackBishop;
-        [SerializeField]
-        private Rook _whiteRook;
-        [SerializeField]
-        private Rook _blackRook;
-        [SerializeField]
-        private Knight _whiteKnight;
-        [SerializeField]
-        private Knight _blackKnight;
+        [SerializeField] private Queen _whiteQueen;
+        [SerializeField] private Queen _blackQueen;
+        [SerializeField] private Bishop _whiteBishop;
+        [SerializeField] private Bishop _blackBishop;
+        [SerializeField] private Rook _whiteRook;
+        [SerializeField] private Rook _blackRook;
+        [SerializeField] private Knight _whiteKnight;
+        [SerializeField] private Knight _blackKnight;
 
         public void PawnPromotionMenu(SideColor color)
         {

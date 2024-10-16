@@ -5,27 +5,12 @@ using UnityEngine;
 
 namespace ChessMainLoop
 {
-    public class PieceController : NetworkBehaviour
+    public class PieceController : SingletonNetworked<PieceController>
     {
         private Piece _activePiece;
         public bool AnyActive { get => _activePiece != null; }
 
         public static event PieceMoved PieceMoved;
-
-        private static PieceController _instance;
-        public static PieceController Instance { get => _instance; }
-
-        private void Awake()
-        {
-            if (_instance != null && _instance != this)
-            {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                _instance = this;
-            }
-        }
 
         void OnEnable()
         {

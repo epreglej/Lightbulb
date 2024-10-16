@@ -1,12 +1,10 @@
 ﻿#if FUSION_WEAVER
-using System;
 
 namespace Photon.Voice.Fusion.Editor
 {
     using Unity.Editor;
     using UnityEditor;
     using UnityEngine;
-    using global::Fusion;
 
     [CustomEditor(typeof(FusionVoiceClient), true)]
     public class FusionVoiceClientEditor : VoiceConnectionEditor

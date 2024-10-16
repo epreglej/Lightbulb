@@ -12,7 +12,6 @@ using System;
 using POpusCodec.Enums;
 using UnityEngine;
 using UnityEngine.Serialization;
-using System.Linq;
 
 namespace Photon.Voice.Unity
 {

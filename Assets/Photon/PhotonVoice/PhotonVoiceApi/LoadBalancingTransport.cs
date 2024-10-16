@@ -10,8 +10,6 @@
 
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using ExitGames.Client.Photon;
 using Photon.Realtime;
 
