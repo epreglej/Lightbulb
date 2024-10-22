@@ -3,6 +3,7 @@ using Fusion.Addons.ConnectionManagerAddon;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,7 +13,6 @@ public class AnnotationGenerator : MonoBehaviour
     [SerializeField] private InputActionReference _eraseButton;
     [SerializeField] private Transform _pointer;
     [SerializeField] private GameObject _linePrefab;
-    [SerializeField] private NetworkRunner _runner;
 
     private bool _drawing = false;
     private bool _erasing = false;
@@ -48,7 +48,7 @@ public class AnnotationGenerator : MonoBehaviour
                     {
                         _lines.Remove(line);
                         var networkedObject = line.GetComponent<NetworkObject>();
-                        FindAnyObjectByType<NetworkRunner>().Despawn(networkedObject);
+                        NetworkRunner.Instances[0].Despawn(networkedObject);
                         break;
                     }
                 }
@@ -88,7 +88,14 @@ public class AnnotationGenerator : MonoBehaviour
             _drawing = true;
             _lastPosition = _pointer.position;
 
-            var prefab = FindAnyObjectByType<NetworkRunner>().Spawn(_linePrefab);
+            Debug.Log(NetworkRunner.Instances.Count);
+            foreach (var instance in NetworkRunner.Instances)
+            {
+                Debug.Log(instance);
+                Debug.Log(instance == null);
+                Debug.Log(instance.IsUnityNull());
+            }
+            var prefab = NetworkRunner.Instances[0].Spawn(_linePrefab);
             _currentLine = prefab.GetComponent<NetworkedLine>();
             _currentLine.AddPoint(_lastPosition);
             _currentLine.AddPoint(_lastPosition);
