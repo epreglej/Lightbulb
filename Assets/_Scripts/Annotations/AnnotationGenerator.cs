@@ -1,3 +1,5 @@
+using Fusion;
+using Fusion.Addons.ConnectionManagerAddon;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,12 +12,14 @@ public class AnnotationGenerator : MonoBehaviour
     [SerializeField] private InputActionReference _eraseButton;
     [SerializeField] private Transform _pointer;
     [SerializeField] private GameObject _linePrefab;
+    [SerializeField] private NetworkRunner _runner;
 
     private bool _drawing = false;
     private bool _erasing = false;
-    private LineRenderer _lineRenderer;
+    private NetworkedLine _currentLine;
     private List<LineRenderer> _lines = new();
     private Vector3 _lastPosition;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +31,7 @@ public class AnnotationGenerator : MonoBehaviour
     {
         if (_drawing)
         {
-            _lineRenderer.SetPosition(_lineRenderer.positionCount - 1, _pointer.position);
+            _currentLine.UpdatePoint(_pointer.position);
             if(Vector3.Distance(_lastPosition, _pointer.position) > 0.02 )
                 ExtendLine(_pointer.position);
         }
@@ -43,7 +47,8 @@ public class AnnotationGenerator : MonoBehaviour
                     if(Vector3.Distance(point, _pointer.position) < 0.5 )
                     {
                         _lines.Remove(line);
-                        Destroy(line.gameObject);
+                        var networkedObject = line.GetComponent<NetworkObject>();
+                        FindAnyObjectByType<NetworkRunner>().Despawn(networkedObject);
                         break;
                     }
                 }
@@ -54,8 +59,7 @@ public class AnnotationGenerator : MonoBehaviour
     void ExtendLine(Vector3 newPosition)
     {
         _lastPosition = newPosition;
-        _lineRenderer.positionCount += 1;
-        _lineRenderer.SetPosition(_lineRenderer.positionCount - 1, _lastPosition);
+        _currentLine.AddPoint(_lastPosition);
     }
 
     private void OnEnable()
@@ -80,15 +84,17 @@ public class AnnotationGenerator : MonoBehaviour
     {
         if(!_erasing)
         {
+            Debug.Log("Starting drawing");
             _drawing = true;
             _lastPosition = _pointer.position;
 
-            var prefab = Instantiate(_linePrefab, _lastPosition, Quaternion.identity);
-            _lineRenderer = prefab.GetComponent<LineRenderer>();
-            _lineRenderer.SetPosition(0, _lastPosition);
-            _lineRenderer.SetPosition(1, _lastPosition);
+            var prefab = FindAnyObjectByType<NetworkRunner>().Spawn(_linePrefab);
+            _currentLine = prefab.GetComponent<NetworkedLine>();
+            _currentLine.AddPoint(_lastPosition);
+            _currentLine.AddPoint(_lastPosition);
 
-            _lines.Add(_lineRenderer);
+            _lines.Add(_currentLine.GetComponent<LineRenderer>());
+            Debug.Log("Ending starting drawing");
         }
     }
 

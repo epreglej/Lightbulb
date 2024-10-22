@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9101044240253274502}
   - component: {fileID: 6368536037536423857}
+  - component: {fileID: 5494649453588205819}
+  - component: {fileID: 1379460784166414500}
   m_Layer: 0
   m_Name: Line
   m_TagString: Untagged
@@ -136,3 +138,33 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &5494649453588205819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8230734050144774652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 1166162153
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1379460784166414500}
+--- !u!114 &1379460784166414500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8230734050144774652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a346b4af0abcd646973e523acc9fd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
