@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7143414749359828170}
   - component: {fileID: 7750322050299755290}
   - component: {fileID: 3872982422854783752}
+  - component: {fileID: 5760683055395284533}
   m_Layer: 0
   m_Name: SynchronizationLocationProvider
   m_TagString: Untagged
@@ -46,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167d48acfe267b94e8caa72816e48fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _annotationGenerator: {fileID: 0}
 --- !u!114 &7750322050299755290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,3 +83,19 @@ MonoBehaviour:
   SyncParent: 0
   _autoAOIOverride: 1
   DisableSharedModeInterpolation: 0
+--- !u!114 &5760683055395284533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6595554126162911961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8761cae5c6e5bb243a1900495cd83a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _drawButton: {fileID: 83097790271614945, guid: ebb3b170b43cdfc489ef95d4b9c2a987, type: 3}
+  _eraseButton: {fileID: 1614429361189879320, guid: ebb3b170b43cdfc489ef95d4b9c2a987, type: 3}
+  _pointer: {fileID: 0}
+  _linePrefab: {fileID: 8230734050144774652, guid: 389864b9a17dd2a4a828ca04ee69ed26, type: 3}

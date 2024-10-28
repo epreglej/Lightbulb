@@ -1,4 +1,5 @@
 using Fusion;
+using UnityEngine;
 
 namespace Digiphy
 {
@@ -9,6 +10,8 @@ namespace Digiphy
             if (VrRoomSynchronizer.Instance == null) return;
 
             VrRoomSynchronizer.Instance.SynchronizeRoomWithAr(Runner, transform);
+
+            AnnotationGenerator.Instance.Init(Runner);
         }
     }
 }

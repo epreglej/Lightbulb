@@ -1,13 +1,10 @@
 using Fusion;
-using Fusion.Addons.ConnectionManagerAddon;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Digiphy;
 
-public class AnnotationGenerator : MonoBehaviour
+public class AnnotationGenerator : Singleton<AnnotationGenerator>
 {
     [SerializeField] private InputActionReference _drawButton;
     [SerializeField] private InputActionReference _eraseButton;
@@ -19,11 +16,11 @@ public class AnnotationGenerator : MonoBehaviour
     private NetworkedLine _currentLine;
     private List<LineRenderer> _lines = new();
     private Vector3 _lastPosition;
+    private NetworkRunner _runner = null;
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void Init(NetworkRunner runner)
     {
+        _runner = runner;
         _drawButton.action.actionMap.Enable();
     }
 
@@ -48,7 +45,7 @@ public class AnnotationGenerator : MonoBehaviour
                     {
                         _lines.Remove(line);
                         var networkedObject = line.GetComponent<NetworkObject>();
-                        NetworkRunner.Instances[0].Despawn(networkedObject);
+                        _runner.Despawn(networkedObject);
                         break;
                     }
                 }
@@ -82,26 +79,17 @@ public class AnnotationGenerator : MonoBehaviour
 
     private void StartDrawing(InputAction.CallbackContext obj)
     {
-        if(!_erasing)
+        if(!_erasing && _runner)
         {
-            Debug.Log("Starting drawing");
             _drawing = true;
             _lastPosition = _pointer.position;
 
-            Debug.Log(NetworkRunner.Instances.Count);
-            foreach (var instance in NetworkRunner.Instances)
-            {
-                Debug.Log(instance);
-                Debug.Log(instance == null);
-                Debug.Log(instance.IsUnityNull());
-            }
-            var prefab = NetworkRunner.Instances[0].Spawn(_linePrefab);
+            var prefab = _runner.Spawn(_linePrefab);
             _currentLine = prefab.GetComponent<NetworkedLine>();
             _currentLine.AddPoint(_lastPosition);
             _currentLine.AddPoint(_lastPosition);
 
             _lines.Add(_currentLine.GetComponent<LineRenderer>());
-            Debug.Log("Ending starting drawing");
         }
     }
 
