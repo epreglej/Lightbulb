@@ -18,10 +18,16 @@ public class AnnotationGenerator : Singleton<AnnotationGenerator>
     private Vector3 _lastPosition;
     private NetworkRunner _runner = null;
 
+    private void Start()
+    {
+        _drawButton.action.actionMap.Enable();
+    }
+
     public void Init(NetworkRunner runner)
     {
+        //TODO: Maybe remove?
+        Debug.Log("Init called!");
         _runner = runner;
-        _drawButton.action.actionMap.Enable();
     }
 
     private void Update()
@@ -35,15 +41,16 @@ public class AnnotationGenerator : Singleton<AnnotationGenerator>
 
         if(_erasing)
         {
-            foreach(var line in _lines)
+            for(int i = 0; i < _lines.Count; i++)
             {
-                Vector3[] points = new Vector3[line.positionCount];
+                var line = _lines[i];
+                var points = new Vector3[line.positionCount];
                 line.GetPositions(points);
                 foreach(var point in points)
                 {
-                    if(Vector3.Distance(point, _pointer.position) < 0.5 )
+                    if(Vector3.Distance(point, _pointer.position) < 0.1 )
                     {
-                        _lines.Remove(line);
+                        _lines.RemoveAt(i--);
                         var networkedObject = line.GetComponent<NetworkObject>();
                         _runner.Despawn(networkedObject);
                         break;
@@ -79,6 +86,15 @@ public class AnnotationGenerator : Singleton<AnnotationGenerator>
 
     private void StartDrawing(InputAction.CallbackContext obj)
     {
+        if(!_runner)
+        {
+            foreach (var runner in NetworkRunner.Instances)
+            {
+                if (runner.IsRunning && runner.IsConnectedToServer)
+                    _runner = runner;
+            }
+        }
+
         if(!_erasing && _runner)
         {
             _drawing = true;
