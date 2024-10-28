@@ -1,30 +1,33 @@
 using Fusion;
-using Fusion.Addons.ConnectionManagerAddon;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Digiphy;
 
-public class AnnotationGenerator : MonoBehaviour
+public class AnnotationGenerator : Singleton<AnnotationGenerator>
 {
     [SerializeField] private InputActionReference _drawButton;
     [SerializeField] private InputActionReference _eraseButton;
     [SerializeField] private Transform _pointer;
     [SerializeField] private GameObject _linePrefab;
-    [SerializeField] private NetworkRunner _runner;
 
     private bool _drawing = false;
     private bool _erasing = false;
     private NetworkedLine _currentLine;
     private List<LineRenderer> _lines = new();
     private Vector3 _lastPosition;
+    private NetworkRunner _runner = null;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _drawButton.action.actionMap.Enable();
+    }
+
+    public void Init(NetworkRunner runner)
+    {
+        //TODO: Maybe remove?
+        Debug.Log("Init called!");
+        _runner = runner;
     }
 
     private void Update()
@@ -38,17 +41,18 @@ public class AnnotationGenerator : MonoBehaviour
 
         if(_erasing)
         {
-            foreach(var line in _lines)
+            for(int i = 0; i < _lines.Count; i++)
             {
-                Vector3[] points = new Vector3[line.positionCount];
+                var line = _lines[i];
+                var points = new Vector3[line.positionCount];
                 line.GetPositions(points);
                 foreach(var point in points)
                 {
-                    if(Vector3.Distance(point, _pointer.position) < 0.5 )
+                    if(Vector3.Distance(point, _pointer.position) < 0.1 )
                     {
-                        _lines.Remove(line);
+                        _lines.RemoveAt(i--);
                         var networkedObject = line.GetComponent<NetworkObject>();
-                        FindAnyObjectByType<NetworkRunner>().Despawn(networkedObject);
+                        _runner.Despawn(networkedObject);
                         break;
                     }
                 }
@@ -82,19 +86,26 @@ public class AnnotationGenerator : MonoBehaviour
 
     private void StartDrawing(InputAction.CallbackContext obj)
     {
-        if(!_erasing)
+        if(!_runner)
         {
-            Debug.Log("Starting drawing");
+            foreach (var runner in NetworkRunner.Instances)
+            {
+                if (runner.IsRunning && runner.IsConnectedToServer)
+                    _runner = runner;
+            }
+        }
+
+        if(!_erasing && _runner)
+        {
             _drawing = true;
             _lastPosition = _pointer.position;
 
-            var prefab = FindAnyObjectByType<NetworkRunner>().Spawn(_linePrefab);
+            var prefab = _runner.Spawn(_linePrefab);
             _currentLine = prefab.GetComponent<NetworkedLine>();
             _currentLine.AddPoint(_lastPosition);
             _currentLine.AddPoint(_lastPosition);
 
             _lines.Add(_currentLine.GetComponent<LineRenderer>());
-            Debug.Log("Ending starting drawing");
         }
     }
 
