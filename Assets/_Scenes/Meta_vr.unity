@@ -1735,11 +1735,6 @@ Transform:
   - {fileID: 1496361292}
   m_Father: {fileID: 695133238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &62838608 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6883326225989096039, guid: 9cea98e00cfee5f478a01f61bcb00a59, type: 3}
-  m_PrefabInstance: {fileID: 198405047}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &63193044
 GameObject:
   m_ObjectHideFlags: 0
@@ -6428,9 +6423,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8693513629565908687}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6883326225989096039, guid: 9cea98e00cfee5f478a01f61bcb00a59, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1002113447}
     - targetCorrespondingSourceObject: {fileID: 2219855934584165622, guid: 9cea98e00cfee5f478a01f61bcb00a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 198405050}
@@ -27130,7 +27122,6 @@ MonoBehaviour:
   _eraseButton: {fileID: 1614429361189879320, guid: ebb3b170b43cdfc489ef95d4b9c2a987, type: 3}
   _pointer: {fileID: 810542927}
   _linePrefab: {fileID: 8230734050144774652, guid: 389864b9a17dd2a4a828ca04ee69ed26, type: 3}
-  _runner: {fileID: 0}
 --- !u!1 &884497778
 GameObject:
   m_ObjectHideFlags: 0
@@ -29913,22 +29904,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1214770656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1002113447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 62838608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfaf4c29cc0485343a91500fc9ed0818, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _anchorPrefab: {fileID: 0}
-  _placeCommand: {fileID: -3279446914071225446, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  _rightController: {fileID: 0}
-  _roomType: 0
 --- !u!1 &1002516418
 GameObject:
   m_ObjectHideFlags: 0
