@@ -45,7 +45,7 @@ namespace Fusion.XR.Host.Utils
                 var averageVelocity = (move / time);
                 if (rb && useRigidbodyVelocityDirection)
                 {
-                    averageVelocity = averageVelocity.magnitude * rb.velocity.normalized;
+                    averageVelocity = averageVelocity.magnitude * rb.linearVelocity.normalized;
                 }
                 return averageVelocity;
             }

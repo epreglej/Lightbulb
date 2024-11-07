@@ -8,7 +8,7 @@ namespace Fusion.XR.Host.Utils
         {
             Quaternion rotationStep = newRotation * Quaternion.Inverse(previousRotation);
             rotationStep.ToAngleAxis(out float angle, out Vector3 axis);
-            // Angular velocity uses eurler notation, bound to -180° / +180°
+            // Angular velocity uses eurler notation, bound to -180ï¿½ / +180ï¿½
             if (angle > 180f)
             {
                 angle -= 360f;
@@ -52,7 +52,7 @@ namespace Fusion.XR.Host.Utils
             Vector3 positionStep = targetPosition - followerRb.transform.position;
             Vector3 velocity = positionStep / elapsedTime;
 
-            followerRb.velocity = velocity;
+            followerRb.linearVelocity = velocity;
             followerRb.angularVelocity = followerRb.transform.rotation.AngularVelocityChange(newRotation: targetRotation, elapsedTime: elapsedTime);
         }
         #endregion

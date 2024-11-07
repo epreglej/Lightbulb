@@ -44,7 +44,7 @@ class VelocityInitialisation : NetworkBehaviour
         if (launch == false) return;
         if (Object != null && Object.HasStateAuthority == false) return;
         launch = false;
-        rb.velocity = targetVelocity;
+        rb.linearVelocity = targetVelocity;
         if (targetAngularVelocity != Vector3.zero)
         {
             rb.angularVelocity = targetAngularVelocity;

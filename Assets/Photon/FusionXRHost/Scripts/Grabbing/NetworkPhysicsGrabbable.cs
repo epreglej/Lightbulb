@@ -289,7 +289,7 @@ namespace Fusion.XR.Host.Grabbing
                 }
 
                 // Apply release velocity (the release timing is probably between tick, so we stored in the input the ungrab velocity to have sub-tick accuracy)
-                grabbable.rb.velocity = grabInfo.ungrabVelocity;
+                grabbable.rb.linearVelocity = grabInfo.ungrabVelocity;
                 grabbable.rb.angularVelocity = grabInfo.ungrabAngularVelocity;
             }
 

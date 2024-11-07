@@ -12,7 +12,7 @@ namespace Fusion.XR.Host.Grabbing
             rb = GetComponent<Rigidbody>();
             rb.isKinematic = false;
         }
-        public override Vector3 Velocity => rb.velocity;
+        public override Vector3 Velocity => rb.linearVelocity;
         public override Vector3 AngularVelocity => rb.angularVelocity;
         public bool IsGrabbed => currentGrabber != null;
 
@@ -81,8 +81,8 @@ namespace Fusion.XR.Host.Grabbing
             rb.VelocityFollow(target: followedTransform, localPositionOffset, localRotationOffset, elapsedTime);
 
             // To avoid a too aggressive move, we attenuate and limit a bit the expected velocity
-            rb.velocity *= followVelocityAttenuation; // followVelocityAttenuation = 0.5F by default
-            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocity); // maxVelocity = 10f by default
+            rb.linearVelocity *= followVelocityAttenuation; // followVelocityAttenuation = 0.5F by default
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, maxVelocity); // maxVelocity = 10f by default
         }
         #endregion
 

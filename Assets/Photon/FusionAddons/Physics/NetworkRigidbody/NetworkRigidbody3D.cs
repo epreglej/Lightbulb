@@ -83,19 +83,19 @@ namespace Fusion.Addons.Physics {
     /// <inheritdoc/>
     protected override void CaptureExtras(Rigidbody rb, ref NetworkRBData data) {
       data.Mass        = rb.mass;
-      data.Drag        = rb.drag;
-      data.AngularDrag = rb.angularDrag;
+      data.Drag        = rb.linearDamping;
+      data.AngularDrag = rb.angularDamping;
 
-      data.LinearVelocity  = rb.velocity;
+      data.LinearVelocity  = rb.linearVelocity;
       data.AngularVelocity = rb.angularVelocity;
     }
     /// <inheritdoc/>
     protected override void ApplyExtras(Rigidbody rb, ref NetworkRBData data) {
       rb.mass        = data.Mass;
-      rb.drag        = data.Drag;
-      rb.angularDrag = data.AngularDrag;
+      rb.linearDamping        = data.Drag;
+      rb.angularDamping = data.AngularDrag;
       
-      rb.velocity        = data.LinearVelocity;
+      rb.linearVelocity        = data.LinearVelocity;
       rb.angularVelocity = data.AngularVelocity;
     }
 
@@ -104,7 +104,7 @@ namespace Fusion.Addons.Physics {
       base.ResetRigidbody();
       var rb = _rigidbody;
       if (!rb.isKinematic) {
-        rb.velocity        = default;
+        rb.linearVelocity        = default;
         rb.angularVelocity = default;  
       }
     }
@@ -118,7 +118,7 @@ namespace Fusion.Addons.Physics {
     
     /// <inheritdoc/>
     protected override bool IsRigidbodyBelowSleepingThresholds(Rigidbody rb) {
-      var energy  = rb.mass * rb.velocity.sqrMagnitude;
+      var energy  = rb.mass * rb.linearVelocity.sqrMagnitude;
       var angVel  = rb.angularVelocity;
       var inertia = rb.inertiaTensor;
 

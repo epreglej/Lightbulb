@@ -63,7 +63,7 @@ public class SinusoidalMotion : NetworkBehaviour
         Vector3 velocity = (targetPosition - transform.position) / Runner.DeltaTime;
             
         // Set the velocity of the Rigidbody
-        rb.velocity = velocity;
+        rb.linearVelocity = velocity;
         }
     }
 }
