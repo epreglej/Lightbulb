@@ -1,19 +1,21 @@
 using Fusion;
 using UnityEngine;
+using Unity.XRTools.Rendering;
 
-[RequireComponent(typeof(LineRenderer))]
+
+[RequireComponent(typeof(XRLineRenderer))]
 public class NetworkedLine : NetworkBehaviour
 {
     [Networked, Capacity(500)]
     [OnChangedRender(nameof(PointAdded))]
     private NetworkLinkedList<Vector3> _points => default;
-    private LineRenderer _lineRenderer;
+    private XRLineRenderer _XRLineRenderer;
 
     // Start is called before the first frame update
     public override void Spawned()
     {
-        _lineRenderer = GetComponent<LineRenderer>();
-        _lineRenderer.positionCount = 0;
+        _XRLineRenderer = GetComponent<XRLineRenderer>();
+        _XRLineRenderer.SetVertexCount(0);
         PointAdded();
     }
 
@@ -29,14 +31,16 @@ public class NetworkedLine : NetworkBehaviour
 
     private void PointAdded()
     {
-        if (_lineRenderer.positionCount != 0)
+        var currentVertexCount = _XRLineRenderer.GetVertexCount();
+        if (currentVertexCount != 0)
         {
-            _lineRenderer.SetPosition(_lineRenderer.positionCount - 1, _points[_lineRenderer.positionCount - 1]);
+            _XRLineRenderer.SetPosition(currentVertexCount - 1, _points[currentVertexCount - 1]);
         }
-        while (_lineRenderer.positionCount < _points.Count)
+        while (currentVertexCount < _points.Count)
         {
-            _lineRenderer.positionCount++;
-            _lineRenderer.SetPosition(_lineRenderer.positionCount - 1, _points[_lineRenderer.positionCount - 1]);
+            currentVertexCount++;
+            _XRLineRenderer.SetVertexCount(currentVertexCount);
+            _XRLineRenderer.SetPosition(currentVertexCount - 1, _points[currentVertexCount - 1]);
         }
     }
 }

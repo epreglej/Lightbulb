@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Digiphy;
 
-public class AnnotationGenerator : Singleton<AnnotationGenerator>
+public class AnnotationGenerator : MonoBehaviour
 {
     [SerializeField] private InputActionReference _drawButton;
     [SerializeField] private InputActionReference _eraseButton;
@@ -23,10 +23,10 @@ public class AnnotationGenerator : Singleton<AnnotationGenerator>
         _drawButton.action.actionMap.Enable();
     }
 
-    public void Init(NetworkRunner runner)
+    public void Init(NetworkRunner runner, PlayerRef player)
     {
-        //TODO: Maybe remove?
-        Debug.Log("Init called!");
+        if (player != runner.LocalPlayer) return;
+
         _runner = runner;
     }
 
@@ -86,15 +86,6 @@ public class AnnotationGenerator : Singleton<AnnotationGenerator>
 
     private void StartDrawing(InputAction.CallbackContext obj)
     {
-        if(!_runner)
-        {
-            foreach (var runner in NetworkRunner.Instances)
-            {
-                if (runner.IsRunning && runner.IsConnectedToServer)
-                    _runner = runner;
-            }
-        }
-
         if(!_erasing && _runner)
         {
             _drawing = true;

@@ -1,5 +1,5 @@
 {
-    "name": "XRI Default Input Actions",
+    "name": "XRI Custom Input Actions",
     "maps": [
         {
             "name": "XRI Head",
@@ -1586,6 +1586,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Draw annotation",
+                    "type": "Button",
+                    "id": "8c2b1dbd-868c-428d-868f-678de36d40b5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Create anchor",
+                    "type": "Button",
+                    "id": "4ca9e4c7-fa83-42a0-8c50-63880bbe756d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1762,6 +1780,28 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Delete annotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8c0f337-ab5c-456f-83c0-960a27366ae5",
+                    "path": "<XRController>{RightHand}/{TriggerButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Draw annotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "679d0b78-c85f-4dd1-a197-99b6cba0d705",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Create anchor",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

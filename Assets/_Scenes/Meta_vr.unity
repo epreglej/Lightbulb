@@ -11295,7 +11295,19 @@ MonoBehaviour:
       m_Calls: []
   PlayerJoined:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 883658911}
+        m_TargetAssemblyTypeName: AnnotationGenerator, Assembly-CSharp
+        m_MethodName: Init
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   PlayerLeft:
     m_PersistentCalls:
       m_Calls: []
@@ -27118,7 +27130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8761cae5c6e5bb243a1900495cd83a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _drawButton: {fileID: 83097790271614945, guid: ebb3b170b43cdfc489ef95d4b9c2a987, type: 3}
+  _drawButton: {fileID: 73599751384363447, guid: ebb3b170b43cdfc489ef95d4b9c2a987, type: 3}
   _eraseButton: {fileID: 1614429361189879320, guid: ebb3b170b43cdfc489ef95d4b9c2a987, type: 3}
   _pointer: {fileID: 810542927}
   _linePrefab: {fileID: 8230734050144774652, guid: 389864b9a17dd2a4a828ca04ee69ed26, type: 3}
