@@ -22201,6 +22201,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1738710634}
   - component: {fileID: 1738710635}
+  - component: {fileID: 1738710637}
+  - component: {fileID: 1738710636}
   m_Layer: 0
   m_Name: Lamp Manager
   m_TagString: Untagged
@@ -22230,7 +22232,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738710633}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5d51edb42192ca4da2107c5c0439a49, type: 3}
   m_Name: 
@@ -22243,6 +22245,48 @@ MonoBehaviour:
   lightbulbObjectGrabbedEventSender: {fileID: 232064730}
   workingLightbulbObjectGrabbedEventSender: {fileID: 852756816}
   lampBodyObjectGrabbedEventSender: {fileID: 1967047512}
+--- !u!114 &1738710636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738710633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 1548264079
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1738710637}
+--- !u!114 &1738710637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738710633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d461132a20c8710468116424b6147a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightbulb: {fileID: 278369133}
+  workingLightbulb: {fileID: 618650897}
+  lampBody: {fileID: 74772269}
+  lightbulbClone: {fileID: 1758207028}
+  lampBodyClone: {fileID: 2001913810}
+  lightbulbObjectGrabbedEventSender: {fileID: 232064730}
+  workingLightbulbObjectGrabbedEventSender: {fileID: 852756816}
+  lampBodyObjectGrabbedEventSender: {fileID: 1967047512}
+  _realLightbulbIsTurnedOn: 0
+  _lightbulbIsConnected: 1
+  _workingLightbulbIsConnected: 0
+  _cloneIsSpawned: 0
 --- !u!1 &1746482618
 GameObject:
   m_ObjectHideFlags: 0
