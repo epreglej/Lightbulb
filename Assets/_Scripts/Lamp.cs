@@ -66,6 +66,7 @@ public class Lamp : MonoBehaviour
         }
     }
 
+    // PAZITI OVDJE JER NAMECHECKAMO ZA HIT!!!!!!!!!!!!
     void HandleWorkingLightbulbReleased(GameObject grabbedObject)
     {
         Debug.Log("Object released: " + grabbedObject.transform.parent.name);
@@ -74,7 +75,7 @@ public class Lamp : MonoBehaviour
         if (Physics.Raycast(workingLightbulb.transform.position, workingLightbulb.transform.TransformDirection(-Vector3.up), out hit, 0.5f))
         {
             Debug.Log(hit.transform.gameObject.name);
-            if (hit.transform.gameObject.name == "Lamp Body" && !lightbulbIsConnected)
+            if (hit.transform.gameObject.name == "[BuildingBlock] Tijelo lampe" && !lightbulbIsConnected)
             {
                 workingLightbulbIsConnected = true;
             }
