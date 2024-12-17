@@ -32,6 +32,34 @@ public class LampNetworked : NetworkBehaviour
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
+    public void RPC_RealLightbulbIsTurnedOn()
+    {
+        realLightbulbIsTurnedOn = true;
+    }
+
+    void RealLightbulbIsTurnedOn()
+    {
+        if (Object.HasStateAuthority)
+        {
+            RPC_RealLightbulbIsTurnedOn();  
+        }
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void RPC_RealLightbulbIsTurnedOff()
+    {
+        realLightbulbIsTurnedOn = false;
+    }
+
+    void RealLightbulbIsTurnedOff()
+    {
+        if (Object.HasStateAuthority)
+        {
+            RPC_RealLightbulbIsTurnedOff();
+        }
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.All)]
     public void RPC_HandleLightbulbGrabbed()
     {
         lightbulbIsConnected = false;
@@ -124,6 +152,7 @@ public class LampNetworked : NetworkBehaviour
     {
         if (!Object.HasStateAuthority) return;
 
+        /*
         if (workingLightbulbIsConnected && !realLightbulbIsTurnedOn)
         {
             realLightbulbIsTurnedOn = true;
@@ -133,6 +162,25 @@ public class LampNetworked : NetworkBehaviour
         if (!workingLightbulbIsConnected && realLightbulbIsTurnedOn)
         {
             realLightbulbIsTurnedOn = false;
+            lightbulbClone.GetComponentInChildren<MeshRenderer>().material.color = Color.white;
+        }
+        */
+
+        if (workingLightbulbIsConnected && workingLightbulb.GetComponentInChildren<MeshRenderer>().material.color != Color.yellow)
+        {
+            workingLightbulb.GetComponentInChildren<MeshRenderer>().material.color = Color.yellow;
+        }
+        else if (!workingLightbulbIsConnected && workingLightbulb.GetComponentInChildren<MeshRenderer>().material.color == Color.yellow)
+        {
+            workingLightbulb.GetComponentInChildren<MeshRenderer>().material.color = Color.gray;
+        }
+
+        if (realLightbulbIsTurnedOn && lightbulbClone.GetComponentInChildren<MeshRenderer>().material.color != Color.yellow)
+        {
+            lightbulbClone.GetComponentInChildren<MeshRenderer>().material.color = Color.yellow;
+        }
+        else if (!realLightbulbIsTurnedOn && lightbulbClone.GetComponentInChildren<MeshRenderer>().material.color != Color.yellow)
+        {
             lightbulbClone.GetComponentInChildren<MeshRenderer>().material.color = Color.white;
         }
 
