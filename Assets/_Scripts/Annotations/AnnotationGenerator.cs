@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Digiphy;
+using Unity.XRTools.Rendering;
 
 public class AnnotationGenerator : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class AnnotationGenerator : MonoBehaviour
     private bool _drawing = false;
     private bool _erasing = false;
     private NetworkedLine _currentLine;
-    private List<LineRenderer> _lines = new();
+    private List<XRLineRenderer> _lines = new();
     private Vector3 _lastPosition;
     private NetworkRunner _runner = null;
 
@@ -41,16 +42,17 @@ public class AnnotationGenerator : MonoBehaviour
 
         if(_erasing)
         {
-            for(int i = 0; i < _lines.Count; i++)
+            for(int i = _lines.Count - 1; i >= 0; i--)
             {
                 var line = _lines[i];
-                var points = new Vector3[line.positionCount];
+                var points = new Vector3[line.GetVertexCount()];
                 line.GetPositions(points);
                 foreach(var point in points)
                 {
-                    if(Vector3.Distance(point, _pointer.position) < 0.1 )
+                    float distance = Vector3.Distance(point, _pointer.position);
+                    if (distance < 0.1 )
                     {
-                        _lines.RemoveAt(i--);
+                        _lines.RemoveAt(i);
                         var networkedObject = line.GetComponent<NetworkObject>();
                         _runner.Despawn(networkedObject);
                         break;
@@ -96,7 +98,7 @@ public class AnnotationGenerator : MonoBehaviour
             _currentLine.AddPoint(_lastPosition);
             _currentLine.AddPoint(_lastPosition);
 
-            _lines.Add(_currentLine.GetComponent<LineRenderer>());
+            _lines.Add(_currentLine.GetComponent<XRLineRenderer>());
         }
     }
 
