@@ -9,41 +9,29 @@ namespace Digiphy.IoT
         [SerializeField]
         private string baseUrl = "http://delock-3530.local/cm?";
         private bool wasDeviceOn = false;
-        private float currentThreshold = 0.1f;
+        private float currentThreshold = 0.05
 
         private void Start()
         {
-            // Start regularly checking the current every 2 seconds
+            // Check the current every 2 seconds
             StartCoroutine(PeriodicCurrentCheck());
         }
 
-        /// <summary>
-        /// Toggles the power state of the switch.
-        /// </summary>
         public void ToggleSwitch()
         {
             StartCoroutine(SendCommand("Power%20Toggle"));
         }
 
-        /// <summary>
-        /// Turns the switch on.
-        /// </summary>
         public void TurnOnSwitch()
         {
             StartCoroutine(SendCommand("Power%20On"));
         }
 
-        /// <summary>
-        /// Turns the switch off.
-        /// </summary>
         public void TurnOffSwitch()
         {
             StartCoroutine(SendCommand("Power%20Off"));
         }
 
-        /// <summary>
-        /// Periodically checks the current every 2 seconds and detects transitions.
-        /// </summary>
         private IEnumerator PeriodicCurrentCheck()
         {
             while (true)
@@ -53,21 +41,14 @@ namespace Digiphy.IoT
             }
         }
 
-        /// <summary>
-        /// Gets the current status and checks if the current has changed from below/above the threshold.
-        /// </summary>
         private IEnumerator GetStatusAndCheckCurrent()
         {
-            string url = $"{baseUrl}cmnd=Status%200";
+            string url = $"{baseUrl}cmnd=Status%208";
             using (UnityWebRequest www = UnityWebRequest.Get(url))
             {
                 yield return www.SendWebRequest();
 
-#if UNITY_2020_2_OR_NEWER
                 if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
-#else
-                if (www.isNetworkError || www.isHttpError)
-#endif
                 {
                     Debug.LogError("Error getting status: " + www.error);
                 }
@@ -84,12 +65,10 @@ namespace Digiphy.IoT
                         // Check for state changes:
                         if (isDeviceOn && !wasDeviceOn)
                         {
-                            // Current went from <=0.1 to >0.1
                             DeviceTurnedOn();
                         }
                         else if (!isDeviceOn && wasDeviceOn)
                         {
-                            // Current went from >0.1 to <=0.1
                             DeviceTurnedOff();
                         }
 
@@ -99,22 +78,16 @@ namespace Digiphy.IoT
             }
         }
 
-        /// <summary>
-        /// Called when the device transitions from off to on (current passes above threshold).
-        /// </summary>
         private void DeviceTurnedOn()
         {
-            Debug.Log("Device has turned ON (current > 0.1A).");
-            // Insert additional logic here...
+            Debug.Log("Device has turned ON (current > 0.05A).");
+            // todo logika
         }
 
-        /// <summary>
-        /// Called when the device transitions from on to off (current goes below threshold).
-        /// </summary>
         private void DeviceTurnedOff()
         {
-            Debug.Log("Device has turned OFF (current <= 0.1A).");
-            // Insert additional logic here...
+            Debug.Log("Device has turned OFF (current <= 0.05A).");
+            // todo logika
         }
 
         private IEnumerator SendCommand(string command)
@@ -124,11 +97,8 @@ namespace Digiphy.IoT
             {
                 yield return www.SendWebRequest();
 
-#if UNITY_2020_2_OR_NEWER
                 if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
-#else
-                if (www.isNetworkError || www.isHttpError)
-#endif
+
                 {
                     Debug.LogError("Error sending command: " + www.error);
                 }
