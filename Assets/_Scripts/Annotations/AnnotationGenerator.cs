@@ -11,11 +11,12 @@ public class AnnotationGenerator : MonoBehaviour
     [SerializeField] private InputActionReference _eraseButton;
     [SerializeField] private Transform _pointer;
     [SerializeField] private GameObject _linePrefab;
+    [SerializeField] private bool _isArPlayer;
 
     private bool _drawing = false;
     private bool _erasing = false;
     private NetworkedLine _currentLine;
-    private List<XRLineRenderer> _lines = new();
+    private List<NetworkedLine> _lines = new();
     private Vector3 _lastPosition;
     private NetworkRunner _runner = null;
 
@@ -45,8 +46,7 @@ public class AnnotationGenerator : MonoBehaviour
             for(int i = _lines.Count - 1; i >= 0; i--)
             {
                 var line = _lines[i];
-                var points = new Vector3[line.GetVertexCount()];
-                line.GetPositions(points);
+                var points = line.Points;
                 foreach(var point in points)
                 {
                     float distance = Vector3.Distance(point, _pointer.position);
@@ -95,10 +95,15 @@ public class AnnotationGenerator : MonoBehaviour
 
             var prefab = _runner.Spawn(_linePrefab);
             _currentLine = prefab.GetComponent<NetworkedLine>();
+            _currentLine.usingArRenderer = _isArPlayer;
+            if(_isArPlayer) 
+                _currentLine.GetComponent<XRLineRenderer>().enabled = true; 
+            else
+                _currentLine.GetComponent<LineRenderer>().enabled = true;
             _currentLine.AddPoint(_lastPosition);
             _currentLine.AddPoint(_lastPosition);
 
-            _lines.Add(_currentLine.GetComponent<XRLineRenderer>());
+            _lines.Add(_currentLine.GetComponent<NetworkedLine>());
         }
     }
 
