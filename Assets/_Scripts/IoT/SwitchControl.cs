@@ -9,7 +9,7 @@ namespace Digiphy.IoT
         [SerializeField]
         private string baseUrl = "http://delock-3530.local/cm?";
         private bool wasDeviceOn = false;
-        private float currentThreshold = 0.05
+        private float currentThreshold = 0.05f;
 
         private void Start()
         {
