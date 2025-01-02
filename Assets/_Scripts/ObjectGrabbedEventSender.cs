@@ -1,7 +1,7 @@
 using UnityEngine;
 using Oculus.Interaction;
 
-public class ObjectGrabbedEventSender : OneGrabFreeTransformer, ITransformer
+public class ObjectGrabbedEventSender : GrabFreeTransformer, ITransformer
 {
     public delegate void ObjectGrabbed(GameObject source);
     public event ObjectGrabbed onObjectGrabbed;
