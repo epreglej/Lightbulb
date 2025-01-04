@@ -4,6 +4,7 @@ using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using System.Linq;
 using UnityEngine;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class LampNetworked : NetworkBehaviour
 {
@@ -34,14 +35,36 @@ public class LampNetworked : NetworkBehaviour
         lampBodyObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualLampCloneGrabbed;
     }
 
-    void RealLampIsTurnedOn()
+    public override void Spawned()
     {
-        ChangeRealLampTurnedOnStateRpc(true);
+        base.Spawned();
+
+        ChangeVirtualLightbulbCloneMaterialColorRpc(Color.white);
+        ChangeVirtualReplacementLightbulbCloneMaterialColorRpc(Color.gray);
+        ChangeVirtualPlacholderLightbulbCloneMaterialColorRpc(Color.gray);
+        ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(Color.yellow);
+
+        ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
+        ChangeVirtualLightbulbCloneParentToVirtualLampCloneRpc();
+
+        ShowVirtualLightbulbCloneRpc(false);
+        ShowVirtualPlaceholderLightbulbCloneRpc(true);
+        ShowVirtualReplacementLightbulbCloneRpc(true);
+        ShowVirtualPlaceholderReplacementLightbulbCloneRpc(false);
     }
 
-    void RealLampIsTurnedOff()
+    // call this when socket says lamp is on / off
+    public void ChangeRealLampTurnedOnState(bool turnedOn)
     {
-        ChangeRealLampTurnedOnStateRpc(false);
+        ChangeRealLampTurnedOnStateRpc(turnedOn);
+        if (turnedOn == true)
+        {
+            ChangeVirtualLightbulbMaterialColorRpc(Color.yellow);
+        }
+        else
+        {
+            ChangeVirtualLightbulbMaterialColorRpc(Color.white);
+        }
     }
 
     // ### interaction handlers ####
@@ -50,36 +73,15 @@ public class LampNetworked : NetworkBehaviour
         if (!virtualCloneIsSpawned)
         {
             ChangeVirtualCloneSpawnedStateRpc(true);
-
-            ChangeVirtualLightbulbCloneMaterialColorRpc(Color.white);
-            ChangeVirtualReplacementLightbulbCloneMaterialColorRpc(Color.gray);
-
-            ChangeVirtualPlacholderLightbulbCloneMaterialColorRpc(Color.gray);
-            ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(Color.yellow);
-
-            ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
-            UseVirtualPlaceholderLightbulbCloneInsteadOfVirtualLightbulbCloneRpc(true);
-            UseVirtualPlaceholderReplacementLightbulbCloneInsteadOfVirtualLightbulbCloneRpc(false);
-            ChangeVirtualLightbulbCloneParentToVirtualLampCloneRpc();
         }
-
-        /*
-        if (virtualLightbulbCloneIsConnectedToVirtualLampClone)
-        {
-            ChangeVirtualLightbulbCloneParentToVirtualLampCloneRpc();
-        }
-        else if (virtualReplacementLightbulbCloneIsConnectedToVirtualLampClone)
-        {
-            ChangeVirtualReplacementLightbulbCloneParentToVirtualLampCloneRpc();
-        }
-        */
     }
 
     void HandleVirtualLightbulbCloneGrabbed(GameObject grabbedObject)
     {
         ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(false);
-        UseVirtualPlaceholderLightbulbCloneInsteadOfVirtualLightbulbCloneRpc(false);
         ChangeVirtualLightbulbCloneParentToNoneRpc();
+        ShowVirtualLightbulbCloneRpc(true);
+        ShowVirtualPlaceholderLightbulbCloneRpc(false);
     }
 
     void HandleVirtualLightbulbCloneReleased(GameObject grabbedObject)
@@ -89,10 +91,10 @@ public class LampNetworked : NetworkBehaviour
         {
             if (hit.transform.gameObject.name == virtualLampClone.name && !virtualReplacementLightbulbCloneIsConnectedToVirtualLampClone)
             {
-                // ChangeVirtualPlacholderLightbulbCloneMaterialColorRpc(Color.gray);
                 ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
-                UseVirtualPlaceholderLightbulbCloneInsteadOfVirtualLightbulbCloneRpc(true);
                 ChangeVirtualLightbulbCloneParentToVirtualLampCloneRpc();
+                ShowVirtualPlaceholderLightbulbCloneRpc(true);
+                ShowVirtualLightbulbCloneRpc(false);
             }
         }
     }
@@ -100,8 +102,9 @@ public class LampNetworked : NetworkBehaviour
     void HandleVirtualReplacementLightbulbCloneGrabbed(GameObject grabbedObject)
     {
         ChangeVirtualReplacementLightbulbCloneConnectedStateToVirtualLampCloneRpc(false);
-        UseVirtualPlaceholderReplacementLightbulbCloneInsteadOfVirtualLightbulbCloneRpc(false);
         ChangeVirtualReplacementLightbulbCloneParentToNoneRpc();
+        ShowVirtualReplacementLightbulbCloneRpc(true);
+        ShowVirtualPlaceholderReplacementLightbulbCloneRpc(false);
     }
 
     void HandleVirtualReplacementLightbulbCloneReleased(GameObject grabbedObject)
@@ -111,19 +114,13 @@ public class LampNetworked : NetworkBehaviour
         {
             if (hit.transform.gameObject.name == virtualLampClone.name && !virtualLightbulbCloneIsConnectedToVirtualLampClone)
             {
-                // ChangeVirtualPlacholderLightbulbCloneMaterialColorRpc(Color.yellow);
                 ChangeVirtualReplacementLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
-                UseVirtualPlaceholderReplacementLightbulbCloneInsteadOfVirtualLightbulbCloneRpc(true);
                 ChangeVirtualReplacementLightbulbCloneParentToVirtualLampCloneRpc();
-                
-                // ChangeVirtualReplacementLightbulbCloneMaterialColorRpc(Color.yellow);
+                ShowVirtualPlaceholderReplacementLightbulbCloneRpc(true);
+                ShowVirtualReplacementLightbulbCloneRpc(false);
             }
         }
     }
-
-    //
-    // RPCs
-    //
 
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void ChangeRealLampTurnedOnStateRpc(bool turnedOn)
@@ -137,31 +134,30 @@ public class LampNetworked : NetworkBehaviour
         virtualCloneIsSpawned = spawned;
     }
 
-    // ### INTERCHABALITY ###
+    // ### VISIBILTY ###
     [Rpc(RpcSources.All, RpcTargets.All)]
-    public void UseVirtualPlaceholderLightbulbCloneInsteadOfVirtualLightbulbCloneRpc(bool use)
+    public void ShowVirtualLightbulbCloneRpc(bool visible)
     {
-        virtualLightbulbClone.transform.Find("Visual").transform.Find("Sphere").GetComponent<MeshRenderer>().enabled = !use;
-        virtualPlaceholderLightbulbClone.GetComponent<MeshRenderer>().enabled = use;
+        virtualLightbulbClone.transform.Find("Visual").transform.Find("Sphere").GetComponent<MeshRenderer>().enabled = visible;
     }
 
-    /*
     [Rpc(RpcSources.All, RpcTargets.All)]
-    public void UseVirtualPlaceholderLightbulbCloneInsteadOfVirtualReplacementLightbulbCloneRpc(bool use)
+    public void ShowVirtualReplacementLightbulbCloneRpc(bool visible)
     {
-        virtualReplacementLightbulbClone.transform.Find("Visual").transform.Find("Sphere").GetComponent<MeshRenderer>().enabled = !use;
-        virtualPlaceholderLightbulbClone.GetComponent<MeshRenderer>().enabled = use;
+        virtualReplacementLightbulbClone.transform.Find("Visual").transform.Find("Sphere").GetComponent<MeshRenderer>().enabled = visible;
     }
-    */
 
     [Rpc(RpcSources.All, RpcTargets.All)]
-    public void UseVirtualPlaceholderReplacementLightbulbCloneInsteadOfVirtualLightbulbCloneRpc(bool use)
+    public void ShowVirtualPlaceholderLightbulbCloneRpc(bool visible)
     {
-        virtualReplacementLightbulbClone.transform.Find("Visual").transform.Find("Sphere").GetComponent<MeshRenderer>().enabled = !use;
-        virtualPlaceholderReplacementLightbulbClone.GetComponent<MeshRenderer>().enabled = use;
+        virtualPlaceholderLightbulbClone.GetComponent<MeshRenderer>().enabled = visible;
     }
-    
 
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void ShowVirtualPlaceholderReplacementLightbulbCloneRpc(bool visible)
+    {
+        virtualPlaceholderReplacementLightbulbClone.GetComponent<MeshRenderer>().enabled = visible;
+    }
 
     // ### PARENTS ###
     [Rpc(RpcSources.All, RpcTargets.All)]
@@ -208,6 +204,12 @@ public class LampNetworked : NetworkBehaviour
     }
 
     // ### COLORS ###
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void ChangeVirtualLightbulbMaterialColorRpc(Color color)
+    {
+        virtualLightbulb.GetComponentInChildren<MeshRenderer>().material.color = color;
+    }
+
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void ChangeVirtualLightbulbCloneMaterialColorRpc(Color color)
     {
