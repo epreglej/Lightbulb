@@ -16,7 +16,9 @@ public class LampNetworked : NetworkBehaviour
     [SerializeField] GameObject virtualPlaceholderLightbulbClone; // used for fixing desync
     [SerializeField] GameObject virtualPlaceholderReplacementLightbulbClone; // used for fixing desync
 
+    private GameObject virtualLightbulbCloneBulb;
     private GameObject virtualLightbulbCloneSocket;
+    private GameObject virtualReplacementLightbulbCloneBulb;
     private GameObject virtualReplacementLightbulbCloneSocket;
 
     public ObjectGrabbedEventSender lightbulbObjectGrabbedEventSender;
@@ -24,7 +26,8 @@ public class LampNetworked : NetworkBehaviour
     public ObjectGrabbedEventSender lampBodyObjectGrabbedEventSender;
 
     [Networked] public bool realLampIsTurnedOn { get; set; }
-    [Networked] public bool virtualCloneIsSpawned { get; set; } = false;
+    [Networked] public bool virtualLampCloneIsSpawned { get; set; } = false;
+    [Networked] public bool virtualLampCloneIsTurnedOn { get; set; } = false;
     [Networked] public bool virtualLightbulbCloneIsConnectedToVirtualLampClone { get; set; } = true;
     [Networked] public bool virtualReplacementLightbulbCloneIsConnectedToVirtualLampClone { get; set; } = false;
     
@@ -37,17 +40,25 @@ public class LampNetworked : NetworkBehaviour
         workingLightbulbObjectGrabbedEventSender.onObjectReleased += HandleVirtualReplacementLightbulbCloneReleased;
         lampBodyObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualLampCloneGrabbed;
 
+        virtualLightbulbCloneBulb = virtualLightbulbClone.transform.Find("Visual")
+            .Find("Sphere").gameObject;
+        virtualReplacementLightbulbCloneBulb = virtualReplacementLightbulbClone.transform.Find("Visual")
+            .Find("Sphere").gameObject;
         virtualLightbulbCloneSocket = virtualLightbulbClone.transform.Find("Visual")
             .Find("Capsule").gameObject;
         virtualReplacementLightbulbCloneSocket = virtualReplacementLightbulbClone.transform.Find("Visual")
             .Find("Capsule").gameObject;
+        /*
+        virtualLampOnButton = virtualLamp.transform.Find("Visual")
+            .Find("On Button").gameObject;
+        virtualLampOffButton = virtualLamp.transform.Find("Visual")
+            .Find("Off Button").gameObject;
+        */
     }
 
     public override void Spawned()
     {
         base.Spawned();
-
-
 
         ChangeVirtualLightbulbCloneMaterialColorRpc(Color.white);
         ChangeVirtualReplacementLightbulbCloneMaterialColorRpc(Color.gray);
@@ -77,12 +88,30 @@ public class LampNetworked : NetworkBehaviour
         }
     }
 
+    public void ChangeVirtualLampCloneTurnedOnState()
+    {
+        ChangeVirtualLampCloneTurnedOnStateRpc(!virtualLampCloneIsTurnedOn);
+        HandleVirtualReplacementLightbulbSocketed(); // draw new state for the lightbulb
+    }
+
     // ### interaction handlers ####
     void HandleVirtualLampCloneGrabbed(GameObject grabbedObject)
     {
-        if (!virtualCloneIsSpawned)
+        if (!virtualLampCloneIsSpawned)
         {
-            ChangeVirtualCloneSpawnedStateRpc(true);
+            ChangeVirtualLampCloneSpawnedStateRpc(true);
+        }
+    }
+
+    void HandleVirtualReplacementLightbulbSocketed()
+    {
+        if(virtualLampCloneIsTurnedOn)
+        {
+            ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(Color.yellow);
+        }
+        else
+        {
+            ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(Color.white);
         }
     }
 
@@ -97,9 +126,11 @@ public class LampNetworked : NetworkBehaviour
     void HandleVirtualLightbulbCloneReleased(GameObject grabbedObject)
     {
         RaycastHit hit;
-        if (Physics.Raycast(virtualLightbulbCloneSocket.transform.position, virtualLightbulbCloneSocket.transform.TransformDirection(-Vector3.up), out hit, 0.5f))
+        if (Physics.Raycast(virtualLightbulbCloneSocket.transform.position, 
+            virtualLightbulbCloneSocket.transform.TransformDirection(-Vector3.up), out hit, 0.125f))
         {
-            if (hit.transform.gameObject.name == virtualLampClone.name && !virtualReplacementLightbulbCloneIsConnectedToVirtualLampClone)
+            if (hit.transform.gameObject.name == virtualLampClone.name 
+                && !virtualReplacementLightbulbCloneIsConnectedToVirtualLampClone)
             {
                 ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
                 ChangeVirtualLightbulbCloneParentToVirtualLampCloneRpc();
@@ -120,14 +151,18 @@ public class LampNetworked : NetworkBehaviour
     void HandleVirtualReplacementLightbulbCloneReleased(GameObject grabbedObject)
     {
         RaycastHit hit;
-        if (Physics.Raycast(virtualReplacementLightbulbCloneSocket.transform.position, virtualReplacementLightbulbCloneSocket.transform.TransformDirection(-Vector3.up), out hit, 0.5f))
+        if (Physics.Raycast(virtualReplacementLightbulbCloneSocket.transform.position, 
+            virtualReplacementLightbulbCloneSocket.transform.TransformDirection(-Vector3.up), out hit, 0.125f))
         {
-            if (hit.transform.gameObject.name == virtualLampClone.name && !virtualLightbulbCloneIsConnectedToVirtualLampClone)
+            if (hit.transform.gameObject.name == virtualLampClone.name 
+                && !virtualLightbulbCloneIsConnectedToVirtualLampClone)
             {
                 ChangeVirtualReplacementLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
                 ChangeVirtualReplacementLightbulbCloneParentToVirtualLampCloneRpc();
                 ShowVirtualPlaceholderReplacementLightbulbCloneRpc(true);
                 ShowVirtualReplacementLightbulbCloneRpc(false);
+
+                HandleVirtualReplacementLightbulbSocketed();
             }
         }
     }
@@ -139,25 +174,29 @@ public class LampNetworked : NetworkBehaviour
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
-    public void ChangeVirtualCloneSpawnedStateRpc(bool spawned)
+    public void ChangeVirtualLampCloneSpawnedStateRpc(bool spawned)
     {
-        virtualCloneIsSpawned = spawned;
+        virtualLampCloneIsSpawned = spawned;
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void ChangeVirtualLampCloneTurnedOnStateRpc(bool turnedOn)
+    {
+        virtualLampCloneIsTurnedOn = turnedOn;
     }
 
     // ### VISIBILTY ###
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void ShowVirtualLightbulbCloneRpc(bool visible)
     {
-        var virtualLightbulbCloneTransform = virtualLightbulbClone.transform.Find("Visual");
-        virtualLightbulbCloneTransform.Find("Sphere").GetComponent<MeshRenderer>().enabled = visible;
+        virtualLightbulbCloneBulb.GetComponent<MeshRenderer>().enabled = visible;
         virtualLightbulbCloneSocket.GetComponent<MeshRenderer>().enabled = visible;
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void ShowVirtualReplacementLightbulbCloneRpc(bool visible)
     {
-        var virtualReplacementLightbulbCloneTransform = virtualReplacementLightbulbClone.transform.Find("Visual");
-        virtualReplacementLightbulbCloneTransform.Find("Sphere").GetComponent<MeshRenderer>().enabled = visible;
+        virtualReplacementLightbulbCloneBulb.GetComponent<MeshRenderer>().enabled = visible;
         virtualReplacementLightbulbCloneSocket.GetComponent<MeshRenderer>().enabled = visible;
     }
 
