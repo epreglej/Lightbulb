@@ -65,6 +65,8 @@ public class LampNetworked : NetworkBehaviour
         ChangeVirtualPlacholderLightbulbCloneMaterialColorRpc(Color.gray);
         ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(Color.yellow);
 
+        ShowVirtualLampCloneRpc(false);
+
         ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
         ChangeVirtualLightbulbCloneParentToVirtualLampCloneRpc();
 
@@ -72,6 +74,9 @@ public class LampNetworked : NetworkBehaviour
         ShowVirtualPlaceholderLightbulbCloneRpc(true);
         ShowVirtualReplacementLightbulbCloneRpc(true);
         ShowVirtualPlaceholderReplacementLightbulbCloneRpc(false);
+
+        // ovo traba staviti na true samo kad se prava lampa upali i false kad se ugasi
+        //ChangeRealLampTurnedOnState(true);
     }
 
     // call this when socket says lamp is on / off
@@ -100,6 +105,7 @@ public class LampNetworked : NetworkBehaviour
         if (!virtualLampCloneIsSpawned)
         {
             ChangeVirtualLampCloneSpawnedStateRpc(true);
+            ShowVirtualLampCloneRpc(true);
         }
     }
 
@@ -186,6 +192,12 @@ public class LampNetworked : NetworkBehaviour
     }
 
     // ### VISIBILTY ###
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void ShowVirtualLampCloneRpc(bool visible)
+    {
+        virtualLampClone.transform.Find("Visual").gameObject.SetActive(visible);
+    }
+
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void ShowVirtualLightbulbCloneRpc(bool visible)
     {
