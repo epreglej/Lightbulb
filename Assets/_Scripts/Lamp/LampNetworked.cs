@@ -15,6 +15,8 @@ public class LampNetworked : NetworkBehaviour
     [SerializeField] GameObject virtualPlaceholderLightbulbClone; // used for fixing desync
     [SerializeField] GameObject virtualPlaceholderReplacementLightbulbClone; // used for fixing desync
 
+    [SerializeField] GameObject lightbulbReferenceLocation;
+
     private GameObject virtualLightbulbCloneBulb;
     private GameObject virtualLightbulbCloneSocket;
     private GameObject virtualReplacementLightbulbCloneBulb;
@@ -252,8 +254,7 @@ public class LampNetworked : NetworkBehaviour
     {
         virtualLightbulbClone.transform.SetParent(virtualLampClone.transform, true);
         virtualLightbulbClone.transform
-            .SetPositionAndRotation(virtualLampClone.transform.position
-            + virtualLampClone.transform.up * 0.275f, virtualLampClone.transform.rotation);
+            .SetPositionAndRotation(lightbulbReferenceLocation.transform.position, virtualLampClone.transform.rotation);
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
@@ -267,8 +268,7 @@ public class LampNetworked : NetworkBehaviour
     {
         virtualReplacementLightbulbClone.transform.SetParent(virtualLampClone.transform, true);
         virtualReplacementLightbulbClone.transform
-            .SetPositionAndRotation(virtualLampClone.transform.position 
-            + virtualLampClone.transform.up * 0.275f, virtualLampClone.transform.rotation);
+            .SetPositionAndRotation(lightbulbReferenceLocation.transform.position, virtualLampClone.transform.rotation);
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]

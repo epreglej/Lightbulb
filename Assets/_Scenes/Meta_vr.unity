@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18396,16 +18397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e362cabb12e2bbc45bb81313ffd5ff97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testMenuControllsAndSize: {fileID: 0}
-  _testMenuCouch: {fileID: 0}
-  _testMenuControllsAndSizeToggle: {fileID: 0}
-  _testMenuCouchToggle: {fileID: 0}
-  _chessKinematic: {fileID: 0}
-  _chessLogic: {fileID: 0}
-  _chessSnapping: {fileID: 0}
-  _scaleSmall: {x: 0, y: 0, z: 0}
-  _scaleLarge: {x: 0, y: 0, z: 0}
-  _chessLocationTable: {fileID: 0}
 --- !u!1 &575590970
 GameObject:
   m_ObjectHideFlags: 0

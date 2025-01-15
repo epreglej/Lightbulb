@@ -27993,6 +27993,14 @@ PrefabInstance:
       propertyPath: SortKey
       value: 1343328356
       objectReference: {fileID: 0}
+    - target: {fileID: 2172632081653594938, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
+      propertyPath: NestedObjects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447117041231531372, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2938253280499274789, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
       propertyPath: SortKey
       value: 935557832
@@ -28000,6 +28008,10 @@ PrefabInstance:
     - target: {fileID: 3809125958269383368, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
       propertyPath: m_Name
       value: Lamp System
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631455817402404949, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
+      propertyPath: instanceId
+      value: 2960e7a1-6eb2-4801-9024-026b2d953dee
       objectReference: {fileID: 0}
     - target: {fileID: 5026218666007384732, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
       propertyPath: SortKey
@@ -28013,9 +28025,17 @@ PrefabInstance:
       propertyPath: SortKey
       value: 3033284877
       objectReference: {fileID: 0}
+    - target: {fileID: 5872082410178532588, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
+      propertyPath: instanceId
+      value: b5334d98-7bbc-4c4f-93f0-d6d28c18b85b
+      objectReference: {fileID: 0}
     - target: {fileID: 7070863275634115367, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
       propertyPath: SortKey
       value: 1297458385
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553566323570083800, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8417412161220627011, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28055,6 +28075,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8417412161220627011, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577432393910662373, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
