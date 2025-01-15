@@ -4,7 +4,6 @@ using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using System.Linq;
 using UnityEngine;
-using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class LampNetworked : NetworkBehaviour
 {
@@ -20,6 +19,9 @@ public class LampNetworked : NetworkBehaviour
     private GameObject virtualLightbulbCloneSocket;
     private GameObject virtualReplacementLightbulbCloneBulb;
     private GameObject virtualReplacementLightbulbCloneSocket;
+
+    private Color defaultLightbulbOffColor = new Color(1f, 1f, 1f, 155f / 255f);
+    private Color defaultLightbulbOnColor = new Color(1f, 0.92f, 0.016f, 200f / 255f);
 
     public ObjectGrabbedEventSender lightbulbObjectGrabbedEventSender;
     public ObjectGrabbedEventSender workingLightbulbObjectGrabbedEventSender;
@@ -69,20 +71,14 @@ public class LampNetworked : NetworkBehaviour
 
         Debug.Log("LampNetworked script instance spawned.");
 
-        ChangeVirtualPlacholderLightbulbCloneMaterialColorRpc(Color.gray);
-        ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(Color.yellow);
+        ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(defaultLightbulbOnColor);
 
         if (!isStarted)
         {
-            ChangeVirtualLightbulbCloneMaterialColorRpc(Color.white);
-            ChangeVirtualReplacementLightbulbCloneMaterialColorRpc(Color.gray);
-
-            // vidi ovo ispod koliko puta treba ko zvat
             ShowVirtualLampCloneRpc(false);
 
             ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
             ChangeVirtualReplacementLightbulbCloneConnectedStateToVirtualLampCloneRpc(false);
-            //
 
             ShowVirtualLightbulbCloneRpc(false);
             ShowVirtualPlaceholderLightbulbCloneRpc(true);
@@ -111,11 +107,11 @@ public class LampNetworked : NetworkBehaviour
         ChangeRealLampTurnedOnStateRpc(turnedOn);
         if (turnedOn == true)
         {
-            ChangeVirtualLightbulbMaterialColorRpc(Color.yellow);
+            ChangeVirtualLightbulbMaterialColorRpc(defaultLightbulbOnColor);
         }
         else
         {
-            ChangeVirtualLightbulbMaterialColorRpc(Color.white);
+            ChangeVirtualLightbulbMaterialColorRpc(defaultLightbulbOffColor);
         }
     }
 
@@ -139,11 +135,11 @@ public class LampNetworked : NetworkBehaviour
     {
         if(virtualLampCloneIsTurnedOn)
         {
-            ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(Color.yellow);
+            ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(defaultLightbulbOnColor);
         }
         else
         {
-            ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(Color.white);
+            ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(defaultLightbulbOffColor);
         }
     }
 
@@ -257,7 +253,7 @@ public class LampNetworked : NetworkBehaviour
         virtualLightbulbClone.transform.SetParent(virtualLampClone.transform, true);
         virtualLightbulbClone.transform
             .SetPositionAndRotation(virtualLampClone.transform.position
-            + virtualLampClone.transform.up * 0.25f, virtualLampClone.transform.rotation);
+            + virtualLampClone.transform.up * 0.275f, virtualLampClone.transform.rotation);
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
@@ -272,7 +268,7 @@ public class LampNetworked : NetworkBehaviour
         virtualReplacementLightbulbClone.transform.SetParent(virtualLampClone.transform, true);
         virtualReplacementLightbulbClone.transform
             .SetPositionAndRotation(virtualLampClone.transform.position 
-            + virtualLampClone.transform.up * 0.25f, virtualLampClone.transform.rotation);
+            + virtualLampClone.transform.up * 0.275f, virtualLampClone.transform.rotation);
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
