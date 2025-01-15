@@ -25,12 +25,25 @@ public class LampNetworked : NetworkBehaviour
     public ObjectGrabbedEventSender workingLightbulbObjectGrabbedEventSender;
     public ObjectGrabbedEventSender lampBodyObjectGrabbedEventSender;
 
+    [Networked] private bool isStarted { get; set; } = false;
+
     [Networked] public bool realLampIsTurnedOn { get; set; }
     [Networked] public bool virtualLampCloneIsSpawned { get; set; } = false;
     [Networked] public bool virtualLampCloneIsTurnedOn { get; set; } = false;
     [Networked] public bool virtualLightbulbCloneIsConnectedToVirtualLampClone { get; set; } = true;
     [Networked] public bool virtualReplacementLightbulbCloneIsConnectedToVirtualLampClone { get; set; } = false;
-    
+
+    [Networked] public bool virtualLightbulbCloneIsVisible { get; set; }
+    [Networked] public bool virtualReplacementLightbulbCloneIsVisible { get; set; }
+    [Networked] public bool virtualPlaceholderLightbulbCloneIsVisible { get; set; }
+    [Networked] public bool virtualPlaceholderReplacementLightbulbCloneIsVisible { get; set; }
+
+
+    //
+    // za Branimira!
+    // ovo traba staviti na true samo kad se prava lampa upali i false kad se ugasi
+    // ChangeRealLampTurnedOnState(true);
+    //
 
     void Start()
     {
@@ -48,35 +61,48 @@ public class LampNetworked : NetworkBehaviour
             .Find("Capsule").gameObject;
         virtualReplacementLightbulbCloneSocket = virtualReplacementLightbulbClone.transform.Find("Visual")
             .Find("Capsule").gameObject;
-        /*
-        virtualLampOnButton = virtualLamp.transform.Find("Visual")
-            .Find("On Button").gameObject;
-        virtualLampOffButton = virtualLamp.transform.Find("Visual")
-            .Find("Off Button").gameObject;
-        */
     }
 
     public override void Spawned()
     {
         base.Spawned();
 
-        ChangeVirtualLightbulbCloneMaterialColorRpc(Color.white);
-        ChangeVirtualReplacementLightbulbCloneMaterialColorRpc(Color.gray);
+        Debug.Log("LampNetworked script instance spawned.");
+
         ChangeVirtualPlacholderLightbulbCloneMaterialColorRpc(Color.gray);
         ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(Color.yellow);
 
-        ShowVirtualLampCloneRpc(false);
+        if (!isStarted)
+        {
+            ChangeVirtualLightbulbCloneMaterialColorRpc(Color.white);
+            ChangeVirtualReplacementLightbulbCloneMaterialColorRpc(Color.gray);
 
-        ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
-        ChangeVirtualLightbulbCloneParentToVirtualLampCloneRpc();
+            // vidi ovo ispod koliko puta treba ko zvat
+            ShowVirtualLampCloneRpc(false);
 
-        ShowVirtualLightbulbCloneRpc(false);
-        ShowVirtualPlaceholderLightbulbCloneRpc(true);
-        ShowVirtualReplacementLightbulbCloneRpc(true);
-        ShowVirtualPlaceholderReplacementLightbulbCloneRpc(false);
+            ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
+            ChangeVirtualReplacementLightbulbCloneConnectedStateToVirtualLampCloneRpc(false);
+            //
 
-        // ovo traba staviti na true samo kad se prava lampa upali i false kad se ugasi
-        //ChangeRealLampTurnedOnState(true);
+            ShowVirtualLightbulbCloneRpc(false);
+            ShowVirtualPlaceholderLightbulbCloneRpc(true);
+            ShowVirtualReplacementLightbulbCloneRpc(true);
+            ShowVirtualPlaceholderReplacementLightbulbCloneRpc(false);
+
+            isStarted = true;
+        }
+        else
+        {
+            ShowVirtualLampCloneRpc(virtualLampCloneIsSpawned);
+
+            ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(virtualLightbulbCloneIsConnectedToVirtualLampClone);
+            ChangeVirtualReplacementLightbulbCloneConnectedStateToVirtualLampCloneRpc(virtualReplacementLightbulbCloneIsConnectedToVirtualLampClone);
+
+            ShowVirtualLightbulbCloneRpc(virtualLightbulbCloneIsVisible);
+            ShowVirtualPlaceholderLightbulbCloneRpc(virtualPlaceholderLightbulbCloneIsVisible);
+            ShowVirtualReplacementLightbulbCloneRpc(virtualReplacementLightbulbCloneIsVisible);
+            ShowVirtualPlaceholderReplacementLightbulbCloneRpc(virtualPlaceholderReplacementLightbulbCloneIsVisible);
+        }
     }
 
     // call this when socket says lamp is on / off
@@ -124,7 +150,6 @@ public class LampNetworked : NetworkBehaviour
     void HandleVirtualLightbulbCloneGrabbed(GameObject grabbedObject)
     {
         ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(false);
-        ChangeVirtualLightbulbCloneParentToNoneRpc();
         ShowVirtualLightbulbCloneRpc(true);
         ShowVirtualPlaceholderLightbulbCloneRpc(false);
     }
@@ -139,7 +164,6 @@ public class LampNetworked : NetworkBehaviour
                 && !virtualReplacementLightbulbCloneIsConnectedToVirtualLampClone)
             {
                 ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
-                ChangeVirtualLightbulbCloneParentToVirtualLampCloneRpc();
                 ShowVirtualPlaceholderLightbulbCloneRpc(true);
                 ShowVirtualLightbulbCloneRpc(false);
             }
@@ -149,7 +173,6 @@ public class LampNetworked : NetworkBehaviour
     void HandleVirtualReplacementLightbulbCloneGrabbed(GameObject grabbedObject)
     {
         ChangeVirtualReplacementLightbulbCloneConnectedStateToVirtualLampCloneRpc(false);
-        ChangeVirtualReplacementLightbulbCloneParentToNoneRpc();
         ShowVirtualReplacementLightbulbCloneRpc(true);
         ShowVirtualPlaceholderReplacementLightbulbCloneRpc(false);
     }
@@ -164,7 +187,6 @@ public class LampNetworked : NetworkBehaviour
                 && !virtualLightbulbCloneIsConnectedToVirtualLampClone)
             {
                 ChangeVirtualReplacementLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
-                ChangeVirtualReplacementLightbulbCloneParentToVirtualLampCloneRpc();
                 ShowVirtualPlaceholderReplacementLightbulbCloneRpc(true);
                 ShowVirtualReplacementLightbulbCloneRpc(false);
 
@@ -201,6 +223,7 @@ public class LampNetworked : NetworkBehaviour
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void ShowVirtualLightbulbCloneRpc(bool visible)
     {
+        virtualLightbulbCloneIsVisible = visible;
         virtualLightbulbCloneBulb.GetComponent<MeshRenderer>().enabled = visible;
         virtualLightbulbCloneSocket.GetComponent<MeshRenderer>().enabled = visible;
     }
@@ -208,6 +231,7 @@ public class LampNetworked : NetworkBehaviour
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void ShowVirtualReplacementLightbulbCloneRpc(bool visible)
     {
+        virtualReplacementLightbulbCloneIsVisible = visible;
         virtualReplacementLightbulbCloneBulb.GetComponent<MeshRenderer>().enabled = visible;
         virtualReplacementLightbulbCloneSocket.GetComponent<MeshRenderer>().enabled = visible;
     }
@@ -215,12 +239,14 @@ public class LampNetworked : NetworkBehaviour
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void ShowVirtualPlaceholderLightbulbCloneRpc(bool visible)
     {
+        virtualPlaceholderLightbulbCloneIsVisible = visible;
         virtualPlaceholderLightbulbClone.GetComponent<MeshRenderer>().enabled = visible;
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void ShowVirtualPlaceholderReplacementLightbulbCloneRpc(bool visible)
     {
+        virtualPlaceholderReplacementLightbulbCloneIsVisible = visible;
         virtualPlaceholderReplacementLightbulbClone.GetComponent<MeshRenderer>().enabled = visible;
     }
 
@@ -260,12 +286,30 @@ public class LampNetworked : NetworkBehaviour
     public void ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(bool connected)
     {
         virtualLightbulbCloneIsConnectedToVirtualLampClone = connected;
+
+        if (connected)
+        {
+            ChangeVirtualLightbulbCloneParentToVirtualLampCloneRpc();
+        }
+        else
+        {
+            ChangeVirtualLightbulbCloneParentToNoneRpc();
+        }
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void ChangeVirtualReplacementLightbulbCloneConnectedStateToVirtualLampCloneRpc(bool connected)
     {
         virtualReplacementLightbulbCloneIsConnectedToVirtualLampClone = connected;
+
+        if (connected)
+        {
+            ChangeVirtualReplacementLightbulbCloneParentToVirtualLampCloneRpc();
+        }
+        else
+        {
+            ChangeVirtualReplacementLightbulbCloneParentToNoneRpc();
+        }
     }
 
     // ### COLORS ###
