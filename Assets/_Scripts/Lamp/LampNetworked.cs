@@ -30,6 +30,7 @@ public class LampNetworked : NetworkBehaviour
     public ObjectGrabbedEventSender lightbulbObjectGrabbedEventSender;
     public ObjectGrabbedEventSender workingLightbulbObjectGrabbedEventSender;
     public ObjectGrabbedEventSender lampBodyObjectGrabbedEventSender;
+    public ObjectGrabbedEventSender powerButtonObjectGrabbedEventSender;
 
     [Networked] private bool isStarted { get; set; } = false;
 
@@ -71,6 +72,7 @@ public class LampNetworked : NetworkBehaviour
         workingLightbulbObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualReplacementLightbulbCloneGrabbed;
         workingLightbulbObjectGrabbedEventSender.onObjectReleased += HandleVirtualReplacementLightbulbCloneReleased;
         lampBodyObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualLampCloneGrabbed;
+        powerButtonObjectGrabbedEventSender.onObjectGrabbed += HandlePowerButtonGrabbed;
 
         ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(defaultLightbulbOnColor);
 
@@ -123,6 +125,11 @@ public class LampNetworked : NetworkBehaviour
     }
 
     // ### interaction handlers ####
+    void HandlePowerButtonGrabbed(GameObject grabbedObject)
+    {
+        ChangeVirtualLampCloneTurnedOnState();
+    }
+
     void HandleVirtualLampCloneGrabbed(GameObject grabbedObject)
     {
         if (!virtualLampCloneIsSpawned)
