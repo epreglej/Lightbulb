@@ -72,7 +72,7 @@ public class LampNetworked : NetworkBehaviour
         workingLightbulbObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualReplacementLightbulbCloneGrabbed;
         workingLightbulbObjectGrabbedEventSender.onObjectReleased += HandleVirtualReplacementLightbulbCloneReleased;
         lampBodyObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualLampCloneGrabbed;
-        powerButtonObjectGrabbedEventSender.onObjectGrabbed += HandlePowerButtonClicked;
+        powerButtonObjectGrabbedEventSender.onObjectGrabbed += HandlePowerButtonGrabbed;
 
         ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(defaultLightbulbOnColor);
 
@@ -125,7 +125,7 @@ public class LampNetworked : NetworkBehaviour
     }
 
     // ### interaction handlers ####
-    void HandlePowerButtonClicked(GameObject clickedObject)
+    void HandlePowerButtonGrabbed(GameObject grabbedObject)
     {
         ChangeVirtualLampCloneTurnedOnState();
     }
@@ -141,7 +141,7 @@ public class LampNetworked : NetworkBehaviour
 
     void HandleVirtualReplacementLightbulbSocketed()
     {
-        if(virtualLampCloneIsTurnedOn)
+        if (virtualLampCloneIsTurnedOn)
         {
             ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(defaultLightbulbOnColor);
         }
@@ -161,10 +161,10 @@ public class LampNetworked : NetworkBehaviour
     void HandleVirtualLightbulbCloneReleased(GameObject grabbedObject)
     {
         RaycastHit hit;
-        if (Physics.Raycast(virtualLightbulbCloneSocket.transform.position, 
+        if (Physics.Raycast(virtualLightbulbCloneSocket.transform.position,
             virtualLightbulbCloneSocket.transform.TransformDirection(-Vector3.up), out hit, 0.125f))
         {
-            if (hit.transform.gameObject.name == virtualLampClone.name 
+            if (hit.transform.gameObject.name == virtualLampClone.name
                 && !virtualReplacementLightbulbCloneIsConnectedToVirtualLampClone)
             {
                 ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
@@ -184,10 +184,10 @@ public class LampNetworked : NetworkBehaviour
     void HandleVirtualReplacementLightbulbCloneReleased(GameObject grabbedObject)
     {
         RaycastHit hit;
-        if (Physics.Raycast(virtualReplacementLightbulbCloneSocket.transform.position, 
+        if (Physics.Raycast(virtualReplacementLightbulbCloneSocket.transform.position,
             virtualReplacementLightbulbCloneSocket.transform.TransformDirection(-Vector3.up), out hit, 0.125f))
         {
-            if (hit.transform.gameObject.name == virtualLampClone.name 
+            if (hit.transform.gameObject.name == virtualLampClone.name
                 && !virtualLightbulbCloneIsConnectedToVirtualLampClone)
             {
                 ChangeVirtualReplacementLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);

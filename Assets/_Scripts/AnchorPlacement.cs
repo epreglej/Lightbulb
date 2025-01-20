@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static OVRInput;
 
 namespace Digiphy
 {
@@ -22,19 +23,22 @@ namespace Digiphy
         [SerializeField] private Transform _rightController;
         [SerializeField] private RoomType _roomType;
 
-        private void Update()
+        public void Start()
         {
-            if (_placeCommand.action.WasPressedThisFrame())
-            {
-                CreateSpatialAnchor();
-            }
-            else if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
-            {
-                CreateSpatialAnchor();
-            }
+            _placeCommand.action.actionMap.Enable();
         }
 
-        private void CreateSpatialAnchor()
+        private void OnEnable()
+        {
+            _placeCommand.action.performed += CreateSpatialAnchor;
+        }
+
+        private void OnDisable()
+        {
+            _placeCommand.action.performed -= CreateSpatialAnchor;
+        }
+
+        private void CreateSpatialAnchor(InputAction.CallbackContext obj)
         {
             if (PlayerPrefs.HasKey(_roomType.ToString()))
             {
