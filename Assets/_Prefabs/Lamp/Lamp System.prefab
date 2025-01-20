@@ -568,6 +568,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6610940855750045124}
+  - {fileID: 1592729871231154504}
   - {fileID: 4412461694108443667}
   - {fileID: 6909113010960574753}
   m_Father: {fileID: 8417412161220627011}
@@ -708,6 +709,37 @@ MonoBehaviour:
     Position: 0.01
     Rotation: 0.01
     Scale: 0.01
+--- !u!1 &1105023541763860378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1592729871231154504}
+  m_Layer: 0
+  m_Name: Power Button Reference Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1592729871231154504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105023541763860378}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0006, z: -0.105}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2433930033050888338}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1130007051816233793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,6 +1402,7 @@ MonoBehaviour:
   virtualPlaceholderReplacementLightbulbClone: {fileID: 2447117041231531372}
   powerButton: {fileID: 2889509852129684104}
   lightbulbReferenceLocation: {fileID: 3837016383768759697}
+  powerButtonReferenceLocation: {fileID: 1105023541763860378}
   lightbulbObjectGrabbedEventSender: {fileID: 2774955442151664656}
   workingLightbulbObjectGrabbedEventSender: {fileID: 7606650826324012641}
   lampBodyObjectGrabbedEventSender: {fileID: 4766350841244383304}
@@ -1658,8 +1691,10 @@ GameObject:
   - component: {fileID: 2801701579036056562}
   - component: {fileID: 946284252641154715}
   - component: {fileID: 3807597280352753454}
+  - component: {fileID: 4684122667535698954}
+  - component: {fileID: 8194703001878118973}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Cube'
+  m_Name: '[BuildingBlock] Power Button'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1674,8 +1709,8 @@ Transform:
   m_GameObject: {fileID: 2889509852129684104}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0.1, z: -0.055}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6515737478759654131}
@@ -1797,6 +1832,46 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4684122667535698954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2889509852129684104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 3162746884
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 8194703001878118973}
+--- !u!114 &8194703001878118973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2889509852129684104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a591d221a634417e9827eb58e17de84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncScale: 0
+  SyncParent: 0
+  _interpolationTarget: {fileID: 0}
+  UsePreciseRotation: 0
+  UseRenderSleepThresholds: 1
+  RenderThresholds:
+    UseEnergy: 1
+    Position: 0.01
+    Rotation: 0.01
+    Scale: 0.01
 --- !u!1 &3070870612403121255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,6 +2561,7 @@ MonoBehaviour:
   ObjectInterest: 1
   Flags: 262145
   NestedObjects:
+  - {fileID: 4684122667535698954}
   - {fileID: 549761673287436511}
   - {fileID: 5026218666007384732}
   - {fileID: 2938253280499274789}

@@ -16,8 +16,8 @@ public class LampNetworked : NetworkBehaviour
     [SerializeField] GameObject virtualPlaceholderReplacementLightbulbClone; // used for fixing desync
     [SerializeField] GameObject powerButton;
 
-
     [SerializeField] GameObject lightbulbReferenceLocation;
+    [SerializeField] GameObject powerButtonReferenceLocation;
 
     private GameObject virtualLightbulbBulb;
     private GameObject virtualLightbulbCloneBulb;
@@ -34,7 +34,6 @@ public class LampNetworked : NetworkBehaviour
     public ObjectGrabbedEventSender powerButtonObjectGrabbedEventSender;
 
     [Networked] private bool isStarted { get; set; } = false;
-
     [Networked] public bool realLampIsTurnedOn { get; set; }
     [Networked] public bool virtualLampCloneIsSpawned { get; set; } = false;
     [Networked] public bool virtualLampCloneIsTurnedOn { get; set; } = false;
@@ -338,5 +337,10 @@ public class LampNetworked : NetworkBehaviour
     public void ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(Color color)
     {
         virtualPlaceholderReplacementLightbulbClone.GetComponentInChildren<MeshRenderer>().material.color = color;
+    }
+
+    override public void FixedUpdateNetwork()
+    {
+        powerButton.transform.SetPositionAndRotation(powerButtonReferenceLocation.transform.position, powerButtonReferenceLocation.transform.rotation);
     }
 }
