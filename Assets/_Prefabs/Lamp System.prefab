@@ -95,37 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boundsClipper: {fileID: 8993938609421887021}
---- !u!1 &370071603976544048
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9182947810377794369}
-  m_Layer: 0
-  m_Name: '[BuildingBlock] HandGrab'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9182947810377794369
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370071603976544048}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2984028518811401236}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &450433972634991046
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: c6f272bc-eea8-457c-a63c-f6b5e8f5cfa1
+  instanceId: 1def269d-0a95-48c8-88b9-2800522f056c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -468,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortKey: 436175463
+  SortKey: 2695389524
   ObjectInterest: 1
   Flags: 524289
   NestedObjects: []
@@ -571,7 +540,6 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2031573752708906735}
   - {fileID: 72293139469925012}
   m_Father: {fileID: 392097597155515411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -624,7 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 0dc5fd37-860c-43d7-8bb2-88a825b9bf15
+  instanceId: 3eaa1aad-2c95-4425-a799-a4332b2618fb
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -653,6 +621,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 6673085082118383504}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &2458333657988025177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,7 +901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: acf87896-9c0f-4c92-813e-35660c08aa58
+  instanceId: 6f21797f-8c5d-46f5-a72f-a78489e1b703
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -993,12 +962,10 @@ MonoBehaviour:
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortKey: 3986391459
+  SortKey: 3103160048
   ObjectInterest: 1
   Flags: 524289
-  NestedObjects:
-  - {fileID: 0}
-  - {fileID: 0}
+  NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 3457570286625902851}
   - {fileID: 8876526707205422070}
@@ -1196,7 +1163,7 @@ MonoBehaviour:
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortKey: 1548264079
+  SortKey: 1908082352
   ObjectInterest: 1
   Flags: 262145
   NestedObjects: []
@@ -1670,7 +1637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 431fc0c0-8022-48a0-8651-2092ecd382f6
+  instanceId: 0a158b56-56ef-4984-b803-46796f9ac0a5
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -1699,6 +1666,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 9193409265579706507}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &8319804146545998798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1888,7 +1856,6 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9182947810377794369}
   - {fileID: 6480670820277577071}
   m_Father: {fileID: 392097597155515411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1945,7 +1912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: d5b1c577-a93c-4675-b754-cb406a00a1c3
+  instanceId: 5cfc7f3f-7209-4f3f-8fc0-af88fb68ba1e
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -2027,7 +1994,7 @@ MonoBehaviour:
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortKey: 1420942086
+  SortKey: 3759853376
   ObjectInterest: 1
   Flags: 786433
   NestedObjects: []
@@ -2077,6 +2044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8417412161220627011}
+  - component: {fileID: 8651881936864105796}
   m_Layer: 0
   m_Name: Lamp System
   m_TagString: Untagged
@@ -2104,6 +2072,28 @@ Transform:
   - {fileID: 5927343135906792294}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8651881936864105796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3809125958269383368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 3685273451
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects:
+  - {fileID: 549761673287436511}
+  - {fileID: 5026218666007384732}
+  - {fileID: 2938253280499274789}
+  - {fileID: 2172632081653594938}
+  - {fileID: 5419102418738161347}
+  NetworkedBehaviours: []
 --- !u!1 &3837016383768759697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,7 +2640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: edf59caf-5485-4906-b2e8-46019b7cbd0d
+  instanceId: c014fff4-5f67-451b-a00f-da55cff73dc8
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -2679,6 +2669,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1981550076525338791}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+  _movingEnabled: 1
 --- !u!114 &1521858420987503262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3798,37 +3789,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &8362842790159739747
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2031573752708906735}
-  m_Layer: 0
-  m_Name: '[BuildingBlock] HandGrab'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2031573752708906735
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8362842790159739747}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2589546539776026417}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8501643024666156614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,7 +3904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: ac3dca6b-f8bf-471b-b4d5-9a30dc10e93d
+  instanceId: 3bc1dd8f-e681-4157-900a-83fd197dcf8f
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -4026,7 +3986,7 @@ MonoBehaviour:
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SortKey: 1125362068
+  SortKey: 2961053624
   ObjectInterest: 1
   Flags: 786433
   NestedObjects: []

@@ -14,6 +14,8 @@ public class LampNetworked : NetworkBehaviour
     [SerializeField] GameObject virtualLamp;
     [SerializeField] GameObject virtualPlaceholderLightbulbClone; // used for fixing desync
     [SerializeField] GameObject virtualPlaceholderReplacementLightbulbClone; // used for fixing desync
+    [SerializeField] GameObject powerButton;
+
 
     [SerializeField] GameObject lightbulbReferenceLocation;
 
@@ -28,6 +30,7 @@ public class LampNetworked : NetworkBehaviour
     public ObjectGrabbedEventSender lightbulbObjectGrabbedEventSender;
     public ObjectGrabbedEventSender workingLightbulbObjectGrabbedEventSender;
     public ObjectGrabbedEventSender lampBodyObjectGrabbedEventSender;
+    public ObjectGrabbedEventSender powerButtonObjectGrabbedEventSender;
 
     [Networked] private bool isStarted { get; set; } = false;
 
@@ -49,13 +52,11 @@ public class LampNetworked : NetworkBehaviour
     // ChangeRealLampTurnedOnState(true);
     //
 
-    void Start()
+    public override void Spawned()
     {
-        lightbulbObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualLightbulbCloneGrabbed;
-        lightbulbObjectGrabbedEventSender.onObjectReleased += HandleVirtualLightbulbCloneReleased;
-        workingLightbulbObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualReplacementLightbulbCloneGrabbed;
-        workingLightbulbObjectGrabbedEventSender.onObjectReleased += HandleVirtualReplacementLightbulbCloneReleased;
-        lampBodyObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualLampCloneGrabbed;
+        base.Spawned();
+
+        Debug.Log("LampNetworked script instance spawned.");
 
         virtualLightbulbCloneBulb = virtualLightbulbClone.transform.Find("Visual")
             .Find("Sphere").gameObject;
@@ -65,13 +66,13 @@ public class LampNetworked : NetworkBehaviour
             .Find("Capsule").gameObject;
         virtualReplacementLightbulbCloneSocket = virtualReplacementLightbulbClone.transform.Find("Visual")
             .Find("Capsule").gameObject;
-    }
 
-    public override void Spawned()
-    {
-        base.Spawned();
-
-        Debug.Log("LampNetworked script instance spawned.");
+        lightbulbObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualLightbulbCloneGrabbed;
+        lightbulbObjectGrabbedEventSender.onObjectReleased += HandleVirtualLightbulbCloneReleased;
+        workingLightbulbObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualReplacementLightbulbCloneGrabbed;
+        workingLightbulbObjectGrabbedEventSender.onObjectReleased += HandleVirtualReplacementLightbulbCloneReleased;
+        lampBodyObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualLampCloneGrabbed;
+        powerButtonObjectGrabbedEventSender.onObjectGrabbed += HandlePowerButtonClicked;
 
         ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(defaultLightbulbOnColor);
 
@@ -124,6 +125,11 @@ public class LampNetworked : NetworkBehaviour
     }
 
     // ### interaction handlers ####
+    void HandlePowerButtonClicked(GameObject clickedObject)
+    {
+        ChangeVirtualLampCloneTurnedOnState();
+    }
+
     void HandleVirtualLampCloneGrabbed(GameObject grabbedObject)
     {
         if (!virtualLampCloneIsSpawned)
