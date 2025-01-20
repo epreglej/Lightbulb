@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15088,6 +15087,10 @@ PrefabInstance:
       propertyPath: SortKey
       value: 3558663691
       objectReference: {fileID: 0}
+    - target: {fileID: 5419102418738161347, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
+      propertyPath: NetworkedBehaviours.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8417412161220627011, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.538
@@ -21471,7 +21474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SyncScale: 0
   SyncParent: 1
-  _interpolationTarget: {fileID: 1433836675}
+  _interpolationTarget: {fileID: 0}
   UsePreciseRotation: 0
   UseRenderSleepThresholds: 1
   RenderThresholds:
@@ -21607,7 +21610,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1478676444}
-  - {fileID: 1433836675}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &626513686
@@ -26879,8 +26881,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 550583578}
+  m_Children: []
   m_Father: {fileID: 426439552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &823131333
@@ -36071,6 +36072,7 @@ Transform:
   - {fileID: 1071016254}
   - {fileID: 1442701265}
   - {fileID: 1885399089}
+  - {fileID: 2087580487}
   m_Father: {fileID: 1670469201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1089619381
@@ -50847,7 +50849,6 @@ MonoBehaviour:
   _rigidbody: {fileID: 626218212}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
-  _movingEnabled: 1
 --- !u!114 &1478676448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51308,6 +51309,7 @@ Transform:
   - {fileID: 1300044647}
   - {fileID: 273258502}
   - {fileID: 1290468448}
+  - {fileID: 882803995}
   m_Father: {fileID: 608915716}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1491415838
@@ -58835,8 +58837,7 @@ MonoBehaviour:
   ObjectInterest: 1
   Flags: 262145
   NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 1737912024}
+  NetworkedBehaviours: []
 --- !u!114 &1737912024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58849,9 +58850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062c92c0d612bb64d8b94b3d135711df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lampPrefab: {fileID: 3809125958269383368, guid: abf6e0ace0bf2024887b921ff5dbefad, type: 3}
-  location: {fileID: 1737912022}
-  _isLampSpawned: 0
 --- !u!1 &1740755774
 GameObject:
   m_ObjectHideFlags: 0
@@ -60440,6 +60438,7 @@ Transform:
   - {fileID: 1741533612}
   - {fileID: 364635602}
   - {fileID: 551694068}
+  - {fileID: 1415562373}
   m_Father: {fileID: 37321620}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1783730629
@@ -61755,6 +61754,7 @@ Transform:
   - {fileID: 695133238}
   - {fileID: 407774068}
   - {fileID: 292521927}
+  - {fileID: 1572247747}
   m_Father: {fileID: 542828266}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1835770817
@@ -71175,3 +71175,6 @@ SceneRoots:
   - {fileID: 2106508209}
   - {fileID: 869571614}
   - {fileID: 1400089070}
+  - {fileID: 413643055}
+  - {fileID: 626218215}
+  - {fileID: 1737912022}

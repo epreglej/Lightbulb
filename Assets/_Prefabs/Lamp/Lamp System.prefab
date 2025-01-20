@@ -381,7 +381,6 @@ MonoBehaviour:
   _rigidbody: {fileID: 3807597280352753454}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
-  _movingEnabled: 1
 --- !u!114 &7739630822362509404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -852,7 +851,6 @@ MonoBehaviour:
   _rigidbody: {fileID: 6673085082118383504}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
-  _movingEnabled: 1
 --- !u!114 &2458333657988025177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,6 +1325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5927343135906792294}
   - component: {fileID: 1615565943676379539}
+  - component: {fileID: 1937443371861719935}
   - component: {fileID: 5419102418738161347}
   m_Layer: 0
   m_Name: Lamp Manager
@@ -1384,6 +1383,19 @@ MonoBehaviour:
   _virtualReplacementLightbulbCloneIsVisible: 0
   _virtualPlaceholderLightbulbCloneIsVisible: 0
   _virtualPlaceholderReplacementLightbulbCloneIsVisible: 0
+--- !u!114 &1937443371861719935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2524570256740560394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba499b834eff3c4a8a96d046255ab4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lampNetworked: {fileID: 1615565943676379539}
 --- !u!114 &5419102418738161347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2052,7 +2064,6 @@ MonoBehaviour:
   _rigidbody: {fileID: 9193409265579706507}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
-  _movingEnabled: 1
 --- !u!114 &8319804146545998798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3106,7 +3117,6 @@ MonoBehaviour:
   _rigidbody: {fileID: 1981550076525338791}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
-  _movingEnabled: 1
 --- !u!114 &1521858420987503262
 MonoBehaviour:
   m_ObjectHideFlags: 0

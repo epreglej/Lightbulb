@@ -19,6 +19,7 @@ public class LampNetworked : NetworkBehaviour
 
     [SerializeField] GameObject lightbulbReferenceLocation;
 
+    private GameObject virtualLightbulbBulb;
     private GameObject virtualLightbulbCloneBulb;
     private GameObject virtualLightbulbCloneSocket;
     private GameObject virtualReplacementLightbulbCloneBulb;
@@ -45,19 +46,13 @@ public class LampNetworked : NetworkBehaviour
     [Networked] public bool virtualPlaceholderLightbulbCloneIsVisible { get; set; }
     [Networked] public bool virtualPlaceholderReplacementLightbulbCloneIsVisible { get; set; }
 
-
-    //
-    // za Branimira!
-    // ovo traba staviti na true samo kad se prava lampa upali i false kad se ugasi
-    // ChangeRealLampTurnedOnState(true);
-    //
-
     public override void Spawned()
     {
         base.Spawned();
 
         Debug.Log("LampNetworked script instance spawned.");
 
+        virtualLightbulbBulb = virtualLightbulb.transform.Find("Visual/Sphere").gameObject;
         virtualLightbulbCloneBulb = virtualLightbulbClone.transform.Find("Visual")
             .Find("Sphere").gameObject;
         virtualReplacementLightbulbCloneBulb = virtualReplacementLightbulbClone.transform.Find("Visual")
@@ -318,7 +313,7 @@ public class LampNetworked : NetworkBehaviour
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void ChangeVirtualLightbulbMaterialColorRpc(Color color)
     {
-        virtualLightbulb.GetComponentInChildren<MeshRenderer>().material.color = color;
+        virtualLightbulbBulb.GetComponent<MeshRenderer>().material.color = color;
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]

@@ -6,7 +6,8 @@ namespace Digiphy.IoT
 {
     public class SwitchControl : MonoBehaviour
     {
-        [SerializeField]
+        [SerializeField] LampNetworked lampNetworked;
+
         private string baseUrl = "http://delock-3530.local/cm?";
         private bool wasDeviceOn = false;
         private float currentThreshold = 0.05f;
@@ -81,13 +82,13 @@ namespace Digiphy.IoT
         private void DeviceTurnedOn()
         {
             Debug.Log("Device has turned ON (current > 0.05A).");
-            // todo logika
+            lampNetworked.ChangeRealLampTurnedOnState(true);
         }
 
         private void DeviceTurnedOff()
         {
             Debug.Log("Device has turned OFF (current <= 0.05A).");
-            // todo logika
+            lampNetworked.ChangeRealLampTurnedOnState(false);
         }
 
         private IEnumerator SendCommand(string command)
