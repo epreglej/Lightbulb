@@ -4,6 +4,7 @@ using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LampNetworked : NetworkBehaviour
 {
@@ -96,9 +97,46 @@ public class LampNetworked : NetworkBehaviour
             ShowVirtualReplacementLightbulbCloneRpc(virtualReplacementLightbulbCloneIsVisible);
             ShowVirtualPlaceholderReplacementLightbulbCloneRpc(virtualPlaceholderReplacementLightbulbCloneIsVisible);
         }
+
+        DisableVirtualLampInAR();
     }
 
-    // call this when socket says lamp is on / off
+    void DisableVirtualLampInAR()
+    {
+        if (SceneManager.GetActiveScene().name == "Meta_ar")
+        {
+            foreach (var renderer in virtualLightbulb.GetComponentsInChildren<MeshRenderer>())
+            {
+                renderer.enabled = false;
+            }
+
+            foreach (var renderer in virtualLamp.GetComponentsInChildren<MeshRenderer>())
+            {
+                renderer.enabled = false;
+            }
+
+            foreach (var renderer in virtualLightbulbClone.GetComponentsInChildren<MeshRenderer>())
+            {
+                renderer.enabled = false;
+            }
+
+            foreach (var renderer in virtualReplacementLightbulbClone.GetComponentsInChildren<MeshRenderer>())
+            {
+                renderer.enabled = false;
+            }
+
+            foreach (var renderer in virtualPlaceholderReplacementLightbulbClone.GetComponentsInChildren<MeshRenderer>())
+            {
+                renderer.enabled = false;
+            }
+
+            foreach (var renderer in powerButton.GetComponentsInChildren<MeshRenderer>())
+            {
+                renderer.enabled = false;
+            }
+        }
+    }
+
     public void ChangeRealLampTurnedOnState(bool turnedOn)
     {
         ChangeRealLampTurnedOnStateRpc(turnedOn);
@@ -216,6 +254,11 @@ public class LampNetworked : NetworkBehaviour
     public void ShowVirtualLampCloneRpc(bool visible)
     {
         virtualLampClone.transform.Find("Visual").gameObject.SetActive(visible);
+
+        foreach (var renderer in powerButton.GetComponentsInChildren<MeshRenderer>())
+        {
+            renderer.enabled = true;
+        }
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
