@@ -36941,7 +36941,7 @@ MonoBehaviour:
   _anchorPrefab: {fileID: -5685593780201781808, guid: 75439a169a0114347ad3954eb9211113, type: 3}
   _placeCommand: {fileID: -6774071361759373458, guid: ebb3b170b43cdfc489ef95d4b9c2a987, type: 3}
   _rightController: {fileID: 1076869685}
-  _roomType: 3
+  _roomType: 4
 --- !u!4 &1996439084
 Transform:
   m_ObjectHideFlags: 0
