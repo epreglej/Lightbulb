@@ -8484,7 +8484,7 @@ MonoBehaviour:
   PlayerJoined:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 377995502}
         m_TargetAssemblyTypeName: AnnotationGenerator, Assembly-CSharp
         m_MethodName: Init
         m_Mode: 0
