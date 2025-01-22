@@ -3,8 +3,6 @@ using UnityEngine;
 using Unity.XRTools.Rendering;
 
 
-[RequireComponent(typeof(XRLineRenderer))]
-[RequireComponent(typeof(LineRenderer))]
 public class NetworkedLine : NetworkBehaviour
 {
     [Networked, Capacity(500)]
@@ -18,10 +16,11 @@ public class NetworkedLine : NetworkBehaviour
     // Start is called before the first frame update
     public override void Spawned()
     {
-        _XRLineRenderer = GetComponent<XRLineRenderer>();
+        _XRLineRenderer = GetComponentInChildren<XRLineRenderer>();
         _XRLineRenderer.SetVertexCount(0);
-        _lineRenderer = GetComponent<LineRenderer>();
+        _lineRenderer = GetComponentInChildren<LineRenderer>();
         _lineRenderer.positionCount = 0;
+
         PointAdded();
     }
 

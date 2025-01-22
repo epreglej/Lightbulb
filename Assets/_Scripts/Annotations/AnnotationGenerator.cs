@@ -97,9 +97,9 @@ public class AnnotationGenerator : MonoBehaviour
             _currentLine = prefab.GetComponent<NetworkedLine>();
             _currentLine.usingArRenderer = _isArPlayer;
             if(_isArPlayer) 
-                _currentLine.GetComponent<XRLineRenderer>().enabled = true; 
+                _currentLine.GetComponentInChildren<XRLineRenderer>().enabled = true; 
             else
-                _currentLine.GetComponent<LineRenderer>().enabled = true;
+                _currentLine.GetComponentInChildren<LineRenderer>().enabled = true;
             _currentLine.AddPoint(_lastPosition);
             _currentLine.AddPoint(_lastPosition);
 
