@@ -18,7 +18,6 @@ public class LampNetworked : NetworkBehaviour
     [SerializeField] GameObject powerButton;
 
     [SerializeField] GameObject lightbulbReferenceLocation;
-    [SerializeField] GameObject powerButtonReferenceLocation;
 
     private GameObject virtualLightbulbBulb;
     private GameObject virtualLightbulbCloneBulb;
@@ -32,7 +31,6 @@ public class LampNetworked : NetworkBehaviour
     public ObjectGrabbedEventSender lightbulbObjectGrabbedEventSender;
     public ObjectGrabbedEventSender workingLightbulbObjectGrabbedEventSender;
     public ObjectGrabbedEventSender lampBodyObjectGrabbedEventSender;
-    public ObjectGrabbedEventSender powerButtonObjectGrabbedEventSender;
 
     [Networked] private bool isStarted { get; set; } = false;
     [Networked] public bool realLampIsTurnedOn { get; set; }
@@ -67,7 +65,8 @@ public class LampNetworked : NetworkBehaviour
         workingLightbulbObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualReplacementLightbulbCloneGrabbed;
         workingLightbulbObjectGrabbedEventSender.onObjectReleased += HandleVirtualReplacementLightbulbCloneReleased;
         lampBodyObjectGrabbedEventSender.onObjectGrabbed += HandleVirtualLampCloneGrabbed;
-        powerButtonObjectGrabbedEventSender.onObjectGrabbed += HandlePowerButtonGrabbed;
+
+        powerButton.GetComponent<PowerButton>().ButtonClicked += HandlePowerButtonClicked;
 
         ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(defaultLightbulbOnColor);
 
@@ -157,8 +156,9 @@ public class LampNetworked : NetworkBehaviour
     }
 
     // ### interaction handlers ####
-    void HandlePowerButtonGrabbed(GameObject grabbedObject)
+    void HandlePowerButtonClicked()
     {
+        Debug.Log("Grabbed!!!!!!!!!!!!!");
         ChangeVirtualLampCloneTurnedOnState();
     }
 
@@ -380,10 +380,5 @@ public class LampNetworked : NetworkBehaviour
     public void ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(Color color)
     {
         virtualPlaceholderReplacementLightbulbClone.GetComponentInChildren<MeshRenderer>().material.color = color;
-    }
-
-    override public void FixedUpdateNetwork()
-    {
-        powerButton.transform.SetPositionAndRotation(powerButtonReferenceLocation.transform.position, powerButtonReferenceLocation.transform.rotation);
     }
 }
