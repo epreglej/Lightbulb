@@ -158,7 +158,6 @@ public class LampNetworked : NetworkBehaviour
     // ### interaction handlers ####
     void HandlePowerButtonClicked()
     {
-        Debug.Log("Grabbed!!!!!!!!!!!!!");
         ChangeVirtualLampCloneTurnedOnState();
     }
 
