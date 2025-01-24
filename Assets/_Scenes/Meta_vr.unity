@@ -9070,7 +9070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6f28573339b4740aee1202308db56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerEyeAnchor: {fileID: 0}
+  centerEyeAnchor: {fileID: 2074592596}
 --- !u!114 &355349590
 MonoBehaviour:
   m_ObjectHideFlags: 0
