@@ -165,9 +165,6 @@ public class LampNetworked : NetworkBehaviour
     // ### interaction handlers ####
     void HandlePowerButtonClicked()
     {
-        if (virtualLampCloneIsTurnedOn) _switchControl.TurnOffSwitch();
-        else _switchControl.TurnOnSwitch();
-
         ChangeVirtualLampCloneTurnedOnState();
     }
 
@@ -256,6 +253,9 @@ public class LampNetworked : NetworkBehaviour
     public void ChangeVirtualLampCloneTurnedOnStateRpc(bool turnedOn)
     {
         virtualLampCloneIsTurnedOn = turnedOn;
+
+        if (turnedOn) _switchControl.TurnOnSwitch();
+        else _switchControl.TurnOffSwitch();
     }
 
     // ### VISIBILTY ###

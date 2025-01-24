@@ -21,6 +21,8 @@ namespace Digiphy
         [SerializeField] private RoomType _roomType;
         [SerializeField] private Vector3 _chessOffest;
         [SerializeField] private Vector3 _logicChessOffest;
+
+        [SerializeField] private bool _spawnChess = false;
         private NetworkRunner _runner;
 
         public void PlayerJoined(NetworkRunner runner, PlayerRef player)
@@ -62,10 +64,13 @@ namespace Digiphy
             unboundAnchor.TryGetPose(out pose);
             Vector3 oldRotation = pose.rotation.eulerAngles;
             Quaternion newRotation = Quaternion.Euler(
-                new Vector3(0, oldRotation.y + 90, 0));
+                new Vector3(0, oldRotation.y + 180, 0));
             NetworkObject synchronizationLocation = _runner.Spawn(_synchronizationLocationPrefab, pose.position + _chessOffest, newRotation);
-            NetworkObject chess = _runner.Spawn(_chessPrefab, pose.position + _chessOffest, newRotation);
-            NetworkObject logicChess = _runner.Spawn(_logicChessPrefab, pose.position + _chessOffest + _logicChessOffest, newRotation);
+            if(_spawnChess)
+            {
+                NetworkObject chess = _runner.Spawn(_chessPrefab, pose.position + _chessOffest, newRotation);
+                NetworkObject logicChess = _runner.Spawn(_logicChessPrefab, pose.position + _chessOffest + _logicChessOffest, newRotation);
+            }
         }
     }
 }
