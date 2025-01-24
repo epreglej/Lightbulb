@@ -653,7 +653,6 @@ MonoBehaviour:
   _rigidbody: {fileID: 6673085082118383504}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
-  _movingEnabled: 1
 --- !u!114 &2458333657988025177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,12 +890,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 650550136307689568}
-  - component: {fileID: 5717220445615113884}
-  - component: {fileID: 8355849743702632356}
-  - component: {fileID: 7739254713132493182}
-  - component: {fileID: 2172632081653594938}
-  - component: {fileID: 3457570286625902851}
-  - component: {fileID: 8876526707205422070}
   m_Layer: 0
   m_Name: '[BuildingBlock] Lampa koja postoji i stoji na mjestu u nekom prostoru'
   m_TagString: Untagged
@@ -920,121 +913,6 @@ Transform:
   - {fileID: 392097597155515411}
   m_Father: {fileID: 8417412161220627011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5717220445615113884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2441839391514475534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: ccffd160-e56f-4f2c-a9c3-fe3015d11852
-  version: 1
-  installationRoutineCheckpoint:
-    _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
-    _installationVariants:
-    - _memberName: _useGravity
-      _value: '{}'
-    - _memberName: installAutoMatchmaking
-      _value: '{}'
---- !u!54 &8355849743702632356
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2441839391514475534}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &7739254713132493182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2441839391514475534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 413bd4e9cbbc96b46ac5a1d62a4105d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseGravity: 0
---- !u!114 &2172632081653594938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2441839391514475534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SortKey: 3604693500
-  ObjectInterest: 1
-  Flags: 524289
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 3457570286625902851}
-  - {fileID: 8876526707205422070}
---- !u!114 &3457570286625902851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2441839391514475534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b72e9ba2c21430c818f53e1079c2a93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8876526707205422070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2441839391514475534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a591d221a634417e9827eb58e17de84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncScale: 0
-  SyncParent: 1
-  _interpolationTarget: {fileID: 392097597155515411}
-  UsePreciseRotation: 0
-  UseRenderSleepThresholds: 1
-  RenderThresholds:
-    UseEnergy: 1
-    Position: 0.01
-    Rotation: 0.01
-    Scale: 0.01
 --- !u!1 &2447117041231531372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,6 +1076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lampNetworked: {fileID: 1615565943676379539}
+  baseUrl: http://10.19.4.146/cm?
 --- !u!114 &5419102418738161347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1929,7 +1808,6 @@ MonoBehaviour:
   _rigidbody: {fileID: 9193409265579706507}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
-  _movingEnabled: 1
 --- !u!114 &8319804146545998798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2308,6 +2186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8417412161220627011}
   - component: {fileID: 8651881936864105796}
+  - component: {fileID: 3029109359106535573}
   m_Layer: 0
   m_Name: Lamp System
   m_TagString: Untagged
@@ -2354,9 +2233,25 @@ MonoBehaviour:
   - {fileID: 549761673287436511}
   - {fileID: 5026218666007384732}
   - {fileID: 2938253280499274789}
-  - {fileID: 2172632081653594938}
   - {fileID: 5419102418738161347}
-  NetworkedBehaviours: []
+  NetworkedBehaviours:
+  - {fileID: 3029109359106535573}
+--- !u!114 &3029109359106535573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3809125958269383368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!1 &3837016383768759697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2982,7 +2877,6 @@ MonoBehaviour:
   _rigidbody: {fileID: 1981550076525338791}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
-  _movingEnabled: 1
 --- !u!114 &1521858420987503262
 MonoBehaviour:
   m_ObjectHideFlags: 0

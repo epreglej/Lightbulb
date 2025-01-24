@@ -11,6 +11,10 @@ public class LampSpawner : MonoBehaviour
 
     public void PlayerJoined(NetworkRunner runner, PlayerRef player)
     {
-        runner.Spawn(lampPrefab, location.position, location.rotation);
+        if (player == runner.LocalPlayer)
+        {
+            var obj = runner.Spawn(lampPrefab, location.position, location.rotation);
+            obj.transform.parent = location;
+        }
     }
 }

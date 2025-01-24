@@ -1,3 +1,4 @@
+using Digiphy.IoT;
 using Fusion;
 using Fusion.Addons.PositionDebugging;
 using Oculus.Interaction;
@@ -6,6 +7,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(SwitchControl))]
 public class LampNetworked : NetworkBehaviour
 {
     [SerializeField] GameObject virtualLightbulbClone;
@@ -24,6 +26,8 @@ public class LampNetworked : NetworkBehaviour
     private GameObject virtualLightbulbCloneSocket;
     private GameObject virtualReplacementLightbulbCloneBulb;
     private GameObject virtualReplacementLightbulbCloneSocket;
+
+    private SwitchControl _switchControl;
 
     private Color defaultLightbulbOffColor = new Color(1f, 1f, 1f, 155f / 255f);
     private Color defaultLightbulbOnColor = new Color(1f, 0.92f, 0.016f, 200f / 255f);
@@ -47,6 +51,7 @@ public class LampNetworked : NetworkBehaviour
     public override void Spawned()
     {
         base.Spawned();
+        _switchControl = GetComponent<SwitchControl>();
 
         Debug.Log("LampNetworked script instance spawned.");
 
@@ -69,6 +74,8 @@ public class LampNetworked : NetworkBehaviour
         powerButton.GetComponent<PowerButton>().ButtonClicked += HandlePowerButtonClicked;
 
         ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(defaultLightbulbOnColor);
+
+        _switchControl.TurnOffSwitch();
 
         if (!isStarted)
         {
@@ -158,6 +165,9 @@ public class LampNetworked : NetworkBehaviour
     // ### interaction handlers ####
     void HandlePowerButtonClicked()
     {
+        if (virtualLampCloneIsTurnedOn) _switchControl.TurnOffSwitch();
+        else _switchControl.TurnOnSwitch();
+
         ChangeVirtualLampCloneTurnedOnState();
     }
 
