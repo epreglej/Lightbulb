@@ -11,8 +11,6 @@ public class NetworkedLine : NetworkBehaviour
     private XRLineRenderer _XRLineRenderer;
     private LineRenderer _lineRenderer;
 
-    public bool usingArRenderer = false;
-
     // Start is called before the first frame update
     public override void Spawned()
     {
@@ -20,6 +18,10 @@ public class NetworkedLine : NetworkBehaviour
         _XRLineRenderer.SetVertexCount(0);
         _lineRenderer = GetComponentInChildren<LineRenderer>();
         _lineRenderer.positionCount = 0;
+        if (AnnotationGenerator.IsArPlayer)
+            _lineRenderer.enabled = false;
+        else
+            _XRLineRenderer.enabled = false;
 
         PointAdded();
     }
@@ -36,7 +38,7 @@ public class NetworkedLine : NetworkBehaviour
 
     private void PointAdded()
     {
-        if(usingArRenderer)
+        if(AnnotationGenerator.IsArPlayer)
         {
             var currentVertexCount = _XRLineRenderer.GetVertexCount();
             if (currentVertexCount != 0)

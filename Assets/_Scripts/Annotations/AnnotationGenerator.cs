@@ -20,9 +20,12 @@ public class AnnotationGenerator : MonoBehaviour
     private Vector3 _lastPosition;
     private NetworkRunner _runner = null;
 
+    public static bool IsArPlayer;
+
     private void Start()
     {
         _drawButton.action.actionMap.Enable();
+        IsArPlayer = _isArPlayer;
     }
 
     public void Init(NetworkRunner runner, PlayerRef player)
@@ -95,11 +98,6 @@ public class AnnotationGenerator : MonoBehaviour
 
             var prefab = _runner.Spawn(_linePrefab);
             _currentLine = prefab.GetComponent<NetworkedLine>();
-            _currentLine.usingArRenderer = _isArPlayer;
-            if(_isArPlayer) 
-                _currentLine.GetComponentInChildren<XRLineRenderer>().enabled = true; 
-            else
-                _currentLine.GetComponentInChildren<LineRenderer>().enabled = true;
             _currentLine.AddPoint(_lastPosition);
             _currentLine.AddPoint(_lastPosition);
 
