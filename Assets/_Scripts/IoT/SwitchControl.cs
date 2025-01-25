@@ -20,19 +20,16 @@ namespace Digiphy.IoT
 
         public void ToggleSwitch()
         {
-                Debug.Log("Toggle!");
             StartCoroutine(SendCommand("Power%20Toggle"));
         }
 
         public void TurnOnSwitch()
         {
-                Debug.Log("Turn on!");
             StartCoroutine(SendCommand("Power%20On"));
         }
 
         public void TurnOffSwitch()
         {
-                Debug.Log("Turn off!");
             StartCoroutine(SendCommand("Power%20Off"));
         }
 
@@ -97,12 +94,9 @@ namespace Digiphy.IoT
         private IEnumerator SendCommand(string command)
         {
             string url = $"{baseUrl}cmnd={command}";
-            Debug.Log("Sending command!");
             using (UnityWebRequest www = UnityWebRequest.Get(url))
             {
-                Debug.Log("Before sending!");
                 yield return www.SendWebRequest();
-                Debug.Log("After sending!");
 
                 if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
 
