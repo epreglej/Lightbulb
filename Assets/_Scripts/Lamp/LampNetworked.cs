@@ -53,7 +53,6 @@ public class LampNetworked : NetworkBehaviour
         base.Spawned();
         _switchControl = GetComponent<SwitchControl>();
 
-        Debug.Log("LampNetworked script instance spawned.");
 
         virtualLightbulbBulb = virtualLightbulb.transform.Find("Visual/Sphere").gameObject;
         virtualLightbulbCloneBulb = virtualLightbulbClone.transform.Find("Visual")
