@@ -27,6 +27,9 @@ public class LampNetworked : NetworkBehaviour
     private GameObject virtualReplacementLightbulbCloneBulb;
     private GameObject virtualReplacementLightbulbCloneSocket;
 
+    private Vector3 virtualReplacementLightbulbCloneStartingPosition;
+    private Quaternion virtualReplacementLightbulbCloneStartingRotation;
+
     private SwitchControl _switchControl;
 
     private Color defaultLightbulbOffColor = new Color(1f, 1f, 1f, 155f / 255f);
@@ -53,6 +56,8 @@ public class LampNetworked : NetworkBehaviour
         base.Spawned();
         _switchControl = GetComponent<SwitchControl>();
 
+        virtualReplacementLightbulbCloneStartingPosition = virtualReplacementLightbulbClone.transform.position;
+        virtualReplacementLightbulbCloneStartingRotation = virtualReplacementLightbulbClone.transform.rotation;
 
         virtualLightbulbBulb = virtualLightbulb.transform.Find("Visual/Sphere").gameObject;
         virtualLightbulbCloneBulb = virtualLightbulbClone.transform.Find("Visual")
@@ -142,29 +147,12 @@ public class LampNetworked : NetworkBehaviour
         }
     }
 
-    public void ChangeRealLampTurnedOnState(bool turnedOn)
-    {
-        ChangeRealLampTurnedOnStateRpc(turnedOn);
-        if (turnedOn == true)
-        {
-            ChangeVirtualLightbulbMaterialColorRpc(defaultLightbulbOnColor);
-        }
-        else
-        {
-            ChangeVirtualLightbulbMaterialColorRpc(defaultLightbulbOffColor);
-        }
-    }
-
-    public void ChangeVirtualLampCloneTurnedOnState()
-    {
-        ChangeVirtualLampCloneTurnedOnStateRpc(!virtualLampCloneIsTurnedOn);
-        HandleVirtualReplacementLightbulbSocketed(); // draw new state for the lightbulb
-    }
-
-    // ### interaction handlers ####
+   
+    // ### INTERACTION HANDLERS ####
     void HandlePowerButtonClicked()
     {
         ChangeVirtualLampCloneTurnedOnState();
+        // ChangeRealLampTurnedOnState(true);
     }
 
     void HandleVirtualLampCloneGrabbed(GameObject grabbedObject)
@@ -173,6 +161,9 @@ public class LampNetworked : NetworkBehaviour
         {
             ChangeVirtualLampCloneSpawnedStateRpc(true);
             ShowVirtualLampCloneRpc(true);
+
+            ResetVirtualReplacementLightbulbClonePositionRpc();
+            ShowVirtualReplacementLightbulbCloneRpc(true);
         }
     }
 
@@ -230,10 +221,39 @@ public class LampNetworked : NetworkBehaviour
                 ChangeVirtualReplacementLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
                 ShowVirtualPlaceholderReplacementLightbulbCloneRpc(true);
                 ShowVirtualReplacementLightbulbCloneRpc(false);
-
                 HandleVirtualReplacementLightbulbSocketed();
             }
         }
+    }
+
+    // ### TURNED ON STATES ###
+    public void ChangeRealLampTurnedOnState(bool turnedOn)
+    {
+        ChangeRealLampTurnedOnStateRpc(turnedOn);
+        if (turnedOn == true)
+        {
+            ChangeVirtualLightbulbMaterialColorRpc(defaultLightbulbOnColor);
+            
+            ChangeVirtualLampCloneSpawnedStateRpc(false);
+            ShowVirtualLampCloneRpc(false);
+
+            ChangeVirtualLightbulbCloneConnectedStateToVirtualLampCloneRpc(true);
+            ChangeVirtualReplacementLightbulbCloneConnectedStateToVirtualLampCloneRpc(false);
+
+            ShowVirtualLightbulbCloneRpc(false);
+            ShowVirtualPlaceholderLightbulbCloneRpc(true);
+            ShowVirtualReplacementLightbulbCloneRpc(false);
+            ShowVirtualPlaceholderReplacementLightbulbCloneRpc(false);
+        }
+        else
+        {
+            ChangeVirtualLightbulbMaterialColorRpc(defaultLightbulbOffColor);
+        }
+    }
+    public void ChangeVirtualLampCloneTurnedOnState()
+    {
+        ChangeVirtualLampCloneTurnedOnStateRpc(!virtualLampCloneIsTurnedOn);
+        HandleVirtualReplacementLightbulbSocketed(); // draw new state for the lightbulb
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]
@@ -266,6 +286,13 @@ public class LampNetworked : NetworkBehaviour
         foreach (var renderer in powerButton.GetComponentsInChildren<MeshRenderer>())
         {
             renderer.enabled = true;
+        }
+
+        // for reseting after the real world lamp works
+        if (!visible)
+        {
+            virtualLampClone.transform.position = virtualLamp.transform.position;
+            virtualLampClone.transform.rotation = virtualLamp.transform.rotation;
         }
     }
 
@@ -388,5 +415,14 @@ public class LampNetworked : NetworkBehaviour
     public void ChangeVirtualPlacholderReplacementLightbulbCloneMaterialColorRpc(Color color)
     {
         virtualPlaceholderReplacementLightbulbClone.GetComponentInChildren<MeshRenderer>().material.color = color;
+    }
+
+    // ### RESET POSITIONS ###
+
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void ResetVirtualReplacementLightbulbClonePositionRpc()
+    {
+        virtualReplacementLightbulbClone.transform.position = virtualReplacementLightbulbCloneStartingPosition;
+        virtualReplacementLightbulbClone.transform.rotation = virtualReplacementLightbulbCloneStartingRotation;
     }
 }
