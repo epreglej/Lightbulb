@@ -1,19 +1,51 @@
-# 2024_2025 - Diplomski projekt
-### Komunikacija i kolaboracija udaljenih korisnika primjenom tehnologija virtualne i proširene stvarnosti
-Članovi tima: Marin Petric, Robert Kunštek, Eugen Preglej, Branimir Tomeljak, Anteo Vukasović
+# **2024 / 2025 - Diplomski Projekt**
+### **Komunikacija i kolaboracija udaljenih korisnika primjenom tehnologija virtualne i proširene stvarnosti**
 
-Upute za korištenje:  
-potrebno: Quest 2 (za VR), Quest 3 (za AR), pametna utičnica (Delock WLAN Power Socket Switch MQTT with energy monitoring), lampa  
-<img src="./socket.jpg" width="300rem"/>  
-aplikacija ima dva korisnika, VR i AR korisnika, te je namijenjena da se koristi na dva različita uređaja istovremeno. VR je testiran da radi na Oculus Quest 2 te AR da radi na Oculus Quest 3, ali bi VR trebao raditi i na Quest 3.  
+**Članovi tima:**  
+Marin Petric, Robert Kunštek, Eugen Preglej, Branimir Tomeljak, Anteo Vukasović
 
+---
 
-Upute za spajanje pametne utičnice na mrežu ako nije već spojena:
-- Uključiti utičnicu u struju te 4 puta brzo pritisnuti gumb
-- Računalom se spojiti na Wi-Fi mrežu "delock-3530"
-- Ako se ne otvori browser popup -> otiči na `http://192.168.4.1/`
-- Ispuniti samo prve dvije kućice (ime i lozinka Wi-Fi mreže na koju želimo da se pametna utičnica spoji), ostale izbrisati
-- Spojiti računalo na mrežu na koju smo spojili utičnicu te sačekati do 2-3 minute
-- Provjeriti radi li utičnica na `http://delock-3530.local/`
+### **Upute za korištenje:**
 
-napomena: kako je bilo problema s DNS razlučivanjem .local adresa na Quest 3 (utičnica je napravljena tako da se na nju spaja preko adrese `http://delock-3530.local`), u buildanim verzijama je hardkodirana IP adresa pametne utičnice. Ako se ta adresa promijeni potrebno ju je promijeniti unutar Unity Editora u prefabu `Lamp System` pod `Lamp System -> Lamp Manager [Switch Control skripta] -> Base Url` te ponovno buildati projekt (trebalo bi biti dovoljno rebuildati samo AR aplikaciju). Novu IP adresu pametne utičnice na Windowsu je najlakše pronaći pomoću konzolne naredbe `nslookup delock-3530.local` ili `ping delock-3530.local`.
+**Potrebno:**
+- Oculus Quest 2 (za VR)
+- Oculus Quest 3 (za AR)
+- Pametna utičnica (Delock WLAN Power Socket Switch MQTT with energy monitoring)
+- Lampa
+
+Aplikacija podržava dva korisnika: VR i AR korisnika. Namijenjena je za simultano korištenje na dva različita uređaja. Testirano je da VR radi na Oculus Quest 2, dok AR funkcionalnosti rade na Oculus Quest 3, no VR bi trebao biti kompatibilan i s Quest 3.
+
+---
+
+### **Upute za spajanje pametne utičnice na mrežu:**
+
+Ako utičnica još nije spojena na mrežu, slijedite ove korake:
+
+1. Uključite utičnicu u struju i četiri puta brzo pritisnite gumb.
+2. Pomoću računala povežite se na Wi-Fi mrežu pod nazivom **"delock-3530"**.
+3. Ako se ne otvori automatski browser popup, otvorite `http://192.168.4.1/` u svom web pregledniku.
+4. Upišite samo prva dva polja (ime i lozinka Wi-Fi mreže na koju želite povezati pametnu utičnicu). Ostala polja možete ostaviti praznima.
+5. Spojite računalo na istu mrežu na koju ste povezali utičnicu i sačekajte 2-3 minute.
+6. Provjerite radi li utičnica posjetom **`http://delock-3530.local/`**.
+
+---
+
+### **Napomena:**
+
+Zbog problema s DNS razlučivanjem `.local` adresa na Oculus Quest 3, pametna utičnica koristi hardkodiranu IP adresu u buildanim verzijama aplikacije. Ako se IP adresa utičnice promijeni, potrebno je izvršiti sljedeće:
+
+1. Otvorite Unity Editor.
+2. Nađite prefab **`Lamp System`**.
+3. Navigirajte do **`Lamp System -> Lamp Manager [Switch Control skripta] -> Base Url`**.
+4. Zamijenite staru IP adresu s novom.
+5. Ponovno buildajte projekt (samo AR aplikaciju).
+
+Za pronalazak nove IP adrese utičnice na Windowsu, možete koristiti naredbe u konzoli:
+
+- `nslookup delock-3530.local`
+- `ping delock-3530.local`
+
+---
+
+Također, pobrinite se da su sve postavke ispravno konfigurirane prije pokretanja aplikacije kako biste osigurali besprijekorno korisničko iskustvo. 
