@@ -14,7 +14,8 @@ Marin Petric, Robert Kunštek, Eugen Preglej, Branimir Tomeljak, Anteo Vukasovi�
 - Pametna utičnica (Delock WLAN Power Socket Switch MQTT with energy monitoring)
 - Lampa
 
-Aplikacija podržava dva korisnika: VR i AR korisnika. Namijenjena je za simultano korištenje na dva različita uređaja. Testirano je da VR radi na Oculus Quest 2, dok AR funkcionalnosti rade na Oculus Quest 3, no VR bi trebao biti kompatibilan i s Quest 3.
+Aplikacija podržava dva korisnika: VR i AR korisnika.
+Testirano je da VR radi na Oculus Quest 2, dok AR funkcionalnosti rade na Oculus Quest 3, no VR bi trebao biti kompatibilan i s Quest 3.
 
 ---
 
@@ -47,5 +48,3 @@ Za pronalazak nove IP adrese utičnice na Windowsu, možete koristiti naredbe u 
 - `ping delock-3530.local`
 
 ---
-
-Također, pobrinite se da su sve postavke ispravno konfigurirane prije pokretanja aplikacije kako biste osigurali besprijekorno korisničko iskustvo. 
